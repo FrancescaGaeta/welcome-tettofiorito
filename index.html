@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetto Fiorito - Guest Directory</title>
+    <!-- Collegamento al file CSS esterno -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header con Logo e Selettore Lingua -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg class="leaf-icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M2 22C2 22 10 18 14 12C16 9 15 5 13 3C13 3 17 6 17 10C17 14 13 18 9 20C7 21 2 22 2 22Z"/>
+                    <path d="M13 11C13 11 18 9 19 6C20 4 19 2 18 1C18 1 21 3 21 6C21 9 18 11 15 12C14 12.5 13 11 13 11Z"/>
+                </svg>
+                <span>Tetto Fiorito</span>
+            </div>
+            <div class="lang-selector">
+                <button class="lang-btn active" onclick="setLanguage('it')">IT</button>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
+                <button class="lang-btn" onclick="setLanguage('de')">DE</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navbar Ristrutturata secondo le tue indicazioni -->
+    <nav class="nav-tabs">
+        <button class="nav-link active" onclick="switchTab('tab-home')">🏡 Welcome</button>
+        <button class="nav-link" onclick="switchTab('tab-apt')">ℹ️ Info Apt</button>
+        <button class="nav-link" onclick="switchTab('tab-tips')">💡 Consigli</button>
+        <button class="nav-link" onclick="switchTab('tab-transport')">🚇 Trasporti</button>
+        <button class="nav-link" onclick="switchTab('tab-itinerary')">📍 Itinerari</button>
+    </nav>
+
+    <!-- Contenitore Principale -->
+    <main class="container">
+        
+        <!-- SEZIONE 1: WELCOME (Interattiva ed emozionale) -->
+        <section id="tab-home" class="tab-content active">
+            <div class="welcome-hero-interactive">
+                <div class="welcome-badge">GUEST DIRECTORY</div>
+                <h1 class="animated-welcome-title">Welcome</h1>
+                <div class="divider-line"></div>
+                <p id="welcome-text">Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi. Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza. Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli, Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana. Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.</p>
+            </div>
+
+            <div class="card contact-card">
+                <h3 id="title-numbers">📞 Contatti Rapidi & Emergenze</h3>
+                <div class="contact-row">
+                    <span>Host: Antonello Assante</span>
+                    <a href="tel:+393383061933" class="btn-call">Chiama Antonello</a>
+                </div>
+                <div class="emergency-grid">
+                    <div><span>Emergenze:</span> <strong>112</strong></div>
+                    <div><span>Ambulanza:</span> <strong>118</strong></div>
+                    <div><span>Vigili del Fuoco:</span> <strong>115</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE 2: INFO APPARTAMENTO (Include i Rifiuti al suo interno) -->
+        <section id="tab-apt" class="tab-content">
+            <div class="card">
+                <h2 id="title-apt">ℹ️ Informazioni Appartamento</h2>
+                
+                <div class="wifi-credentials">
+                    <div class="wifi-header">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0 M1.42 9a16 16 0 0 1 21.16 0 M8.53 16.11a6 6 0 0 1 6.94 0 M12 20h.01"/></svg>
+                        <strong>Connessione Wi-Fi</strong>
+                    </div>
+                    <div class="wifi-body">
+                        <p><strong>Rete 1:</strong> Tetto Fiorito</p>
+                        <p><strong>Rete 2:</strong> EXT – Tetto Fiorito</p>
+                        <p><strong>Password:</strong> <span class="highlight-text">tettofiorito</span></p>
+                    </div>
+                </div>
+
+                <div class="info-block">
+                    <h4 id="lbl-ac">❄️ Aria Condizionata</h4>
+                    <p id="txt-ac">Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando. Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.</p>
+                </div>
+
+                <div class="info-block">
+                    <h4 id="lbl-rules">👥 Vicinato & Terrazza</h4>
+                    <p id="txt-rules">Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni (scale e terrazza) nelle ore serali e notturne, nel rispetto degli altri residenti. La terrazza è uno spazio condominiale condiviso. Siete i benvenuti a rilassarvi utilizzando l'altalena, il divanetto e le poltrone. Vi chiediamo invece di non utilizzare le sedie bianche in plastica e di non lasciare cibo, bevande o altri oggetti sulla terrazza al termine dell'utilizzo.</p>
+                </div>
+            </div>
+
+            <!-- COMPARTO RIFIUTI INTEGRATO DENTRO INFO APPARTAMENTO -->
+            <div class="card trash-container">
+                <h2>
+                    <svg class="leaves-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 21 3c-1.3 4.2-2 6.5-3.1 11.8A7 7 0 0 1 11 20z"/>
+                        <path d="M9.8 6.1C8 7.5 6 10 5.1 13.5c-.8 3 0 5.5 1.4 6.5"/>
+                    </svg>
+                    ♻️ Raccolta Rifiuti
+                </h2>
+                <p id="txt-trash-info" class="trash-subtitle">I rifiuti vanno posti fuori all’ingresso principale, in strada, sui 2 gradini di ingresso, dopo le ore 20:00 del giorno indicato.</p>
+                
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th id="th-day">Giorno</th>
+                                <th id="th-type">Tipo Rifiuto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td id="d-lun" class="day-col">Lunedì sera</td><td><span class="badge badge-organic">Organico / Umido</span></td></tr>
+                            <tr><td id="d-mar" class="day-col">Martedì sera</td><td><span class="badge badge-paper">Carta e Cartone</span></td></tr>
+                            <tr><td id="d-mer" class="day-col">Mercoledì sera</td><td><span class="badge badge-organic">Organico</span> + <span class="badge badge-glass">Vetro</span></td></tr>
+                            <tr><td id="d-gio" class="day-col">Giovedì sera</td><td><span class="badge badge-plastic">Plastica e Metalli</span></td></tr>
+                            <tr><td id="d-ven" class="day-col">Venerdì sera</td><td><span class="badge badge-undiff">Secco Residuo</span></td></tr>
+                            <tr><td id="d-dom" class="day-col">Domenica sera</td><td><span class="badge badge-organic">Organico / Umido</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE 3: CONSIGLI (Include Supermercati e Gastronomia con tabelle interattive) -->
+        <section id="tab-tips" class="tab-content">
+            <!-- SOTTO-SEZIONE SUPERMERCATI -->
+            <div class="card">
+                <h2 id="title-shops">🛒 Supermercati e Servizi Vicini</h2>
+                <p id="txt-shops-info">A pochi minuti a piedi dalla struttura troverete tutti i principali servizi necessari della zona:</p>
+                
+                <div class="table-responsive">
+                    <table class="interactive-table">
+                        <thead>
+                            <tr>
+                                <th>Insegna</th>
+                                <th>Tipologia</th>
+                                <th>Posizione</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Decò</strong></td>
+                                <td>Supermercato Alimentare</td>
+                                <td>A pochi minuti a piedi</td>
+                            </tr>
+                            <tr>
+                                <td><strong>365</strong></td>
+                                <td>Supermercato e Beni per la Casa</td>
+                                <td>Vicino alla struttura</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SOTTO-SEZIONE GASTRONOMIA -->
+            <div class="card">
+                <h2>🍝 Gastronomia Locale e Ristoranti</h2>
+                <p>I posti del cuore e i consigli di Antonello per mangiare bene a Castellammare e dintorni:</p>
+                
+                <div class="table-responsive">
+                    <table class="interactive-table">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Nome Locale</th>
+                                <th>Nota di Antonello</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>☕ Bar / Colazione</strong></td>
+                                <td>Gran Caffè Napoli, Il Re delle Graffe, Bar 2000</td>
+                                <td>Gran Caffè Napoli è il mio preferito in assoluto!</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🍕 Pizzerie</strong></td>
+                                <td>Girasole, Zembri</td>
+                                <td>Girasole è la mia pizzeria del cuore.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🍽️ Ristoranti</strong></td>
+                                <td>Mustafa (Vico Equense), Caravelle, Terra Mare</td>
+                                <td>Mustafa a Vico Equense è eccezionale.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🍷 Cucina Tipica / Wine Bar</strong></td>
+                                <td>Taverna Mafalda, Il Dubbio, Maracanà Pub, Baccanera Winery</td>
+                                <td>Ottimi piatti tradizionali e ottimi vini.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🍨 Gelaterie</strong></td>
+                                <td>K2</td>
+                                <td>Il miglior gelato della zona.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="info-block" style="margin-top: 20px;">
+                    <h4 id="title-beaches">🏖️ Spiagge Consigliate</h4>
+                    <p id="txt-beaches">Lo specchio di mare di fronte al Tetto Fiorito è balneabile (spiaggia libera). Se cercate stabilimenti attrezzati:</p>
+                    <ul class="styled-list">
+                        <li><strong>Castellammare:</strong> Bagno Conte, Bagno Elena, Stone, Famous Beach</li>
+                        <li><strong>Vico Equense:</strong> Il Bikini, Scrajo (La spiaggia preferita di Antonello)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE 4: TRASPORTI (Dedicata, Distinta e con PDF Orari) -->
+        <section id="tab-transport" class="tab-content">
+            <div class="card transport-card">
+                <h2 id="title-transport">🚇 Come Muoversi e Trasporti</h2>
+                <p style="margin-bottom: 20px;">Muoversi da Castellammare è facilissimo grazie ai collegamenti separati via terra e via mare:</p>
+                
+                <!-- Blocco 1: Circumvesuviana -->
+                <div class="transport-block terra">
+                    <h3>🚂 Via Terra: Stazione Circumvesuviana</h3>
+                    <p id="txt-train">Situata a pochissimi metri dal portone d'ingresso, svoltando a destra. Rappresenta il mezzo più comodo e rapido per raggiungere comodamente <strong>Napoli, Pompei, Ercolano e Sorrento</strong>.</p>
+                    
+                    <!-- Bottone per aprire il file PDF locale richiesto -->
+                    <a href="orari-napoli--sorrento.pdf" target="_blank" class="btn-pdf-link">
+                        📂 Apri PDF Orari Ufficiali (Napoli - Sorrento)
+                    </a>
+                </div>
+
+                <!-- Blocco 2: Porto -->
+                <div class="transport-block mare">
+                    <h3>⚓ Via Mare: Porto di Castellammare</h3>
+                    <p id="txt-ferry">Situato a pochi minuti di cammino a piedi, svoltando a sinistra del portone. Da qui partono regolarmente aliscafi e traghetti diretti verso l'isola di <strong>Capri</strong> e la costiera di <strong>Sorrento</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE 5: ITINERARI & ESCURSIONI (Noleggio e Link Sesto Continente) -->
+        <section id="tab-itinerary" class="tab-content">
+            <!-- Collegamento Esterno Escursioni -->
+            <div class="card external-promo-card">
+                <h3>🚢 Escursioni & Tour Guidati</h3>
+                <p>Vuoi vivere esperienze uniche in barca e tour guidati indimenticabili? Scopri tutte le offerte del nostro partner.</p>
+                <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-external-link marine">Visita Sesto Continente Tours</a>
+            </div>
+
+            <!-- Blocco Noleggio Veicoli -->
+            <div class="card rental-card">
+                <h3>🛵 Noleggio Auto e Motorino</h3>
+                <p>Se desideri esplorare la costiera in totale libertà e autonomia, puoi noleggiare una macchina o uno scooter direttamente online tramite Sesto Continente.</p>
+                <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-external-link">Noleggia Veicolo su Sesto Continente</a>
+            </div>
+
+            <div class="card promo-card">
+                <h2 id="title-itinerary">🗺️ Itinerari consigliati da Antonello</h2>
+                <p id="txt-itinerary">I posti del cuore di Antonello da non perdere: godetevi il miglior punto per vedere il tramonto alla Villa comunale di Castellammare! Come escursione consigliata, non perdetevi lo splendido tour per Capri e Positano.</p>
+                
+                <div class="promo-box">
+                    <span id="txt-discount-tag">Codice Sconto Partner Esclusivo Sesto Continente Tours:</span>
+                    <div class="promo-code">TETTOFIORITO10</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Tetto Fiorito • Castellammare di Stabia</p>
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            
+            const activeBtn = Array.from(document.querySelectorAll('.nav-link')).find(btn => btn.getAttribute('onclick').includes(tabId));
+            if(activeBtn) activeBtn.classList.add('active');
+            
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        const translations = {
+            it: {
+                welcome: "Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi. Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza. Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli, Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana. Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.",
+                apt: "ℹ️ Informazioni Appartamento",
+                ac_lbl: "❄️ Aria Condizionata",
+                ac_txt: "Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando. Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.",
+                rules_lbl: "👥 Vicinato & Terrazza",
+                rules_txt: "Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni (scale e terrazza) nelle ore serali e notturne, nel rispetto degli altri residenti. La terrazza è uno spazio condominiale condiviso. Siete i benvenuti a rilassarvi utilizzando l'altalena, il divanetto e le poltrone. Vi chiediamo invece di non utilizzare le sedie bianche in plastica e di non lasciare cibo, bevande o altri oggetti sulla terrazza al termine dell'utilizzo.",
+                trash_info: "I rifiuti vanno posti fuori all’ingresso principale, in strada, sui 2 gradini di ingresso, dopo le ore 20:00 del giorno indicato.",
+                th_day: "Giorno", th_type: "Tipo Rifiuto",
+                lun: "Lunedì sera", mar: "Martedì sera", mer: "Mercoledì sera", gio: "Giovedì sera", ven: "Venerdì sera", dom: "Domenica sera",
+                transport: "🚇 Come Muoversi e Trasporti",
+                train: "Situata a pochissimi metri dal portone d'ingresso, svoltando a destra. Rappresenta il mezzo più comodo e rapido per raggiungere comodamente Napoli, Pompei, Ercolano e Sorrento.",
+                ferry: "Situato a pochi minuti di cammino a piedi, svoltando a sinistra del portone. Da qui partono regolarmente aliscafi e traghetti diretti verso l'isola di Capri e la costiera di Sorrento.",
+                shops: "🛒 Supermercati e Servizi Vicini",
+                shops_txt: "A pochi minuti a piedi dalla struttura troverete tutti i principali servizi necessari della zona:",
+                beaches: "🏖️ Spiagge Consigliate",
+                beaches_txt: "Lo specchio di mare di fronte al Tetto Fiorito è balneabile (spiaggia libera). Se cercate stabilimenti attrezzati:",
+                itinerary: "🗺️ Itinerari consigliati da Antonello",
+                itinerary_txt: "I posti del cuore di Antonello da non perdere: godetevi il miglior punto per vedere il tramonto alla Villa comunale di Castellammare! Come escursione consigliata, non perdetevi lo splendido tour per Capri e Positano.",
+                disc_tag: "Codice Sconto Partner Esclusivo Sesto Continente Tours:",
+                numbers: "📞 Contatti Rapidi & Emergenze"
+            },
+            en: {
+                welcome: "Welcome to Tetto Fiorito and thank you for choosing to stay with us. We are happy that you chose Castellammare di Stabia as the base for your holiday. Thanks to its strategic location, our city represents the ideal starting point for visiting some of the most beautiful and well-known destinations in Campania, including Naples, Pompeii, Herculaneum, Sorrento, Capri, and the Amalfi Coast. Our wish is to make you feel at home and make your stay as pleasant as possible.",
+                apt: "ℹ️ Apartment Information",
+                ac_lbl: "❄️ Air Conditioning",
+                ac_txt: "You can manage the air conditioning autonomously using the remote control. We kindly ask you to turn it off when you leave the apartment.",
+                rules_lbl: "👥 Neighbors & Terrace",
+                rules_txt: "We kindly ask you to avoid excessive noise in common areas (stairs and terrace) during evening and night hours, out of respect for other residents. The terrace is a shared space: you are welcome to relax using the swing, sofa, and armchairs. We ask you instead not to use the white plastic chairs and not to leave food, drinks, or other objects on the terrace after use.",
+                trash_info: "Waste must be placed outside the main entrance, on the street entrance steps, after 8:00 PM on the designated day.",
+                th_day: "Day", th_type: "Trash Type",
+                lun: "Monday night", mar: "Tuesday night", mer: "Wednesday night", gio: "Thursday night", ven: "Friday night", dom: "Sunday night",
+                transport: "🚇 Getting Around & Transport",
+                train: "Located just a few meters from the entrance door, turning right. It is the most convenient and fastest way to easily reach Naples, Pompeii, Herculaneum, and Sorrento.",
+                ferry: "Located a few minutes' walk away, turning left from the door. Hydrofoils and ferries leave regularly from here towards Capri and Sorrento.",
+                shops: "🛒 Supermarkets & Services",
+                shops_txt: "A few minutes' walk from the property you will find all main services of the area:",
+                beaches: "🏖️ Recommended Beaches",
+                beaches_txt: "The stretch of sea in front of Tetto Fiorito is declared swimmable (free beach). If you look for equipped beach clubs:",
+                itinerary: "🗺️ Recommended Itineraries & Tours",
+                itinerary_txt: "Antonello's favorite places: don't miss the sunset from the Villa Comunale in Castellammare! As a recommended excursion, enjoy a boat tour to Capri and Positano.",
+                disc_tag: "Exclusive Partner Discount Code Sesto Continente Tours:",
+                numbers: "📞 Quick Contacts & Emergencies"
+            },
+            fr: {
+                welcome: "Bienvenue au Tetto Fiorito ! Nous siamo ravis que vous ayez choisi Castellammare di Stabia comme base pour vos vacances. Grâce à sa position stratégique, notre ville représente le point de départ idéal pour visiter Naples, Pompéi, Herculanum, Sorrente, Capri et la côte amalfitaine. Notre souhait est que vous vous sentiez comme chez vous.",
+                apt: "ℹ️ Informations sur l'Appartement",
+                ac_lbl: "❄️ Climatisation",
+                ac_txt: "Vous pouvez gérer la climatisation de manière autonome à l'aide de la télécommande. Merci de bien vouloir l'éteindre lorsque vous quittez l'appartement.",
+                rules_lbl: "👥 Voisinage & Terrasse",
+                rules_txt: "Nous vous demandons d'éviter les bruits excessifs dans les parties communes le soir. La terrasse est partagée : vous pouvez utiliser la balancelle, le canapé et les fauteuils, mais pas les chaises en plastique blanc.",
+                trash_info: "Les déchets doivent être déposés devant l'entrée principale, dans la rue, après 20h00 le jour indiqué.",
+                th_day: "Jour", th_type: "Type de Déchet",
+                lun: "Lundi soir", mar: "Mardi soir", mer: "Mercredi soir", gio: "Jeudi soir", ven: "Vendredi soir", dom: "Dimanche soir",
+                transport: "🚇 Transports",
+                train: "Situé à quelques mètres de la porte d'entrée, en tournant à droite. C'est le moyen le plus rapide pour rejoindre Naples, Pompéi, Herculanum et Sorrente.",
+                ferry: "Situé à quelques minutes à pied, en tournant à gauche. Des ferries partent régulièrement d'ici vers Capri et Sorrente.",
+                shops: "🛒 Supermarchés et Services",
+                shops_txt: "À quelques minutes à pied, vous trouverez tous les services nécessaires de la zone :",
+                beaches: "🏖️ Plages Recommandées",
+                beaches_txt: "La mer en face est baignable (plage publique). Si vous recherchez des plages privées équipées :",
+                itinerary: "🗺️ Itinéraires & Excursions recommandés",
+                itinerary_txt: "Les endroits préférés d'Antonello : profitez du coucher de soleil depuis la Villa Comunale ! Nous recommandons une excursion à Capri et Positano.",
+                disc_tag: "Code de Réduction Sesto Continente Tours:",
+                numbers: "📞 Contacts & Urgences"
+            },
+            de: {
+                welcome: "Willkommen im Tetto Fiorito! Wir freuen uns, dass Sie Castellammare di Stabia gewählt haben. Dank seiner strategischen Lage ist unsere Stadt der ideale Ausgangspunkt, um Neapel, Pompeji, Herculaneum, Sorrent, Capri und die Amalfiküste zu besuchen. Wir möchten, dass Sie sich wie zu Hause fühlen.",
+                apt: "ℹ️ Informationen zur Wohnung",
+                ac_lbl: "❄️ Klimaanlage",
+                ac_txt: "Sie können die Klimaanlage mithilfe der Fernbedienung selbstständig regulieren. Bitte beim Verlassen der Wohnung ausschalten.",
+                rules_lbl: "👥 Nachbarschaft & Terrasse",
+                rules_txt: "Bitte vermeiden Sie abends/nachts übermäßigen Lärm in den Gemeinschaftsbereichen. Die Terrasse wird geteilt: Schaukel, Sofa und Sessel dürfen genutzt werden.",
+                trash_info: "Der Abfall muss am angegebenen Tag nach 20:00 Uhr vor dem Haupteingang auf den Stufen abgestellt werden.",
+                th_day: "Tag", th_type: "Müllart",
+                lun: "Montagabend", mar: "Dienstagabend", mer: "Mittwochabend", gio: "Donnerstagabend", ven: "Freitagabend", dom: "Sonntagabend",
+                transport: "🚇 Mobilität",
+                train: "Nur wenige Meter vom Eingang entfernt, nach rechts abbiegen. Der schnellste Weg nach Neapel, Pompeji, Herculaneum und Sorrent.",
+                ferry: "Nur wenige Gehminuten entfernt, nach links abbiegen. Fähren fahren regelmäßig nach Capri und Sorrent.",
+                shops: "🛒 Supermärkte & Dienstleistungen",
+                shops_txt: "Nur wenige Gehminuten entfernt finden Sie alle wichtigen Dienstleistungen der Region:",
+                beaches: "🏖️ Empfohlene Strände",
+                beaches_txt: "Das Meer gegenüber ist zum Baden freigegeben (freier Strand). Wenn Sie ausgestattete Strandbäder suchen:",
+                itinerary: "🗺️ Routen & Ausflüge",
+                itinerary_txt: "Antonellos Lieblingsorte: Genießen Sie den Sonnenuntergang an der Villa Comunale! Wir empfehlen eine Bootstour nach Capri und Positano.",
+                disc_tag: "Exklusiver Rabattcode Sesto Continente Tours:",
+                numbers: "📞 Notfallnummern & Kontakte"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const t = translations[lang];
+            document.getElementById('welcome-text').innerText = t.welcome;
+            document.getElementById('title-apt').innerText = t.apt;
+            document.getElementById('lbl-ac').innerText = t.ac_lbl;
+            document.getElementById('txt-ac').innerText = t.ac_txt;
+            document.getElementById('lbl-rules').innerText = t.rules_lbl;
+            document.getElementById('txt-rules').innerText = t.rules_txt;
+            document.getElementById('txt-trash-info').innerText = t.trash_info;
+            document.getElementById('th-day').innerText = t.th_day;
+            document.getElementById('th-type').innerText = t.th_type;
+            document.getElementById('title-transport').innerText = t.transport;
+            document.getElementById('txt-train').innerText = t.train;
+            document.getElementById('txt-ferry').innerText = t.ferry;
+            document.getElementById('title-shops').innerText = t.shops;
+            document.getElementById('txt-shops-info').innerText = t.shops_txt;
+            document.getElementById('title-beaches').innerText = t.beaches;
+            document.getElementById('txt-beaches').innerText = t.beaches_txt;
+            document.getElementById('title-itinerary').innerText = t.itinerary;
+            document.getElementById('txt-itinerary').innerText = t.itinerary_txt;
+            document.getElementById('txt-discount-tag').innerText = t.disc_tag;
+            document.getElementById('title-numbers').innerText = t.numbers;
+
+            document.getElementById('d-lun').innerText = t.lun;
+            document.getElementById('d-mar').innerText = t.mar;
+            document.getElementById('d-mer').innerText = t.mer;
+            document.getElementById('d-gio').innerText = t.gio;
+            document.getElementById('d-ven').innerText = t.ven;
+            document.getElementById('d-dom').innerText = t.dom;
+        }
+    </script>
+</body>
+</html>

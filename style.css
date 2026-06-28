@@ -1,0 +1,441 @@
+:root {
+    --brand-lilla: #a27bf1;
+    --brand-lilla-light: #f1ecfd;
+    --brand-green-bg: #79b683;   /* Verde molto più forte, saturo e profondo richiesto */
+    --brand-green-accent: #2d6a4f; /* Verde intermedio per elementi di stacco */
+    --brand-green-dark: #112a1f;
+    --text-main: #202221;
+    --card-surface: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--brand-green-bg); /* Sfondo forte sui toni del verde */
+    color: var(--text-main);
+    line-height: 1.6;
+    padding-bottom: 60px; 
+}
+
+/* HEADER DEL SITO */
+header {
+    background-color: var(--card-surface);
+    border-bottom: 3px solid var(--brand-lilla);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 21px;
+    color: var(--brand-lilla);
+}
+
+.leaf-icon-logo {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-green-accent);
+}
+
+/* LINGUE */
+.lang-selector {
+    display: flex;
+    gap: 6px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--brand-lilla);
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--brand-lilla);
+}
+
+.lang-btn.active {
+    background-color: var(--brand-lilla);
+    color: white;
+}
+
+/* NAVBAR TABS */
+.nav-tabs {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    display: flex;
+    overflow-x: auto;
+    border-bottom: 2px solid var(--brand-green-accent);
+    position: sticky;
+    top: 62px;
+    z-index: 999;
+}
+
+.nav-tabs::-webkit-scrollbar {
+    display: none; 
+}
+
+.nav-link {
+    flex: 1;
+    min-width: 90px;
+    padding: 15px 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 4px solid transparent;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.nav-link.active {
+    color: var(--brand-green-accent);
+    border-bottom: 4px solid var(--brand-green-accent);
+    font-weight: 700;
+    background-color: #f4f9f6;
+}
+
+/* CONTENITORE PRINCIPALE DI SCHEDE */
+.container {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 0 16px;
+}
+
+.tab-content {
+    display: none; 
+}
+
+.tab-content.active {
+    display: block; 
+}
+
+.card {
+    background: var(--card-surface);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px;
+}
+
+/* TITOLI RIGIDAMENTE IN NERO PURO */
+h2, h3 {
+    color: #000000 !important;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+
+/* NUOVA SEZIONE WELCOME IMPORTANTE DI EFFETTO CON ANIMAZIONE */
+.welcome-hero-interactive {
+    background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%);
+    padding: 35px 25px;
+    border-radius: 28px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(45, 106, 79, 0.1);
+    animation: slideUpHero 0.7s cubic-bezier(0.16, 1, 0.3, 1) to;
+}
+
+.welcome-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background-color: var(--brand-lilla-light);
+    color: var(--brand-lilla);
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+
+.animated-welcome-title {
+    font-size: 56px !important; /* Molto grande d'impatto */
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 900;
+    color: #000000 !important;
+    line-height: 1;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    animation: scaleText 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.divider-line {
+    width: 60px;
+    height: 4px;
+    background: var(--brand-green-accent);
+    margin: 15px auto 25px auto;
+    border-radius: 2px;
+}
+
+.welcome-hero-interactive p {
+    font-size: 16px;
+    color: #333634;
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.7;
+}
+
+/* ANIMAZIONI WELCOME */
+@keyframes slideUpHero {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleText {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* COMPARTIMENTO RIFIUTI ALL'INTERNO DI INFO APT */
+.trash-container {
+    border: 2px solid var(--brand-green-accent);
+    background-color: #fafffc;
+}
+
+.trash-subtitle {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.leaves-icon-svg {
+    width: 24px;
+    height: 24px;
+    color: var(--brand-green-accent);
+    vertical-align: middle;
+}
+
+/* TABELLE INTERATTIVE AGGIORNATE */
+.table-responsive {
+    overflow-x: auto;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 14px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.custom-table, .interactive-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.custom-table th, .interactive-table th {
+    background-color: #f7f7f7;
+    color: #000000;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid #e6e6e6;
+}
+
+.custom-table td, .interactive-table td {
+    padding: 14px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 14px;
+}
+
+/* Effetto Interattività Righe */
+.custom-table tbody tr:hover, .interactive-table tbody tr:hover {
+    background-color: #f1f8f4;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.day-col {
+    font-weight: 700;
+    color: #000000;
+}
+
+/* BADGES */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.badge-organic { background: #ebdcc5; color: #524331; }
+.badge-paper { background: #d7e8f5; color: #284b66; }
+.badge-glass { background: #d2ebd6; color: #1f4a24; }
+.badge-plastic { background: #fff4c3; color: #6b5800; }
+.badge-undiff { background: #e3e3e3; color: #404040; }
+
+/* SEZIONE TRASPORTI DISTINTA */
+.transport-block {
+    background: #fafafa;
+    border: 1px solid #ebeeec;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.transport-block.terra {
+    border-left: 5px solid #2d6a4f;
+}
+
+.transport-block.mare {
+    border-left: 5px solid #028090;
+}
+
+/* BOTTONE PDF LOCAL */
+.btn-pdf-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.2);
+    transition: background 0.2s;
+}
+
+.btn-pdf-link:hover {
+    background-color: #a62c20;
+}
+
+/* BOTTONI SESTO CONTINENTE ESTERNI */
+.btn-external-link {
+    display: inline-block;
+    margin-top: 12px;
+    background-color: #2b6cb0;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.25);
+    transition: background 0.2s;
+}
+
+.btn-external-link:hover {
+    background-color: #1a446c;
+}
+
+.btn-external-link.marine {
+    background-color: #028090;
+    box-shadow: 0 4px 12px rgba(2, 128, 144, 0.25);
+}
+
+.btn-external-link.marine:hover {
+    background-color: #015f6b;
+}
+
+/* ALTRE SCHEDE SPECIFICHE */
+.rental-card { border-left: 5px solid #2b6cb0; }
+.external-promo-card { border-left: 5px solid #028090; }
+
+.promo-card {
+    border: 2px dashed var(--brand-lilla) !important;
+    background: var(--brand-lilla-light) !important;
+}
+
+.promo-box {
+    text-align: center;
+    background: white;
+    border: 1px solid rgba(162, 123, 241, 0.3);
+    border-radius: 14px;
+    padding: 18px;
+    margin-top: 15px;
+}
+
+.promo-code {
+    display: inline-block;
+    margin-top: 8px;
+    background-color: var(--brand-lilla);
+    color: white;
+    padding: 10px 28px;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+/* CREDENZIALI WI-FI */
+.wifi-credentials {
+    background-color: var(--brand-lilla-light);
+    border: 1px dashed rgba(162, 123, 241, 0.4);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.wifi-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--brand-lilla);
+    margin-bottom: 10px;
+}
+
+.wifi-header .icon { width: 22px; height: 22px; }
+
+.highlight-text {
+    font-family: monospace;
+    font-size: 16px;
+    background: white;
+    padding: 3px 8px;
+    border-radius: 6px;
+    color: var(--brand-lilla);
+    font-weight: 700;
+}
+
+.info-block {
+    margin-top: 18px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 14px;
+}
+
+.contact-card { background: #fafafa; border: 1px solid #e5e5e5; }
+.contact-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.btn-call { border: 1px solid var(--brand-lilla); color: var(--brand-lilla); padding: 7px 14px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 13px; background: white; }
+.btn-call:hover { background: var(--brand-lilla); color: white; }
+.emergency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 14px; font-size: 12px; text-align: center; }
+
+.styled-list { list-style: none; margin-top: 10px; }
+.styled-list li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 14px; }
+.styled-list li::before { content: "•"; position: absolute; left: 6px; color: var(--brand-green-accent); font-size: 18px; top: -2px; }
+
+footer {
+    text-align: center;
+    padding: 25px 0;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.7;
+}
