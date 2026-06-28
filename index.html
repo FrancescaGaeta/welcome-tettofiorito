@@ -28,7 +28,7 @@
         </div>
     </header>
 
-    <!-- Navbar Ristrutturata secondo le tue indicazioni -->
+    <!-- Navbar Ristrutturata (4 Sezioni + Link Esterno) -->
     <nav class="nav-tabs">
         <button class="nav-link active" onclick="switchTab('tab-home')">🏡 Welcome</button>
         <button class="nav-link" onclick="switchTab('tab-apt')">ℹ️ Info Apt</button>
@@ -123,9 +123,8 @@
             </div>
         </section>
 
-        <!-- SEZIONE 3: CONSIGLI (Include Supermercati e Gastronomia con tabelle interattive) -->
+        <!-- SEZIONE 3: CONSIGLI (Supermercati e Gastronomia) -->
         <section id="tab-tips" class="tab-content">
-            <!-- SOTTO-SEZIONE SUPERMERCATI -->
             <div class="card">
                 <h2 id="title-shops">🛒 Supermercati e Servizi Vicini</h2>
                 <p id="txt-shops-info">A pochi minuti a piedi dalla struttura troverete tutti i principali servizi necessari della zona:</p>
@@ -155,7 +154,6 @@
                 </div>
             </div>
 
-            <!-- SOTTO-SEZIONE GASTRONOMIA -->
             <div class="card">
                 <h2>🍝 Gastronomia Locale e Ristoranti</h2>
                 <p>I posti del cuore e i consigli di Antonello per mangiare bene a Castellammare e dintorni:</p>
@@ -210,37 +208,28 @@
             </div>
         </section>
 
-        <!-- SEZIONE 4: TRASPORTI (Dedicata, Distinta e con PDF Orari) -->
         <!-- SEZIONE 4: TRASPORTI -->
-       <!-- SEZIONE 4: TRASPORTI -->
         <section id="tab-transport" class="tab-content">
             <div class="card transport-card">
                 <h2 id="title-transport">🚇 Come Muoversi e Trasporti</h2>
                 <p style="margin-bottom: 20px;">Muoversi da Castellammare è facilissimo grazie ai collegamenti separati via terra, via mare e per l'aeroporto:</p>
                 
-                <!-- Blocco 1: Circumvesuviana con LINK ESTERNO AL PDF -->
                 <div class="transport-block terra">
                     <h3>🚂 Via Terra: Stazione Circumvesuviana</h3>
                     <p id="txt-train">Situata a pochissimi metri dal portone d'ingresso, svoltando a destra. Rappresenta il mezzo più comodo e rapido per raggiungere comodamente <strong>Napoli, Pompei, Ercolano e Sorrento</strong>.</p>
-                    
-                    <!-- Bottone per aprire il file PDF locale -->
                     <a href="orari-napoli--sorrento.pdf" target="_blank" class="btn-pdf-link" style="margin-top: 15px;">
                         📂 Apri PDF Orari Ufficiali (Napoli - Sorrento)
                     </a>
                 </div>
 
-                <!-- Blocco 2: Porto -->
                 <div class="transport-block mare">
                     <h3>⚓ Via Mare: Porto di Castellammare</h3>
                     <p id="txt-ferry">Situato a pochi minuti di cammino a piedi, svoltando a sinistra del portone. Da qui partono regolarmente aliscafi e traghetti diretti verso l'isola di <strong>Capri</strong> e la costiera di <strong>Sorrento</strong>.</p>
                 </div>
 
-                <!-- Blocco 3: Navetta Aeroporto CurreriViaggi -->
                 <div class="transport-block bus">
                     <h3>✈️ Collegamento Aeroporto: CurreriViaggi</h3>
                     <p id="txt-bus">Per raggiungere o arrivare dall'<strong>Aeroporto di Napoli (Capodichino)</strong> in modo diretto, puoi usufruire del servizio autobus di linea CurreriViaggi, comodo e puntuale.</p>
-                    
-                    <!-- Bottone per prenotazione -->
                     <a href="https://www.curreriviaggi.it/it/navetta-aeroporto-di-napoli" target="_blank" class="btn-external-link bus-btn">
                         🎟️ Prenota il tuo biglietto
                     </a>
@@ -248,31 +237,181 @@
             </div>
         </section>
 
-        <!-- SEZIONE 5: ITINERARI & ESCURSIONI (Noleggio e Link Sesto Continente) -->
+        <!-- SEZIONE 5: ITINERARI & ESCURSIONI RISTRUTTURATA -->
         <section id="tab-itinerary" class="tab-content">
-            <!-- Collegamento Esterno Escursioni -->
-            <div class="card external-promo-card">
-                <h3>🚢 Escursioni & Tour Guidati</h3>
-                <p>Vuoi vivere esperienze uniche in barca e tour guidati indimenticabili? Scopri tutte le offerte del nostro partner.</p>
-                <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-external-link marine">Visita Sesto Continente Tours</a>
+            
+            <!-- Introduzione Strategica -->
+            <div class="card">
+                <h2 id="title-itinerary">🗺️ Punti di Interesse e Itinerari</h2>
+                <p id="txt-itinerary-intro">Grazie alla posizione incredibilmente strategica di Castellammare di Stabia, alloggiare al Tetto Fiorito vi permette di raggiungere in pochissimo tempo le perle più iconiche della Campania. Esplorate le mete vicine in autonomia o con i nostri tour partner selezionati.</p>
             </div>
 
-            <!-- Blocco Noleggio Veicoli -->
-            <div class="card rental-card">
-                <h3>🛵 Noleggio Auto e Motorino</h3>
-                <p>Se desideri esplorare la costiera in totale libertà e autonomia, puoi noleggiare una macchina o uno scooter direttamente online tramite Sesto Continente.</p>
-                <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-external-link">Noleggia Veicolo su Sesto Continente</a>
-            </div>
-
-            <div class="card promo-card">
-                <h2 id="title-itinerary">🗺️ Itinerari consigliati da Antonello</h2>
-                <p id="txt-itinerary">I posti del cuore di Antonello da non perdere: godetevi il miglior punto per vedere il tramonto alla Villa comunale di Castellammare! Come escursione consigliata, non perdetevi lo splendido tour per Capri e Positano.</p>
+            <!-- Griglia di Card Espandibili (Accordion dei Punti d'Interesse) -->
+            <div class="poi-accordion-container">
                 
+                <!-- CARD 1: POMPEI -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🏛️ Archeologia: Pompei</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Gli scavi archeologici più famosi al mondo, una città romana cristallizzata nel tempo dall'eruzione del Vesuvio del 79 d.C.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Prendi la Circumvesuviana a pochi metri da casa in direzione Napoli e scendi alla fermata <em>"Pompei Scavi - Villa dei Misteri"</em> (circa 10 minuti di treno).
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: NAPOLI -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🎭 Cultura & Vita: Napoli</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Una capitale di cultura, arte, cibo e tradizioni millenarie. Dinamica, colorata e ricca di tesori storici a cielo aperto.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Prendi la Circumvesuviana fuori casa in direzione Napoli e scendi alla fermata capolinea <em>"Napoli Piazza Garibaldi"</em> (circa 45 minuti).
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 3: SORRENTO -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🍋 La Terra delle Sirene: Sorrento</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Famosa per i suoi agrumeti, i panorami mozzafiato sul golfo e i pittoreschi vicoli storici ideali per lo shopping e il relax.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Prendi la Circumvesuviana fuori casa in direzione Sorrento e scendi al capolinea <em>"Sorrento"</em> (circa 20 minuti). Alternativamente, in estate ci sono traghetti dal porto.
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 4: COSTIERA AMALFITANA -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🌊 Paradiso Naturale: Amalfi Coast & Positano</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Patrimonio UNESCO, un nastro di roccia sospeso sul mare azzurro che unisce borghi gioiello incastonati nella montagna come Positano e Amalfi.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Prendi la Circumvesuviana fino a Sorrento, e subito fuori la stazione troverai i bus di linea SITA diretti a Positano/Amalfi.
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 5: CAPRI -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>💎 L'Isola Azzurra: Capri</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">L'isola della Dolce Vita, celebre in tutto il mondo per i suoi maestosi Faraglioni, la Grotta Azzurra e l'elegante Piazzetta.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Raggiungi a piedi il Porto di Castellammare di Stabia (svoltando a sinistra fuori dal portone) e imbarcati direttamente sull'aliscafo per Capri.
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 6: SCAVI DI STABIA -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🏡 Storia Locale: Scavi Archeologici di Stabia</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Meravigliose ville romane residenziali (come Villa San Marco e Villa Arianna) eccezionalmente conservate e situate proprio a Castellammare.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Raggiungibili facilmente tramite autobus locali, taxi o brevi tragitti in auto verso la collina di Varano.
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 7: SPIAGGE -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🏖️ Mare e Relax: Spiagge Consigliate</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Dalla spiaggia libera proprio davanti alla struttura fino ai famosi lidi attrezzati della costa vicina per godersi il sole.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Per i lidi di Castellammare (Pozzano) o Vico Equense (Scrajo/Bikini), prendi la Circumvesuviana in direzione Sorrento scendendo alle rispettive fermate balneari.
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+                <!-- CARD 8: ERCOLANO -->
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>🌋 Gioiello Sommerso: Ercolano</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p class="poi-desc">Antica città romana sepolta dal fango vulcanico, incredibilmente intatta nei suoi legni, arredi e mosaici interni baciati dalla storia.</p>
+                        <div class="how-to-go">
+                            <strong>🚌 Come arrivarci da soli:</strong> Prendi la Circumvesuviana fuori casa in direzione Napoli e scendi alla stazione di <em>"Ercolano Scavi"</em> (circa 25 minuti).
+                        </div>
+                        <a href="https://www.sestocontinentetours.com/" target="_blank" class="btn-partner-booking">🚢 Vedi Tour Organizzato Sesto Continente</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- NUOVA SEZIONE: PERCORSI E TOUR DETTAGLIATI SUGGERITI -->
+            <div class="card routes-section-title">
+                <h3>🗺️ Percorsi Giornalieri Consigliati da Antonello</h3>
+                <p>Ecco dei programmi pensati giorno per giorno per ottimizzare le vostre escursioni senza stress:</p>
+            </div>
+
+            <!-- SCHEDA ITINERARIO AMALFI COAST -->
+            <div class="card route-detail-card amalfi-theme">
+                <div class="route-header">🚶‍♂️ Tour della Costiera Amalfitana</div>
+                <div class="route-body">
+                    <p>Un percorso mozzafiato via mare o terra per scoprire le icone del Mediterraneo:</p>
+                    <ul class="route-steps">
+                        <li><strong>Mattina:</strong> Partenza presto. Tappa panoramica al belvedere di Positano per ammirare le casette colorate a strapiombo e passeggiata tra le boutique di moda Positano.</li>
+                        <li><strong>Pranzo:</strong> Spostamento ad Amalfi, visita al maestoso Duomo di Sant'Andrea e pranzo tipico nei vicoli a base di scialatielli ai frutti di mare.</li>
+                        <li><strong>Pomeriggio:</strong> Salita verso la tranquilla ed elegante Ravello per visitare i giardini sospesi di Villa Rufolo o Villa Cimbrone con il celebre "Terrazzo dell'Infinito".</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SCHEDA ITINERARIO NAPOLI -->
+            <div class="card route-detail-card napoli-theme">
+                <div class="route-header">🍕 L'Anima di Napoli: Cose da non perdere</div>
+                <div class="route-body">
+                    <p>Un itinerario a piedi nel cuore pulsante del centro storico millenario:</p>
+                    <ul class="route-steps">
+                        <li><strong>Spaccanapoli & San Gregorio Armeno:</strong> Passeggiate lungo il decumano inferiore e immergetevi nella celebre via degli artigiani del presepe, attiva tutto l'anno.</li>
+                        <li><strong>Napoli Sotterranea (Da non perdere):</strong> Scendete a 40 metri di profondità sotto Piazza San Gaetano per esplorare l'incredibile acquedotto greco-romano e i rifugi bellici.</li>
+                        <li><strong>Cappella Sansevero:</strong> Prenotate in anticipo per ammirare da vicino il capolavoro mondiale del <em>Cristo Velato</em>.</li>
+                        <li><strong>Tramonto in Villa Comunale:</strong> Al vostro rientro a Castellammare, rilassatevi passeggiando sulla nostra Villa Comunale: è il miglior punto in assoluto per godersi un tramonto magico sul golfo!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Box Sconto Esclusivo -->
+            <div class="card promo-card">
                 <div class="promo-box">
                     <span id="txt-discount-tag">Codice Sconto Partner Esclusivo Sesto Continente Tours:</span>
                     <div class="promo-code">TETTOFIORITO10</div>
                 </div>
             </div>
+            
         </section>
 
     </main>
@@ -281,6 +420,7 @@
         <p>© 2026 Tetto Fiorito • Castellammare di Stabia</p>
     </footer>
 
+    <!-- Script per navigazione e interattività Accordion -->
     <script>
         function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -292,6 +432,27 @@
             if(activeBtn) activeBtn.classList.add('active');
             
             window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Gestione apertura/chiusura card Itinerari
+        function toggleAccordion(element) {
+            const item = element.parentElement;
+            const content = item.querySelector('.accordion-content');
+            const arrow = element.querySelector('.arrow');
+            
+            if (item.classList.contains('open')) {
+                item.classList.remove('open');
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                // Chiude gli altri eventualmente aperti per ordine visivo
+                document.querySelectorAll('.accordion-item').forEach(el => {
+                    el.classList.remove('open');
+                    const a = el.querySelector('.arrow');
+                    if(a) a.style.transform = "rotate(0deg)";
+                });
+                item.classList.add('open');
+                arrow.style.transform = "rotate(180deg)";
+            }
         }
 
         const translations = {
@@ -312,8 +473,8 @@
                 shops_txt: "A pochi minuti a piedi dalla struttura troverete tutti i principali servizi necessari della zona:",
                 beaches: "🏖️ Spiagge Consigliate",
                 beaches_txt: "Lo specchio di mare di fronte al Tetto Fiorito è balneabile (spiaggia libera). Se cercate stabilimenti attrezzati:",
-                itinerary: "🗺️ Itinerari consigliati da Antonello",
-                itinerary_txt: "I posti del cuore di Antonello da non perdere: godetevi il miglior punto per vedere il tramonto alla Villa comunale di Castellammare! Come escursione consigliata, non perdetevi lo splendido tour per Capri e Positano.",
+                itinerary: "🗺️ Punti di Interesse e Itinerari",
+                itinerary_txt: "Grazie alla posizione incredibilmente strategica di Castellammare di Stabia, alloggiare al Tetto Fiorito vi permette di raggiungere in pochissimo tempo le perle più iconiche della Campania. Esplorate le mete vicine in autonomia o con i nostri tour partner selezionati.",
                 disc_tag: "Codice Sconto Partner Esclusivo Sesto Continente Tours:",
                 numbers: "📞 Contatti Rapidi & Emergenze"
             },
@@ -334,8 +495,8 @@
                 shops_txt: "A few minutes' walk from the property you will find all main services of the area:",
                 beaches: "🏖️ Recommended Beaches",
                 beaches_txt: "The stretch of sea in front of Tetto Fiorito is declared swimmable (free beach). If you look for equipped beach clubs:",
-                itinerary: "🗺️ Recommended Itineraries & Tours",
-                itinerary_txt: "Antonello's favorite places: don't miss the sunset from the Villa Comunale in Castellammare! As a recommended excursion, enjoy a boat tour to Capri and Positano.",
+                itinerary: "🗺️ Points of Interest & Itineraries",
+                itinerary_txt: "Thanks to the strategic position of Castellammare di Stabia, staying at Tetto Fiorito allows you to quickly reach the most iconic spots in Campania. Explore nearby spots on your own or with our selected tour partners.",
                 disc_tag: "Exclusive Partner Discount Code Sesto Continente Tours:",
                 numbers: "📞 Quick Contacts & Emergencies"
             },
@@ -356,8 +517,8 @@
                 shops_txt: "À quelques minutes à pied, vous trouverez tous les services nécessaires de la zone :",
                 beaches: "🏖️ Plages Recommandées",
                 beaches_txt: "La mer en face est baignable (plage publique). Si vous recherchez des plages privées équipées :",
-                itinerary: "🗺️ Itinéraires & Excursions recommandés",
-                itinerary_txt: "Les endroits préférés d'Antonello : profitez du coucher de soleil depuis la Villa Comunale ! Nous recommandons une excursion à Capri et Positano.",
+                itinerary: "🗺️ Points d'Intérêt & Itinéraires",
+                itinerary_txt: "Grâce à la position stratégique de Castellammare, séjourner au Tetto Fiorito vous permet de rejoindre rapidement les perles de la Campanie. Visitez par vous-même ou via nos excursions partenaires.",
                 disc_tag: "Code de Réduction Sesto Continente Tours:",
                 numbers: "📞 Contacts & Urgences"
             },
@@ -365,7 +526,7 @@
                 welcome: "Willkommen im Tetto Fiorito! Wir freuen uns, dass Sie Castellammare di Stabia gewählt haben. Dank seiner strategischen Lage ist unsere Stadt der ideale Ausgangspunkt, um Neapel, Pompeji, Herculaneum, Sorrent, Capri und die Amalfiküste zu besuchen. Wir möchten, dass Sie sich wie zu Hause fühlen.",
                 apt: "ℹ️ Informationen zur Wohnung",
                 ac_lbl: "❄️ Klimaanlage",
-                ac_txt: "Sie können die Klimaanlage mithilfe der Fernbedienung selbstständig regulieren. Bitte beim Verlassen der Wohnung ausschalten.",
+                ac_txt: "Sie können die Klimaanlage mithilfe der Fernbedienung selbstständig regulieren. Bitte beim Verlassen della Wohnung ausschalten.",
                 rules_lbl: "👥 Nachbarschaft & Terrasse",
                 rules_txt: "Bitte vermeiden Sie abends/nachts übermäßigen Lärm in den Gemeinschaftsbereichen. Die Terrasse wird geteilt: Schaukel, Sofa und Sessel dürfen genutzt werden.",
                 trash_info: "Der Abfall muss am angegebenen Tag nach 20:00 Uhr vor dem Haupteingang auf den Stufen abgestellt werden.",
@@ -378,8 +539,8 @@
                 shops_txt: "Nur wenige Gehminuten entfernt finden Sie alle wichtigen Dienstleistungen der Region:",
                 beaches: "🏖️ Empfohlene Strände",
                 beaches_txt: "Das Meer gegenüber ist zum Baden freigegeben (freier Strand). Wenn Sie ausgestattete Strandbäder suchen:",
-                itinerary: "🗺️ Routen & Ausflüge",
-                itinerary_txt: "Antonellos Lieblingsorte: Genießen Sie den Sonnenuntergang an der Villa Comunale! Wir empfehlen eine Bootstour nach Capri und Positano.",
+                itinerary: "🗺️ Sehenswürdigkeiten & Routen",
+                itinerary_txt: "Dank der strategischen Lage von Castellammare di Stabia erreichen Sie die Highlights Kampaniens im Handumdrehen. Entdecken Sie die Ziele auf eigene Faust o mit Partner-Touren.",
                 disc_tag: "Exklusiver Rabattcode Sesto Continente Tours:",
                 numbers: "📞 Notfallnummern & Kontakte"
             }
@@ -407,7 +568,7 @@
             document.getElementById('title-beaches').innerText = t.beaches;
             document.getElementById('txt-beaches').innerText = t.beaches_txt;
             document.getElementById('title-itinerary').innerText = t.itinerary;
-            document.getElementById('txt-itinerary').innerText = t.itinerary_txt;
+            document.getElementById('txt-itinerary-intro').innerText = t.itinerary_txt;
             document.getElementById('txt-discount-tag').innerText = t.disc_tag;
             document.getElementById('title-numbers').innerText = t.numbers;
 

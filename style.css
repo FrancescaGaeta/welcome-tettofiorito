@@ -1,8 +1,8 @@
 :root {
     --brand-lilla: #a27bf1;
     --brand-lilla-light: #f1ecfd;
-    --brand-green-bg: #79b683;   /* Verde molto più forte, saturo e profondo richiesto */
-    --brand-green-accent: #2d6a4f; /* Verde intermedio per elementi di stacco */
+    --brand-green-bg: #529a66;   
+    --brand-green-accent: #2d6a4f; 
     --brand-green-dark: #112a1f;
     --text-main: #202221;
     --card-surface: #ffffff;
@@ -17,7 +17,7 @@
 }
 
 body {
-    background-color: var(--brand-green-bg); /* Sfondo forte sui toni del verde */
+    background-color: var(--brand-green-bg);
     color: var(--text-main);
     line-height: 1.6;
     padding-bottom: 60px; 
@@ -118,7 +118,7 @@ header {
     background-color: #f4f9f6;
 }
 
-/* CONTENITORE PRINCIPALE DI SCHEDE */
+/* CONTENITORE PRINCIPALE */
 .container {
     max-width: 600px;
     margin: 25px auto;
@@ -141,7 +141,6 @@ header {
     margin-bottom: 25px;
 }
 
-/* TITOLI RIGIDAMENTE IN NERO PURO */
 h2, h3 {
     color: #000000 !important;
     font-weight: 700;
@@ -152,7 +151,7 @@ h2, h3 {
 h2 { font-size: 22px; }
 h3 { font-size: 18px; }
 
-/* NUOVA SEZIONE WELCOME IMPORTANTE DI EFFETTO CON ANIMAZIONE */
+/* WELCOME HERO ANIMATO */
 .welcome-hero-interactive {
     background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%);
     padding: 35px 25px;
@@ -163,7 +162,7 @@ h3 { font-size: 18px; }
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(45, 106, 79, 0.1);
-    animation: slideUpHero 0.7s cubic-bezier(0.16, 1, 0.3, 1) to;
+    animation: slideUpHero 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .welcome-badge {
@@ -179,7 +178,7 @@ h3 { font-size: 18px; }
 }
 
 .animated-welcome-title {
-    font-size: 56px !important; /* Molto grande d'impatto */
+    font-size: 56px !important;
     font-family: 'Playfair Display', 'Georgia', serif;
     font-weight: 900;
     color: #000000 !important;
@@ -201,11 +200,9 @@ h3 { font-size: 18px; }
     font-size: 16px;
     color: #333634;
     text-align: justify;
-    text-justify: inter-word;
     line-height: 1.7;
 }
 
-/* ANIMAZIONI WELCOME */
 @keyframes slideUpHero {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
@@ -216,7 +213,7 @@ h3 { font-size: 18px; }
     to { opacity: 1; transform: scale(1); }
 }
 
-/* COMPARTIMENTO RIFIUTI ALL'INTERNO DI INFO APT */
+/* RIFIUTI */
 .trash-container {
     border: 2px solid var(--brand-green-accent);
     background-color: #fafffc;
@@ -235,14 +232,13 @@ h3 { font-size: 18px; }
     vertical-align: middle;
 }
 
-/* TABELLE INTERATTIVE AGGIORNATE */
+/* TABELLE */
 .table-responsive {
     overflow-x: auto;
     width: 100%;
     margin: 15px 0;
     border-radius: 14px;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
 .custom-table, .interactive-table {
@@ -267,19 +263,12 @@ h3 { font-size: 18px; }
     font-size: 14px;
 }
 
-/* Effetto Interattività Righe */
 .custom-table tbody tr:hover, .interactive-table tbody tr:hover {
     background-color: #f1f8f4;
-    cursor: pointer;
-    transition: background-color 0.15s ease;
 }
 
-.day-col {
-    font-weight: 700;
-    color: #000000;
-}
+.day-col { font-weight: 700; color: #000000; }
 
-/* BADGES */
 .badge {
     display: inline-block;
     padding: 5px 12px;
@@ -293,7 +282,7 @@ h3 { font-size: 18px; }
 .badge-plastic { background: #fff4c3; color: #6b5800; }
 .badge-undiff { background: #e3e3e3; color: #404040; }
 
-/* SEZIONE TRASPORTI DISTINTA */
+/* TRASPORTI */
 .transport-block {
     background: #fafafa;
     border: 1px solid #ebeeec;
@@ -301,20 +290,12 @@ h3 { font-size: 18px; }
     padding: 20px;
     margin-bottom: 18px;
 }
+.transport-block.terra { border-left: 5px solid #2d6a4f; }
+.transport-block.mare { border-left: 5px solid #028090; }
+.transport-block.bus { border-left: 5px solid #e67e22; }
 
-.transport-block.terra {
-    border-left: 5px solid #2d6a4f;
-}
-
-.transport-block.mare {
-    border-left: 5px solid #028090;
-}
-
-/* BOTTONE PDF LOCAL */
 .btn-pdf-link {
     display: inline-flex;
-    align-items: center;
-    margin-top: 15px;
     background-color: #c0392b;
     color: white;
     padding: 10px 16px;
@@ -322,18 +303,10 @@ h3 { font-size: 18px; }
     text-decoration: none;
     font-weight: 700;
     font-size: 13px;
-    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.2);
-    transition: background 0.2s;
 }
 
-.btn-pdf-link:hover {
-    background-color: #a62c20;
-}
-
-/* BOTTONI SESTO CONTINENTE ESTERNI */
 .btn-external-link {
     display: inline-block;
-    margin-top: 12px;
     background-color: #2b6cb0;
     color: white;
     padding: 12px 20px;
@@ -341,27 +314,146 @@ h3 { font-size: 18px; }
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
-    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.25);
+}
+.btn-external-link.bus-btn { background-color: #2980b9; }
+
+/* NUOVO STILE ACCORDION PER CARD ITINERARI */
+.poi-accordion-container {
+    margin-bottom: 25px;
+}
+
+.accordion-item {
+    background: white;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    background-color: #f9fbf9;
+}
+
+.accordion-header .arrow {
+    font-size: 12px;
+    color: #888;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: #fafdfb;
+    border-top: 1px solid #f0f3f1;
+}
+
+/* Classe attivata via Script */
+.accordion-item.open .accordion-content {
+    max-height: 1000px; /* Abbastanza spazioso da mostrare tutto */
+    padding: 20px;
+}
+
+.poi-desc {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.how-to-go {
+    background-color: #f1f6f3;
+    border-left: 4px solid var(--brand-green-accent);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13.5px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.btn-partner-booking {
+    display: inline-block;
+    background-color: #028090;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
     transition: background 0.2s;
 }
 
-.btn-external-link:hover {
-    background-color: #1a446c;
+.btn-partner-booking:hover {
+    background-color: #015e6a;
 }
 
-.btn-external-link.marine {
-    background-color: #028090;
-    box-shadow: 0 4px 12px rgba(2, 128, 144, 0.25);
+/* PERCORSI SUGGERITI DA ANTONELLO */
+.routes-section-title {
+    margin-top: 35px;
+    background: #f7fdfa;
+    border-bottom: 3px solid var(--brand-green-accent);
 }
 
-.btn-external-link.marine:hover {
-    background-color: #015f6b;
+.route-detail-card {
+    border-radius: 20px;
+    padding: 22px;
+    margin-bottom: 20px;
 }
 
-/* ALTRE SCHEDE SPECIFICHE */
-.rental-card { border-left: 5px solid #2b6cb0; }
-.external-promo-card { border-left: 5px solid #028090; }
+.route-detail-card.amalfi-theme { border-left: 6px solid #e74c3c; }
+.route-detail-card.napoli-theme { border-left: 6px solid #f1c40f; }
 
+.route-header {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.route-body p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.route-steps {
+    list-style: none;
+    padding-left: 0;
+}
+
+.route-steps li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.route-steps li::before {
+    content: "➔";
+    position: absolute;
+    left: 0;
+    color: var(--brand-green-accent);
+    font-weight: bold;
+}
+
+/* PROMO CARD */
 .promo-card {
     border: 2px dashed var(--brand-lilla) !important;
     background: var(--brand-lilla-light) !important;
@@ -373,7 +465,6 @@ h3 { font-size: 18px; }
     border: 1px solid rgba(162, 123, 241, 0.3);
     border-radius: 14px;
     padding: 18px;
-    margin-top: 15px;
 }
 
 .promo-code {
@@ -387,7 +478,7 @@ h3 { font-size: 18px; }
     border-radius: 10px;
 }
 
-/* CREDENZIALI WI-FI */
+/* WI-FI */
 .wifi-credentials {
     background-color: var(--brand-lilla-light);
     border: 1px dashed rgba(162, 123, 241, 0.4);
@@ -395,37 +486,14 @@ h3 { font-size: 18px; }
     padding: 18px;
     margin-bottom: 20px;
 }
-
-.wifi-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--brand-lilla);
-    margin-bottom: 10px;
-}
-
+.wifi-header { display: flex; align-items: center; gap: 8px; color: var(--brand-lilla); margin-bottom: 10px; }
 .wifi-header .icon { width: 22px; height: 22px; }
+.highlight-text { font-family: monospace; font-size: 16px; background: white; padding: 3px 8px; border-radius: 6px; color: var(--brand-lilla); font-weight: 700; }
 
-.highlight-text {
-    font-family: monospace;
-    font-size: 16px;
-    background: white;
-    padding: 3px 8px;
-    border-radius: 6px;
-    color: var(--brand-lilla);
-    font-weight: 700;
-}
-
-.info-block {
-    margin-top: 18px;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 14px;
-}
-
+.info-block { margin-top: 18px; border-top: 1px solid #f0f0f0; padding-top: 14px; }
 .contact-card { background: #fafafa; border: 1px solid #e5e5e5; }
 .contact-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
 .btn-call { border: 1px solid var(--brand-lilla); color: var(--brand-lilla); padding: 7px 14px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 13px; background: white; }
-.btn-call:hover { background: var(--brand-lilla); color: white; }
 .emergency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 14px; font-size: 12px; text-align: center; }
 
 .styled-list { list-style: none; margin-top: 10px; }
@@ -438,19 +506,4 @@ footer {
     font-size: 13px;
     color: #ffffff;
     opacity: 0.7;
-}
-/* Stile specifico per il blocco Bus */
-.transport-block.bus {
-    border-left: 5px solid #e67e22; /* Bordo arancione per distinguerlo da treno e nave */
-}
-
-/* Bottone specifico per CurreriViaggi */
-.btn-external-link.bus-btn {
-    background-color: #2980b9; /* Colore blu aviazione/viaggi */
-    box-shadow: 0 4px 12px rgba(41, 128, 185, 0.25);
-    margin-top: 15px;
-}
-
-.btn-external-link.bus-btn:hover {
-    background-color: #216a9b;
 }
