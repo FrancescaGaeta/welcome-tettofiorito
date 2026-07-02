@@ -28,7 +28,7 @@ body {
 /* HEADER DEL SITO */
 header {
     background-color: var(--card-surface);
-    border-bottom: 3px solid var(--brand-lilla); /* Ripristinato il bordo lilla spesso originale */
+    border-bottom: 3px solid var(--brand-lilla);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,7 +49,7 @@ header {
     gap: 8px;
     font-weight: 800;
     font-size: 21px;
-    color: var(--brand-lilla); /* Ripristinato il colore lilla del logo */
+    color: var(--brand-lilla);
     letter-spacing: -0.5px;
 }
 
@@ -67,9 +67,9 @@ header {
 
 .lang-btn {
     background: transparent;
-    border: 1px solid var(--brand-lilla); /* Ripristinato bordo lilla originale */
+    border: 1px solid var(--brand-lilla);
     padding: 4px 10px;
-    border-radius: 12px; /* Stile moderno arrotondato ma non a pillola estrema */
+    border-radius: 12px;
     cursor: pointer;
     font-size: 11px;
     font-weight: 600;
@@ -89,7 +89,7 @@ header {
     background: var(--card-surface);
     display: flex;
     overflow-x: auto;
-    border-bottom: 2px solid var(--brand-green-accent); /* Ripristinato bordo inferiore verde originale */
+    border-bottom: 2px solid var(--brand-green-accent);
     position: sticky;
     top: 62px;
     z-index: 999;
@@ -119,7 +119,7 @@ header {
     color: var(--brand-green-accent);
     border-bottom: 4px solid var(--brand-green-accent);
     font-weight: 700;
-    background-color: #f4f9f6; /* Ripristinato lo sfondo soft attivo originale */
+    background-color: #f4f9f6;
 }
 
 /* CONTENITORE PRINCIPALE */
@@ -140,14 +140,14 @@ header {
 .card {
     background: var(--card-surface);
     padding: 24px;
-    border-radius: 16px; /* Mantenuto smussato moderno anziché vecchio iOS 24px */
+    border-radius: 16px;
     border: 1px solid var(--border-smooth);
     box-shadow: var(--shadow-smooth);
     margin-bottom: 25px;
 }
 
 h2, h3 {
-    color: #000000 !important; /* Ripristinato il nero pieno per i titoli delle card */
+    color: #000000 !important;
     font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: -0.3px;
@@ -159,17 +159,16 @@ h2 {
     align-items: center;
     gap: 10px;
 }
-h3 { font-size: 18px; }
+h3 { font-size: 18px; margin-bottom: 8px; }
 
-/* Icone nei titoli ereditate da FA */
 h2 i {
-    color: var(--brand-green-accent); /* Tinta coerente per le icone principali */
+    color: var(--brand-green-dark);
     font-size: 20px;
 }
 
-/* WELCOME HERO EDITORIALE CON COLORI ACCESI */
+/* WELCOME HERO EDITORIALE */
 .welcome-hero-interactive {
-    background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%); /* Ripristinato gradiente originale */
+    background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%);
     padding: 35px 25px;
     border-radius: 16px;
     border: 1px solid rgba(45, 106, 79, 0.1);
@@ -195,7 +194,7 @@ h2 i {
 }
 
 .animated-welcome-title {
-    font-size: 42px !important; /* Scalato leggermente per un look più bilanciato e moderno */
+    font-size: 42px !important;
     font-family: 'Playfair Display', serif;
     font-weight: 900;
     color: #000000 !important;
@@ -221,7 +220,7 @@ h2 i {
 
 /* RIFIUTI */
 .trash-container {
-    border: 2px solid var(--brand-green-accent); /* Ripristinato bordo originale */
+    border: 2px solid var(--brand-green-dark);
     background-color: #fafffc;
 }
 
@@ -267,7 +266,7 @@ h2 i {
 .badge {
     display: inline-block;
     padding: 5px 12px;
-    border-radius: 8px; /* Smussatura moderna abbinata */
+    border-radius: 8px;
     font-size: 12px;
     font-weight: 600;
 }
@@ -277,19 +276,28 @@ h2 i {
 .badge-plastic { background: #fff4c3; color: #6b5800; }
 .badge-undiff { background: #e3e3e3; color: #404040; }
 
-/* TRASPORTI */
+/* TRASPORTI (BOX TOTALI) */
 .transport-block {
-    background: #fafafa;
-    border: 1px solid #ebeeec;
-    border-radius: 12px;
+    border: 1px solid transparent;
+    border-radius: 14px;
     padding: 20px;
     margin-bottom: 18px;
 }
-.transport-block.terra { border-left: 5px solid #2d6a4f; }
-.transport-block.mare { border-left: 5px solid #028090; }
-.transport-block.bus { border-left: 5px solid #e67e22; }
 
-/* BOTTONI CON PRESETS VIVI ORIGINALI */
+.transport-block.terra { background: #edf7ed; border-color: #c8e6c9; color: #1e4620; }
+.transport-block.mare { background: #e0f7fa; border-color: #b2ebf2; color: #006064; }
+.transport-block.bus { background: #fff3e0; border-color: #ffe0b2; color: #e65100; }
+
+.transport-block h4 {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* BOTTONI GENERICI */
 .btn-pdf-link, .btn-external-link, .btn-partner-booking {
     display: inline-flex;
     align-items: center;
@@ -301,71 +309,122 @@ h2 i {
     font-weight: 700;
     font-size: 13px;
     transition: transform 0.2s, opacity 0.2s;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 .btn-pdf-link { background-color: #c0392b; color: white; }
 .btn-external-link { background-color: #2b6cb0; color: white; }
-.btn-partner-booking { background-color: #028090; color: white; }
+.btn-partner-booking { background-color: #028090; color: white; width: 100%; } /* Adattato al fondo delle nuove card */
 
 .btn-pdf-link:active, .btn-external-link:active, .btn-partner-booking:active {
     transform: scale(0.97);
 }
-
-/* ACCORDION ITINERARI */
-.accordion-item {
-    background: white;
-    border-radius: 12px;
-    margin-bottom: 12px;
-    border: 1px solid var(--border-smooth);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-    overflow: hidden;
-    transition: border-color 0.2s;
-}
-
-.accordion-item.open {
-    border-color: var(--brand-green-accent);
-}
-
-.accordion-header {
-    width: 100%;
+/* CONTAINER GRIGLIA VERTICALE */
+.discover-cities-vertical-grid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 20px;
-    background: white;
-    border: none;
-    font-size: 16px;
-    font-weight: 700;
-    color: #000000;
-    cursor: pointer;
+    flex-direction: column;
+    gap: 14px; /* Spazio ridotto tra le card verticali */
 }
 
-.accordion-header:hover {
-    background-color: #f9fbf9;
-}
-
-.accordion-content {
-    max-height: 0;
+/* CARD IN VERTICALE MA ORIZZONTALE INTERNAMENTE (Immagine a sinistra, testo a destra) */
+.city-compact-card {
+    display: flex;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid var(--border-smooth);
     overflow: hidden;
-    padding: 0 20px;
-    transition: all 0.25s ease-out;
-    background-color: #fafdfb;
+    height: 125px; /* Altezza fissa e molto bassa per massima compattezza */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
-.poi-desc {
-    font-size: 14px;
-    color: #444;
-    margin-bottom: 15px;
+/* IMMAGINE PICCOLA SULLA SINISTRA */
+.city-compact-img {
+    width: 95px; /* Larghezza fissa e contenuta */
+    height: 100%;
+    flex-shrink: 0;
 }
 
-.how-to-go {
-    background-color: #f1f6f3;
-    border-left: 4px solid var(--brand-green-accent);
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 13.5px;
-    color: #2c3e50;
+.city-compact-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BLOCCO INFORMAZIONI COMPATTO */
+.city-compact-info {
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ottimizza gli spazi verticali */
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.city-compact-info h3 {
+    font-size: 14px !important;
+    margin-bottom: 2px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.poi-compact-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Taglia il testo a massimo 2 righe per non farlo uscire */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+/* BOX VELOCI CON ICONE PER I TRASPORTI */
+.quick-transit-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+.transit-badge {
+    background: #f1f6f3;
+    border: 1px solid rgba(138, 206, 157, 0.3);
+    color: var(--brand-green-dark);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.transit-badge i {
+    font-size: 10px;
+    color: var(--brand-green-bg);
+}
+
+/* BOTTONE PARTNER PICCOLO E COMPATTO */
+.btn-compact-partner {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background-color: #028090;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 5px;
+    align-self: flex-start; /* Non occupa tutta la larghezza */
+    transition: background 0.2s;
+}
+
+.btn-compact-partner:active {
+    background-color: #015f6b;
+    transform: scale(0.98);
 }
 
 /* PERCORSI DI ANTONELLO */
@@ -390,7 +449,7 @@ h2 i {
     content: "➔";
     position: absolute;
     left: 0;
-    color: var(--brand-green-accent);
+    color: var(--brand-green-bg);
 }
 
 /* PROMO CARD */
@@ -466,18 +525,222 @@ h2 i {
 }
 
 .styled-list li::before { 
-    color: var(--brand-green-accent); 
+    color: var(--brand-lilla); 
 }
 
 footer {
     text-align: center;
     padding: 25px 0;
     font-size: 13px;
-    color: #ffffff; /* Ripristinato il testo del footer bianco nitido */
+    color: #ffffff;
     opacity: 0.8;
 }
 
 @keyframes slideUpHero {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* CONTAINER VERTICALE GENERALE */
+.discover-cities-vertical-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* WRAPPER COMPLESSIVO DELLA CARD */
+.city-compact-card-wrapper {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid var(--border-smooth);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.city-compact-card-wrapper.open {
+    border-color: var(--brand-lilla);
+    box-shadow: 0 10px 25px rgba(171, 136, 242, 0.15);
+}
+
+/* CARD COMPATTA (Sempre visibile) */
+.city-compact-card {
+    display: flex;
+    height: 125px; /* Mantenuta bassa e compatta */
+}
+
+.city-compact-img {
+    width: 100px;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.city-compact-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.city-compact-info {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.city-compact-info h3 {
+    font-size: 15px !important;
+    margin-bottom: 2px !important;
+    color: #000000 !important;
+}
+
+.poi-compact-desc {
+    font-size: 11px;
+    color: #666;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.quick-transit-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.transit-badge {
+    background: #f1f6f3;
+    border: 1px solid rgba(138, 206, 157, 0.3);
+    color: var(--brand-green-dark);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* FISSA LA RIGA CON IL PULSANTE DI ESPANSIONE E IL TOUR */
+.card-action-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.btn-toggle-guide {
+    background: var(--brand-lilla-light);
+    color: var(--brand-lilla);
+    border: 1px solid rgba(171, 136, 242, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+}
+
+.btn-toggle-guide:active {
+    background: var(--brand-lilla);
+    color: white;
+}
+
+.btn-compact-partner {
+    background-color: #028090;
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* PARTE ESTESA (Nascosta di default, si apre fluidamente) */
+.city-extended-guide {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #fdfdfd;
+    padding: 0 14px;
+}
+
+.city-compact-card-wrapper.open .city-extended-guide {
+    max-height: 800px; /* Altezza massima per contenere comodamente il testo espanso */
+    padding-bottom: 16px;
+}
+
+.guide-divider {
+    height: 1px;
+    background: #eee;
+    margin: 4px 0 12px 0;
+}
+
+.guide-section {
+    margin-bottom: 12px;
+}
+
+.guide-section h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--brand-green-dark);
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.guide-section p {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.5;
+}
+
+/* BOX CONSIGLI DEL TETTO FIORITO STILIZZATO */
+.advice-box {
+    background: #fbf8ff; /* Sfondo soft lilla/pulito */
+    border-left: 3px solid var(--brand-lilla);
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+}
+
+.advice-box h4 {
+    color: var(--brand-lilla);
+    margin-bottom: 6px;
+}
+
+.advice-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advice-box ul li {
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 14px;
+    margin-bottom: 6px;
+}
+
+.advice-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+.advice-box ul li::before {
+    content: "•";
+    color: var(--brand-lilla);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
