@@ -1,18 +1,20 @@
 :root {
     --brand-lilla: #a27bf1;
     --brand-lilla-light: #f1ecfd;
-    --brand-green-bg: #529a66;   
+    --brand-green-bg: #529a66;   /* Ripristinato il verde acceso originale per lo sfondo */
     --brand-green-accent: #2d6a4f; 
     --brand-green-dark: #112a1f;
     --text-main: #202221;
     --card-surface: #ffffff;
+    --border-smooth: rgba(17, 42, 31, 0.08);
+    --shadow-smooth: 0 12px 30px rgba(0, 0, 0, 0.15); /* Ripristinata l'intensità dell'ombra originale */
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -26,7 +28,7 @@ body {
 /* HEADER DEL SITO */
 header {
     background-color: var(--card-surface);
-    border-bottom: 3px solid var(--brand-lilla);
+    border-bottom: 3px solid var(--brand-lilla); /* Ripristinato il bordo lilla spesso originale */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -45,9 +47,10 @@ header {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 700;
+    font-weight: 800;
     font-size: 21px;
-    color: var(--brand-lilla);
+    color: var(--brand-lilla); /* Ripristinato il colore lilla del logo */
+    letter-spacing: -0.5px;
 }
 
 .leaf-icon-logo {
@@ -64,13 +67,14 @@ header {
 
 .lang-btn {
     background: transparent;
-    border: 1px solid var(--brand-lilla);
+    border: 1px solid var(--brand-lilla); /* Ripristinato bordo lilla originale */
     padding: 4px 10px;
-    border-radius: 20px;
+    border-radius: 12px; /* Stile moderno arrotondato ma non a pillola estrema */
     cursor: pointer;
     font-size: 11px;
     font-weight: 600;
     color: var(--brand-lilla);
+    transition: all 0.2s ease;
 }
 
 .lang-btn.active {
@@ -82,10 +86,10 @@ header {
 .nav-tabs {
     max-width: 600px;
     margin: 0 auto;
-    background: #ffffff;
+    background: var(--card-surface);
     display: flex;
     overflow-x: auto;
-    border-bottom: 2px solid var(--brand-green-accent);
+    border-bottom: 2px solid var(--brand-green-accent); /* Ripristinato bordo inferiore verde originale */
     position: sticky;
     top: 62px;
     z-index: 999;
@@ -115,7 +119,7 @@ header {
     color: var(--brand-green-accent);
     border-bottom: 4px solid var(--brand-green-accent);
     font-weight: 700;
-    background-color: #f4f9f6;
+    background-color: #f4f9f6; /* Ripristinato lo sfondo soft attivo originale */
 }
 
 /* CONTENITORE PRINCIPALE */
@@ -136,33 +140,45 @@ header {
 .card {
     background: var(--card-surface);
     padding: 24px;
-    border-radius: 24px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 16px; /* Mantenuto smussato moderno anziché vecchio iOS 24px */
+    border: 1px solid var(--border-smooth);
+    box-shadow: var(--shadow-smooth);
     margin-bottom: 25px;
 }
 
 h2, h3 {
-    color: #000000 !important;
+    color: #000000 !important; /* Ripristinato il nero pieno per i titoli delle card */
     font-weight: 700;
     margin-bottom: 16px;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
 }
 
-h2 { font-size: 22px; }
+h2 { 
+    font-size: 22px; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 h3 { font-size: 18px; }
 
-/* WELCOME HERO ANIMATO */
+/* Icone nei titoli ereditate da FA */
+h2 i {
+    color: var(--brand-green-accent); /* Tinta coerente per le icone principali */
+    font-size: 20px;
+}
+
+/* WELCOME HERO EDITORIALE CON COLORI ACCESI */
 .welcome-hero-interactive {
-    background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f7fdfa 100%); /* Ripristinato gradiente originale */
     padding: 35px 25px;
-    border-radius: 28px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    border: 1px solid rgba(45, 106, 79, 0.1);
+    box-shadow: var(--shadow-smooth);
     margin-bottom: 25px;
     text-align: center;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(45, 106, 79, 0.1);
-    animation: slideUpHero 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: slideUpHero 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .welcome-badge {
@@ -170,22 +186,22 @@ h3 { font-size: 18px; }
     font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
+    text-transform: uppercase;
     background-color: var(--brand-lilla-light);
     color: var(--brand-lilla);
     padding: 6px 16px;
-    border-radius: 30px;
+    border-radius: 8px;
     margin-bottom: 10px;
 }
 
 .animated-welcome-title {
-    font-size: 56px !important;
-    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 42px !important; /* Scalato leggermente per un look più bilanciato e moderno */
+    font-family: 'Playfair Display', serif;
     font-weight: 900;
     color: #000000 !important;
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: 15px;
-    letter-spacing: -1px;
-    animation: scaleText 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    letter-spacing: -0.5px;
 }
 
 .divider-line {
@@ -203,19 +219,9 @@ h3 { font-size: 18px; }
     line-height: 1.7;
 }
 
-@keyframes slideUpHero {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleText {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
-}
-
 /* RIFIUTI */
 .trash-container {
-    border: 2px solid var(--brand-green-accent);
+    border: 2px solid var(--brand-green-accent); /* Ripristinato bordo originale */
     background-color: #fafffc;
 }
 
@@ -225,19 +231,12 @@ h3 { font-size: 18px; }
     margin-bottom: 15px;
 }
 
-.leaves-icon-svg {
-    width: 24px;
-    height: 24px;
-    color: var(--brand-green-accent);
-    vertical-align: middle;
-}
-
 /* TABELLE */
 .table-responsive {
     overflow-x: auto;
     width: 100%;
     margin: 15px 0;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 1px solid #e0e0e0;
 }
 
@@ -263,16 +262,12 @@ h3 { font-size: 18px; }
     font-size: 14px;
 }
 
-.custom-table tbody tr:hover, .interactive-table tbody tr:hover {
-    background-color: #f1f8f4;
-}
-
 .day-col { font-weight: 700; color: #000000; }
 
 .badge {
     display: inline-block;
     padding: 5px 12px;
-    border-radius: 20px;
+    border-radius: 8px; /* Smussatura moderna abbinata */
     font-size: 12px;
     font-weight: 600;
 }
@@ -286,7 +281,7 @@ h3 { font-size: 18px; }
 .transport-block {
     background: #fafafa;
     border: 1px solid #ebeeec;
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 20px;
     margin-bottom: 18px;
 }
@@ -294,41 +289,42 @@ h3 { font-size: 18px; }
 .transport-block.mare { border-left: 5px solid #028090; }
 .transport-block.bus { border-left: 5px solid #e67e22; }
 
-.btn-pdf-link {
+/* BOTTONI CON PRESETS VIVI ORIGINALI */
+.btn-pdf-link, .btn-external-link, .btn-partner-booking {
     display: inline-flex;
-    background-color: #c0392b;
-    color: white;
-    padding: 10px 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 700;
     font-size: 13px;
+    transition: transform 0.2s, opacity 0.2s;
+    margin-top: 10px;
 }
 
-.btn-external-link {
-    display: inline-block;
-    background-color: #2b6cb0;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-}
-.btn-external-link.bus-btn { background-color: #2980b9; }
+.btn-pdf-link { background-color: #c0392b; color: white; }
+.btn-external-link { background-color: #2b6cb0; color: white; }
+.btn-partner-booking { background-color: #028090; color: white; }
 
-/* NUOVO STILE ACCORDION PER CARD ITINERARI */
-.poi-accordion-container {
-    margin-bottom: 25px;
+.btn-pdf-link:active, .btn-external-link:active, .btn-partner-booking:active {
+    transform: scale(0.97);
 }
 
+/* ACCORDION ITINERARI */
 .accordion-item {
     background: white;
-    border-radius: 16px;
+    border-radius: 12px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-smooth);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: border-color 0.2s;
+}
+
+.accordion-item.open {
+    border-color: var(--brand-green-accent);
 }
 
 .accordion-header {
@@ -343,32 +339,18 @@ h3 { font-size: 18px; }
     font-weight: 700;
     color: #000000;
     cursor: pointer;
-    text-align: left;
 }
 
 .accordion-header:hover {
     background-color: #f9fbf9;
 }
 
-.accordion-header .arrow {
-    font-size: 12px;
-    color: #888;
-    transition: transform 0.3s ease;
-}
-
 .accordion-content {
     max-height: 0;
     overflow: hidden;
     padding: 0 20px;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition: all 0.25s ease-out;
     background-color: #fafdfb;
-    border-top: 1px solid #f0f3f1;
-}
-
-/* Classe attivata via Script */
-.accordion-item.open .accordion-content {
-    max-height: 1000px; /* Abbastanza spazioso da mostrare tutto */
-    padding: 20px;
 }
 
 .poi-desc {
@@ -384,73 +366,31 @@ h3 { font-size: 18px; }
     border-radius: 8px;
     font-size: 13.5px;
     color: #2c3e50;
-    margin-bottom: 15px;
 }
 
-.btn-partner-booking {
-    display: inline-block;
-    background-color: #028090;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 13px;
-    transition: background 0.2s;
-}
-
-.btn-partner-booking:hover {
-    background-color: #015e6a;
-}
-
-/* PERCORSI SUGGERITI DA ANTONELLO */
-.routes-section-title {
-    margin-top: 35px;
-    background: #f7fdfa;
-    border-bottom: 3px solid var(--brand-green-accent);
-}
-
+/* PERCORSI DI ANTONELLO */
 .route-detail-card {
-    border-radius: 20px;
+    border-radius: 12px;
     padding: 22px;
     margin-bottom: 20px;
+    background: #ffffff;
+    border: 1px solid var(--border-smooth);
 }
-
 .route-detail-card.amalfi-theme { border-left: 6px solid #e74c3c; }
 .route-detail-card.napoli-theme { border-left: 6px solid #f1c40f; }
-
-.route-header {
-    font-size: 18px;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 12px;
-}
-
-.route-body p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 12px;
-}
-
-.route-steps {
-    list-style: none;
-    padding-left: 0;
-}
 
 .route-steps li {
     position: relative;
     padding-left: 20px;
     margin-bottom: 10px;
     font-size: 14px;
-    line-height: 1.5;
+    color: #555;
 }
-
 .route-steps li::before {
     content: "➔";
     position: absolute;
     left: 0;
     color: var(--brand-green-accent);
-    font-weight: bold;
 }
 
 /* PROMO CARD */
@@ -460,11 +400,11 @@ h3 { font-size: 18px; }
 }
 
 .promo-box {
-    text-align: center;
     background: white;
     border: 1px solid rgba(162, 123, 241, 0.3);
-    border-radius: 14px;
+    border-radius: 12px;
     padding: 18px;
+    text-align: center;
 }
 
 .promo-code {
@@ -482,28 +422,62 @@ h3 { font-size: 18px; }
 .wifi-credentials {
     background-color: var(--brand-lilla-light);
     border: 1px dashed rgba(162, 123, 241, 0.4);
-    border-radius: 16px;
+    border-radius: 12px;
     padding: 18px;
-    margin-bottom: 20px;
 }
-.wifi-header { display: flex; align-items: center; gap: 8px; color: var(--brand-lilla); margin-bottom: 10px; }
-.wifi-header .icon { width: 22px; height: 22px; }
-.highlight-text { font-family: monospace; font-size: 16px; background: white; padding: 3px 8px; border-radius: 6px; color: var(--brand-lilla); font-weight: 700; }
+.wifi-header { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    color: var(--brand-lilla); 
+    margin-bottom: 10px; 
+    font-weight: 700;
+}
+.highlight-text { 
+    font-family: monospace; 
+    font-size: 16px; 
+    background: white; 
+    padding: 3px 8px; 
+    border-radius: 6px; 
+    color: var(--brand-lilla); 
+    font-weight: 700;
+    border: 1px solid rgba(162, 123, 241, 0.2);
+}
 
-.info-block { margin-top: 18px; border-top: 1px solid #f0f0f0; padding-top: 14px; }
+.info-block { border-top: 1px solid #f0f0f0; }
 .contact-card { background: #fafafa; border: 1px solid #e5e5e5; }
-.contact-row { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
-.btn-call { border: 1px solid var(--brand-lilla); color: var(--brand-lilla); padding: 7px 14px; border-radius: 20px; text-decoration: none; font-weight: 600; font-size: 13px; background: white; }
-.emergency-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; border-top: 1px solid #eee; padding-top: 14px; font-size: 12px; text-align: center; }
+.btn-call { 
+    border: 1px solid var(--brand-lilla); 
+    color: var(--brand-lilla); 
+    padding: 7px 14px; 
+    border-radius: 12px; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 13px; 
+    background: white; 
+}
 
-.styled-list { list-style: none; margin-top: 10px; }
-.styled-list li { position: relative; padding-left: 22px; margin-bottom: 8px; font-size: 14px; }
-.styled-list li::before { content: "•"; position: absolute; left: 6px; color: var(--brand-green-accent); font-size: 18px; top: -2px; }
+.emergency-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px; 
+    border-top: 1px solid #eee; 
+    font-size: 12px; 
+}
+
+.styled-list li::before { 
+    color: var(--brand-green-accent); 
+}
 
 footer {
     text-align: center;
     padding: 25px 0;
     font-size: 13px;
-    color: #ffffff;
-    opacity: 0.7;
+    color: #ffffff; /* Ripristinato il testo del footer bianco nitido */
+    opacity: 0.8;
+}
+
+@keyframes slideUpHero {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
