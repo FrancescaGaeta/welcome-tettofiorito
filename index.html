@@ -14,21 +14,18 @@
 
     <!-- Header con Logo e Selettore Lingua -->
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <svg class="leaf-icon-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M2 22C2 22 10 18 14 12C16 9 15 5 13 3C13 3 17 6 17 10C17 14 13 18 9 20C7 21 2 22 2 22Z"/>
-                    <path d="M13 11C13 11 18 9 19 6C20 4 19 2 18 1C18 1 21 3 21 6C21 9 18 11 15 12C14 12.5 13 11 13 11Z"/>
-                </svg>
-                <span>Tetto Fiorito</span>
-            </div>
-            <div class="lang-selector">
-                <button class="lang-btn active" onclick="setLanguage('it')">IT</button>
-                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-                <button class="lang-btn" onclick="setLanguage('fr')">FR</button>
-                <button class="lang-btn" onclick="setLanguage('de')">DE</button>
-            </div>
+       <div class="header-container">
+        <!-- Logo con immagine diretta anziché testo e icona font-awesome -->
+        <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="Il Tetto Fiorito" class="site-logo-img">
+        </a>
+        
+        <!-- SELETTORE LINGUE (Mantenuto intatto sulla destra) -->
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="changeLang('it')">IT</button>
+            <button class="lang-btn" onclick="changeLang('en')">EN</button>
         </div>
+    </div>
     </header>
 
     <!-- Navbar Ristrutturata (4 Sezioni + Link Esterno) -->

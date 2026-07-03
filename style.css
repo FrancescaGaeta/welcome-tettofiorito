@@ -43,20 +43,29 @@ header {
     align-items: center;
 }
 
-.logo {
+/* STILIZZAZIONE DEL NUOVO LOGO IMMAGINE */
+.logo-link {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-weight: 800;
-    font-size: 21px;
-    color: var(--brand-lilla);
-    letter-spacing: -0.5px;
+    text-decoration: none;
+    height: 38px; /* Altezza ideale per smartphone per non rendere l'header troppo alto */
 }
 
-.leaf-icon-logo {
-    width: 24px;
-    height: 24px;
-    color: var(--brand-green-accent);
+.site-logo-img {
+    height: 100%;
+    width: auto; /* Mantiene le proporzioni corrette dell'immagine originale */
+    object-fit: contain; /* Evita qualsiasi distorsione del logo */
+    display: block;
+}
+
+/* Modifica leggera all'header-container per allineare perfettamente gli elementi */
+.header-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 15px; /* Ridotto leggermente il padding verticale per un look più compatto ed elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* LINGUE */
