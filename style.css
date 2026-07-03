@@ -757,3 +757,46 @@ footer {
 
 
 
+/* ==========================================================================
+   STILE PERSONALIZZATO PER LE TABELLE INTERATTIVE (IL TETTO FIORITO)
+   ========================================================================== */
+
+/* 1. Sfondo dell'intestazione della tabella con il tuo colore primario */
+.interactive-table th {
+    background-color: #ad85d6 !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 12px 10px;
+    border: none;
+}
+
+/* 2. Colore delle linee di separazione delle categorie (es. tra Bar e Pizzerie) */
+.interactive-table tr[style*="border-top"] {
+    border-top: 2px solid #ad85d6 !important; /* Cambia la linea grigia con il tuo colore */
+}
+
+/* 3. Colore di sfondo per la colonna delle Categorie (quella a sinistra) */
+.interactive-table td[rowspan] {
+    background-color: #f0f7f8 !important; /* Un azzurrato/ottanio chiarissimo e pulito */
+    color: #014f59 !important; /* Testo ottanio scuro per massima leggibilità */
+    border-right: 1px solid #d1e6e8 !important;
+}
+
+/* 4. Effetto al passaggio del mouse sulle righe (Hover) */
+.interactive-table tbody tr:hover {
+    background-color: #f7fbfc !important; /* Sottile riflesso quando l'utente ci passa sopra */
+}
+
+/* 5. Stile dei link con l'icona della posizione (Mappe) */
+.interactive-table a {
+    color: #458464 !important;
+    transition: color 0.2s ease-in-out;
+}
+
+.interactive-table a:hover {
+    color: #014f59 !important; /* Si scurisce leggermente quando viene cliccato o sorvolato */
+    text-decoration: underline !important;
+}
