@@ -402,6 +402,11 @@ h2 i {
 .badge-glass { background: #d2ebd6; color: #1f4a24; }
 .badge-plastic { background: #fff4c3; color: #6b5800; }
 .badge-undiff { background: #e3e3e3; color: #404040; }
+.badge-none {
+    background: #f3f3f3;
+    color: #777;
+    border: 1px dashed #bdbdbd;
+}
 
 /* TRASPORTI (BOX TOTALI) */
 .transport-block {
@@ -632,16 +637,7 @@ h2 i {
 
 .info-block { border-top: 1px solid #f0f0f0; }
 .contact-card { background: #fafafa; border: 1px solid #e5e5e5; }
-.btn-call { 
-    border: 1px solid var(--brand-lilla); 
-    color: var(--brand-lilla); 
-    padding: 7px 14px; 
-    border-radius: 12px; 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 13px; 
-    background: white; 
-}
+
 
 .emergency-grid { 
     display: grid; 
@@ -917,4 +913,398 @@ footer {
 .interactive-table a:hover {
     color: #014f59 !important; /* Si scurisce leggermente quando viene cliccato o sorvolato */
     text-decoration: underline !important;
+}
+
+
+/* =========================================================
+   CONTATTI ED EMERGENZE
+   ========================================================= */
+
+.contact-card {
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    padding: 24px;
+}
+
+/* Titolo del box */
+.contact-card h3 {
+    margin-bottom: 22px;
+    line-height: 1.35;
+}
+
+/* Riga host + pulsante */
+.contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.contact-row span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+/* Pulsante chiamata */
+.btn-call {
+    flex-shrink: 0;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 9px 15px;
+
+    border: 1px solid var(--brand-lilla);
+    border-radius: 12px;
+
+    color: var(--brand-lilla);
+    background: white;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Numeri di emergenza */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+
+    padding-top: 0;
+    border-top: none;
+}
+
+.emergency-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 82px;
+    padding: 12px 8px;
+
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.emergency-grid span {
+    display: block;
+    margin-bottom: 5px;
+
+    color: #666;
+    font-size: 10px;
+    line-height: 1.25;
+}
+
+.emergency-grid strong {
+    color: #000;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Smartphone molto piccoli */
+@media (max-width: 380px) {
+    .contact-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-call {
+        width: 100%;
+    }
+
+    .emergency-grid {
+        gap: 8px;
+    }
+
+    .emergency-grid > div {
+        padding: 10px 4px;
+    }
+
+    .emergency-grid span {
+        font-size: 9px;
+    }
+
+    .emergency-grid strong {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   INFORMAZIONI APPARTAMENTO
+   ========================================================= */
+
+/* Spazio sotto il titolo principale */
+#tab-apt .card > h2 {
+    margin-bottom: 24px;
+    line-height: 1.35;
+}
+
+/* Box Wi-Fi più arioso */
+.wifi-credentials {
+    padding: 20px;
+    margin-bottom: 24px;
+
+    background-color: var(--brand-lilla-light);
+    border: 1px dashed rgba(162, 123, 241, 0.4);
+    border-radius: 14px;
+}
+
+.wifi-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 14px;
+
+    color: var(--brand-lilla);
+    font-weight: 700;
+}
+
+.wifi-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wifi-body p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Blocchi aria condizionata, vicinato e terrazza */
+.info-block {
+    padding: 22px 0;
+    border-top: 1px solid #e9e9e9;
+}
+
+.info-block:first-of-type {
+    border-top: none;
+}
+
+.info-block:last-child {
+    padding-bottom: 0;
+}
+
+.info-block h4 {
+    margin: 0 0 10px 0;
+
+    color: #111;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.info-block p {
+    margin: 0;
+
+    color: #444;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Migliora la leggibilità della password */
+.highlight-text {
+    display: inline-block;
+    margin-left: 3px;
+    padding: 4px 9px;
+}
+
+.host-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.host-label {
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.host-info strong {
+    color: #111;
+    font-size: 15px;
+}
+
+/* AZIONI DI CONTATTO HOST */
+
+/* RIGA HOST */
+.contact-row {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.host-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.host-label {
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* NOME + ICONE SULLA STESSA RIGA */
+.host-main-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.host-main-row strong {
+    color: #111;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+
+
+/* PULSANTI ROTONDI */
+.contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.contact-text-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 34px;
+    padding: 7px 10px;
+
+    border-radius: 9px;
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.contact-text-btn:active {
+    transform: scale(0.95);
+}
+
+.call-btn {
+    color: var(--brand-lilla);
+    background: var(--brand-lilla-light);
+    border: 1px solid rgba(171, 136, 242, 0.4);
+}
+
+.whatsapp-btn {
+    color: #ffffff;
+    background: #25d366;
+    border: 1px solid #25d366;
+}
+
+.sms-btn {
+    color: #ffffff;
+    background: #028090;
+    border: 1px solid #028090;
+}
+
+@media (max-width: 390px) {
+    .host-main-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contact-actions {
+        width: 100%;
+    }
+
+    .contact-text-btn {
+        flex: 1;
+        font-size: 10px;
+    }
+}
+
+
+/* SCHERMI MOLTO PICCOLI */
+@media (max-width: 360px) {
+    .host-main-row {
+        gap: 8px;
+    }
+
+    .host-main-row strong {
+        font-size: 14px;
+    }
+
+    .contact-actions {
+        gap: 5px;
+    }
+
+    .contact-icon-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+/* Disposizione del blocco host */
+
+
+.host-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.host-label {
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.host-info strong {
+    color: #111;
+    font-size: 16px;
+}
+
+/* Telefoni molto piccoli */
+@media (max-width: 360px) {
+    .contact-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-btn {
+        width: 100%;
+        font-size: 12px;
+    }
 }
