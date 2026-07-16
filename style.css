@@ -131,6 +131,124 @@ header {
     background-color: #f4f9f6;
 }
 
+/* NAVBAR TABS - VERSIONE MOBILE SENZA SCORRIMENTO */
+.nav-tabs {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    background: var(--card-surface);
+    border-bottom: 2px solid var(--brand-green-accent);
+
+    position: sticky;
+    top: 61px;
+    z-index: 999;
+
+    padding: 5px 4px;
+}
+
+/* SINGOLA VOCE DELLA NAVBAR */
+.nav-link {
+    min-width: 0;
+    min-height: 56px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    padding: 6px 2px;
+
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+
+    color: #555;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.15;
+    text-align: center;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    white-space: normal;
+    overflow: hidden;
+}
+
+/* ICONA DELLA NAVBAR */
+.nav-icon {
+    display: block;
+    font-size: 19px;
+    line-height: 1;
+}
+
+/* TESTO DELLA NAVBAR */
+.nav-label {
+    display: block;
+    width: 100%;
+
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.1;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* VOCE ATTIVA */
+.nav-link.active {
+    color: var(--brand-green-accent);
+    background-color: var(--brand-lilla-light);
+}
+
+/* LINEA SOTTO LA VOCE ATTIVA */
+.nav-link.active::after {
+    content: "";
+    display: block;
+
+    width: 20px;
+    height: 3px;
+
+    margin-top: 2px;
+
+    background: var(--brand-green-accent);
+    border-radius: 20px;
+}
+
+/* EFFETTO AL TOCCO */
+.nav-link:active {
+    transform: scale(0.96);
+}
+
+/* TELEFONI MOLTO PICCOLI */
+@media (max-width: 360px) {
+    .nav-tabs {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .nav-link {
+        min-height: 52px;
+        padding-left: 1px;
+        padding-right: 1px;
+    }
+
+    .nav-icon {
+        font-size: 17px;
+    }
+
+    .nav-label {
+        font-size: 8px;
+    }
+}
+
+
 /* CONTENITORE PRINCIPALE */
 .container {
     max-width: 600px;

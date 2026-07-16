@@ -29,12 +29,31 @@
     </header>
 
     <!-- Navbar Ristrutturata (4 Sezioni + Link Esterno) -->
-    <nav class="nav-tabs">
-        <button class="nav-link active" onclick="switchTab('tab-home')">🏡 Welcome</button>
-        <button class="nav-link" onclick="switchTab('tab-apt')">ℹ️ Info Apt</button>
-        <button class="nav-link" onclick="switchTab('tab-tips')">💡 Consigli</button>
-        <button class="nav-link" onclick="switchTab('tab-transport')">🚇 Trasporti</button>
-        <button class="nav-link" onclick="switchTab('tab-itinerary')">📍 Itinerari</button>
+   <nav class="nav-tabs" aria-label="Navigazione principale">
+        <button class="nav-link active" onclick="switchTab('tab-home')">
+            <span class="nav-icon">🏡</span>
+            <span class="nav-label">Home</span>
+        </button>
+
+        <button class="nav-link" onclick="switchTab('tab-apt')">
+            <span class="nav-icon">ℹ️</span>
+            <span class="nav-label">Info</span>
+        </button>
+
+        <button class="nav-link" onclick="switchTab('tab-tips')">
+            <span class="nav-icon">💡</span>
+            <span class="nav-label">Consigli</span>
+        </button>
+
+        <button class="nav-link" onclick="switchTab('tab-transport')">
+            <span class="nav-icon">🚇</span>
+            <span class="nav-label">Trasporti</span>
+        </button>
+
+        <button class="nav-link" onclick="switchTab('tab-itinerary')">
+            <span class="nav-icon">📍</span>
+            <span class="nav-label">Itinerari</span>
+        </button>
     </nav>
 
     <!-- Contenitore Principale -->
@@ -44,7 +63,7 @@
         <section id="tab-home" class="tab-content active">
             <div class="welcome-hero-interactive">
                 <div class="welcome-badge">GUEST DIRECTORY</div>
-                <h1 class="animated-welcome-title">Welcome</h1>
+                <h1 class="animated-welcome-title">Benvenuti</h1>
                 <div class="divider-line"></div>
                 <p id="welcome-text">Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi. Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza. Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli, Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana. Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.</p>
             </div>
