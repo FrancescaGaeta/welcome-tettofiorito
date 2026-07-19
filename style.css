@@ -1862,3 +1862,724 @@ footer {
         font-size: 9px;
     }
 }
+
+
+/* =========================================================
+   NUOVA SEZIONE ITINERARI - RESPONSIVE E MOBILE FRIENDLY
+   AGGIUNGERE IN FONDO AL FILE CSS
+   ========================================================= */
+
+
+/* =========================================================
+   INTRODUZIONE ITINERARI
+   ========================================================= */
+
+#tab-itinerary .card {
+    padding: 24px;
+}
+
+.itinerary-intro {
+    margin-bottom: 26px;
+}
+
+.itinerary-intro h2 {
+    margin-bottom: 12px;
+}
+
+.itinerary-intro-text {
+    margin: 0 0 10px 0;
+    color: #4b4b4b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.itinerary-intro-text:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   GRIGLIA DESTINAZIONI
+   ========================================================= */
+
+#tab-itinerary .discover-cities-vertical-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   WRAPPER SINGOLA DESTINAZIONE
+   ========================================================= */
+
+#tab-itinerary .city-compact-card-wrapper {
+    width: 100%;
+    min-width: 0;
+
+    background: #ffffff;
+    border: 1px solid var(--border-smooth);
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.05);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#tab-itinerary .city-compact-card-wrapper.open {
+    border-color: rgba(171, 136, 242, 0.6);
+    box-shadow: 0 10px 24px rgba(171, 136, 242, 0.13);
+}
+
+
+/* =========================================================
+   CARD VISIBILE
+   ========================================================= */
+
+#tab-itinerary .city-compact-card {
+    display: flex;
+
+    width: 100%;
+    height: auto;
+    min-height: 150px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   IMMAGINE
+   ========================================================= */
+
+#tab-itinerary .city-compact-img {
+    width: 145px;
+    min-width: 145px;
+    height: auto;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+}
+
+#tab-itinerary .city-compact-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   CONTENUTO CARD
+   ========================================================= */
+
+#tab-itinerary .city-compact-info {
+    min-width: 0;
+    width: 100%;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+#tab-itinerary .city-compact-info h3 {
+    width: 100%;
+
+    margin: 0 0 7px 0 !important;
+
+    color: #111 !important;
+
+    font-size: 17px !important;
+    line-height: 1.3;
+
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+}
+
+
+/* Descrizione: niente più testo tagliato */
+
+#tab-itinerary .poi-compact-desc {
+    width: 100%;
+
+    margin: 0 0 10px 0;
+
+    color: #666;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    display: block;
+
+    overflow: visible;
+
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+}
+
+
+/* =========================================================
+   BADGE TRASPORTO
+   ========================================================= */
+
+#tab-itinerary .quick-transit-box {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin: 0 0 11px 0;
+}
+
+#tab-itinerary .transit-badge {
+    max-width: 100%;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 5px 8px;
+
+    background: #f1f6f3;
+
+    border: 1px solid rgba(138, 206, 157, 0.35);
+    border-radius: 7px;
+
+    color: var(--brand-green-dark);
+
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.35;
+
+    white-space: normal;
+}
+
+
+/* =========================================================
+   PULSANTE GUIDA
+   ========================================================= */
+
+#tab-itinerary .card-action-row {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-top: 0;
+}
+
+#tab-itinerary .btn-toggle-guide {
+    min-height: 38px;
+
+    padding: 8px 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    background: var(--brand-lilla-light);
+
+    border: 1px solid rgba(171, 136, 242, 0.35);
+    border-radius: 9px;
+
+    color: var(--brand-lilla);
+
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+#tab-itinerary .btn-toggle-guide:active {
+    transform: scale(0.97);
+    background: var(--brand-lilla);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PARTE ESPANDIBILE
+   ========================================================= */
+
+#tab-itinerary .city-extended-guide {
+    max-height: 0;
+
+    overflow: hidden;
+
+    padding: 0 18px;
+
+    background: #fdfdfd;
+
+    transition:
+        max-height 0.45s ease,
+        padding-bottom 0.3s ease;
+}
+
+
+/*
+   IMPORTANTE:
+   800px era troppo poco per Napoli e altre card lunghe.
+*/
+
+#tab-itinerary .city-compact-card-wrapper.open .city-extended-guide {
+    max-height: 3000px;
+
+    padding-bottom: 20px;
+}
+
+
+#tab-itinerary .guide-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 0 0 16px 0;
+
+    background: #eeeeee;
+}
+
+
+/* =========================================================
+   SINGOLE SEZIONI DELLA GUIDA
+   ========================================================= */
+
+#tab-itinerary .guide-section {
+    margin-bottom: 18px;
+}
+
+#tab-itinerary .guide-section:last-child {
+    margin-bottom: 0;
+}
+
+#tab-itinerary .guide-section h4 {
+    margin: 0 0 8px 0;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 7px;
+
+    color: var(--brand-green-dark);
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+#tab-itinerary .guide-section p {
+    margin: 0 0 9px 0;
+
+    color: #444;
+
+    font-size: 12.5px;
+    line-height: 1.65;
+}
+
+#tab-itinerary .guide-section p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Liste delle guide */
+
+#tab-itinerary .guide-section ul {
+    margin: 0;
+    padding-left: 19px;
+}
+
+#tab-itinerary .guide-section ul li {
+    margin-bottom: 8px;
+
+    color: #444;
+
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+#tab-itinerary .guide-section ul li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   BOX CONSIGLI
+   ========================================================= */
+
+#tab-itinerary .advice-box {
+    margin-top: 4px;
+
+    padding: 14px;
+
+    background: #fbf8ff;
+
+    border-left: 4px solid var(--brand-lilla);
+    border-radius: 0 10px 10px 0;
+}
+
+#tab-itinerary .advice-box h4 {
+    color: var(--brand-lilla);
+}
+
+#tab-itinerary .advice-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#tab-itinerary .advice-box ul li {
+    position: relative;
+
+    padding-left: 16px;
+}
+
+#tab-itinerary .advice-box ul li::before {
+    content: "•";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    color: var(--brand-lilla);
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   BOX FINALE: SESTO CONTINENTE / TOUR / SCOOTER
+   ========================================================= */
+
+.itinerary-final-box {
+    margin-top: 28px;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #fbf8ff 0%,
+        #f6fcf8 100%
+    );
+
+    border: 1px solid rgba(171, 136, 242, 0.28);
+    border-radius: 16px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.itinerary-final-icon {
+    width: 46px;
+    height: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(171, 136, 242, 0.25);
+    border-radius: 13px;
+
+    font-size: 22px;
+}
+
+.itinerary-final-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.itinerary-final-content h3 {
+    margin: 0 0 10px 0 !important;
+
+    font-size: 18px !important;
+    line-height: 1.35;
+}
+
+.itinerary-final-content > p {
+    margin: 0 0 12px 0;
+
+    color: #4c4c4c;
+
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+
+/* Piccoli box interni */
+
+.itinerary-partner-highlight {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 12px;
+
+    padding: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 11px;
+}
+
+.itinerary-partner-highlight > span {
+    flex-shrink: 0;
+
+    font-size: 18px;
+}
+
+.itinerary-partner-highlight p {
+    margin: 0;
+
+    color: #4d4d4d;
+
+    font-size: 11.5px;
+    line-height: 1.55;
+}
+
+
+/* Pulsante finale Sesto Continente */
+
+.itinerary-final-box .transport-action-btn {
+    margin-top: 16px;
+
+    background: var(--brand-lilla);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET E SMARTPHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    #tab-itinerary .card {
+        padding: 18px;
+    }
+
+    .itinerary-intro {
+        margin-bottom: 22px;
+    }
+
+    .itinerary-intro-text {
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+
+    /* CARD DESTINAZIONE:
+       SU MOBILE FOTO SOPRA E TESTO SOTTO
+    */
+
+    #tab-itinerary .city-compact-card {
+        flex-direction: column;
+
+        height: auto;
+        min-height: 0;
+    }
+
+    #tab-itinerary .city-compact-img {
+        width: 100%;
+        min-width: 0;
+
+        height: 180px;
+    }
+
+    #tab-itinerary .city-compact-img img {
+        width: 100%;
+        height: 180px;
+        min-height: 180px;
+
+        object-fit: cover;
+    }
+
+    #tab-itinerary .city-compact-info {
+        padding: 16px;
+    }
+
+    #tab-itinerary .city-compact-info h3 {
+        font-size: 17px !important;
+    }
+
+    #tab-itinerary .poi-compact-desc {
+        font-size: 12.5px;
+    }
+
+    #tab-itinerary .transit-badge {
+        font-size: 10.5px;
+        padding: 6px 8px;
+    }
+
+    #tab-itinerary .btn-toggle-guide {
+        width: 100%;
+
+        min-height: 42px;
+
+        font-size: 11.5px;
+    }
+
+
+    /* Parte espansa */
+
+    #tab-itinerary .city-extended-guide {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    #tab-itinerary .city-compact-card-wrapper.open .city-extended-guide {
+        padding-bottom: 18px;
+    }
+
+    #tab-itinerary .guide-section h4 {
+        font-size: 13.5px;
+    }
+
+    #tab-itinerary .guide-section p,
+    #tab-itinerary .guide-section ul li {
+        font-size: 12.5px;
+    }
+
+
+    /* Box finale */
+
+    .itinerary-final-box {
+        flex-direction: column;
+
+        padding: 18px;
+
+        gap: 12px;
+    }
+
+    .itinerary-final-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+    .itinerary-final-content h3 {
+        font-size: 17px !important;
+    }
+
+    .itinerary-final-content > p {
+        font-size: 12.5px;
+    }
+
+    .itinerary-partner-highlight {
+        padding: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   SMARTPHONE PICCOLI
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    #tab-itinerary .card {
+        padding: 14px;
+    }
+
+    #tab-itinerary .city-compact-img,
+    #tab-itinerary .city-compact-img img {
+        height: 160px;
+        min-height: 160px;
+    }
+
+    #tab-itinerary .city-compact-info {
+        padding: 14px;
+    }
+
+    #tab-itinerary .city-compact-info h3 {
+        font-size: 16px !important;
+    }
+
+    #tab-itinerary .poi-compact-desc {
+        font-size: 12px;
+    }
+
+    #tab-itinerary .guide-section {
+        margin-bottom: 15px;
+    }
+
+    #tab-itinerary .guide-section h4 {
+        font-size: 13px;
+    }
+
+    #tab-itinerary .guide-section p,
+    #tab-itinerary .guide-section ul li {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #tab-itinerary .advice-box {
+        padding: 12px;
+    }
+
+    .itinerary-final-box {
+        margin-top: 22px;
+        padding: 15px;
+    }
+
+}
+
+
+/* =========================================================
+   SMARTPHONE MOLTO PICCOLI
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+    #tab-itinerary .card {
+        padding: 12px;
+    }
+
+    #tab-itinerary .city-compact-img,
+    #tab-itinerary .city-compact-img img {
+        height: 145px;
+        min-height: 145px;
+    }
+
+    #tab-itinerary .city-compact-info {
+        padding: 12px;
+    }
+
+    #tab-itinerary .transit-badge {
+        width: 100%;
+    }
+
+    #tab-itinerary .btn-toggle-guide {
+        font-size: 10.5px;
+    }
+
+}
