@@ -347,7 +347,7 @@ h2 i {
 
 /* RIFIUTI */
 .trash-container {
-    border: 2px solid var(--brand-green-dark);
+    border: 1px solid var(--border-smooth);
     background-color: #fafffc;
 }
 
