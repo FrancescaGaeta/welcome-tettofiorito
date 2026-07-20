@@ -14,151 +14,254 @@
 
     <!-- Header con Logo e Selettore Lingua -->
     <header>
-       <div class="header-container">
-        <!-- Logo con immagine diretta anziché testo e icona font-awesome -->
+    <div class="header-container">
+
         <a href="#" class="logo-link">
             <img src="logo.jpg" alt="Il Tetto Fiorito" class="site-logo-img">
         </a>
-        
-        <!-- SELETTORE LINGUE (Mantenuto intatto sulla destra) -->
+
         <div class="lang-selector">
-            <button class="lang-btn active" onclick="changeLang('it')">IT</button>
-            <button class="lang-btn" onclick="changeLang('en')">EN</button>
+            <select id="language-select" onchange="setLanguage(this.value)">
+                <option value="it">🇮🇹 IT</option>
+                <option value="en">🇬🇧 EN</option>
+                <option value="es">🇪🇸 ES</option>
+                <option value="fr">🇫🇷 FR</option>
+                <option value="de">🇩🇪 DE</option>
+            </select>
         </div>
+
     </div>
-    </header>
+</header>
 
-    <!-- Navbar Ristrutturata (4 Sezioni + Link Esterno) -->
-   <nav class="nav-tabs" aria-label="Navigazione principale">
-        <button class="nav-link active" onclick="switchTab('tab-home')">
-            <span class="nav-icon">🏡</span>
-            <span class="nav-label">Home</span>
-        </button>
 
-        <button class="nav-link" onclick="switchTab('tab-apt')">
-            <span class="nav-icon">ℹ️</span>
-            <span class="nav-label">Info</span>
-        </button>
+<nav class="nav-tabs" aria-label="Navigazione principale">
 
-        <button class="nav-link" onclick="switchTab('tab-tips')">
-            <span class="nav-icon">💡</span>
-            <span class="nav-label">Consigli</span>
-        </button>
+    <button class="nav-link active" onclick="switchTab('tab-home')">
+        <span class="nav-icon">🏡</span>
+        <span class="nav-label" data-i18n="nav_home">Home</span>
+    </button>
 
-        <button class="nav-link" onclick="switchTab('tab-transport')">
-            <span class="nav-icon">🚇</span>
-            <span class="nav-label">Trasporti</span>
-        </button>
+    <button class="nav-link" onclick="switchTab('tab-apt')">
+        <span class="nav-icon">ℹ️</span>
+        <span class="nav-label" data-i18n="nav_info">Info</span>
+    </button>
 
-        <button class="nav-link" onclick="switchTab('tab-itinerary')">
-            <span class="nav-icon">📍</span>
-            <span class="nav-label">Itinerari</span>
-        </button>
-    </nav>
+    <button class="nav-link" onclick="switchTab('tab-tips')">
+        <span class="nav-icon">💡</span>
+        <span class="nav-label" data-i18n="nav_tips">Consigli</span>
+    </button>
 
+    <button class="nav-link" onclick="switchTab('tab-transport')">
+        <span class="nav-icon">🚇</span>
+        <span class="nav-label" data-i18n="nav_transport">Trasporti</span>
+    </button>
+
+    <button class="nav-link" onclick="switchTab('tab-itinerary')">
+        <span class="nav-icon">📍</span>
+        <span class="nav-label" data-i18n="nav_itinerary">Itinerari</span>
+    </button>
+
+</nav>
+
+    
     <!-- Contenitore Principale -->
     <main class="container">
         
         <!-- SEZIONE 1: WELCOME (Interattiva ed emozionale) -->
         <section id="tab-home" class="tab-content active">
-            <div class="welcome-hero-interactive">
-                <div class="welcome-badge">GUEST DIRECTORY</div>
-                <h1 class="animated-welcome-title">Benvenuti</h1>
-                <div class="divider-line"></div>
-                <p id="welcome-text">Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi. Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza. Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli, Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana. Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.</p>
-            </div>
 
-            <div class="card contact-card">
-                <h3 id="title-numbers">📞 Contatti Rapidi & Emergenze</h3>
-                
-                <div class="contact-row">
-                    <div class="host-info">
-                        <span class="host-label">Il vostro host</span>
+    <div class="welcome-hero-interactive">
 
-                        <div class="host-main-row">
-                            <strong>Antonello Assante</strong>
+        <div class="welcome-badge" data-i18n="guest_directory">
+            GUEST DIRECTORY
+        </div>
 
-                            <div class="contact-actions">
+        <h1 class="animated-welcome-title" data-i18n="welcome_title">
+            Benvenuti
+        </h1>
 
-                                <a
-                                    href="tel:+393383061933"
-                                    class="contact-text-btn call-btn"
-                                    aria-label="Chiama Antonello"
-                                >
-                                    Chiama
-                                </a>
+        <div class="divider-line"></div>
 
-                                <a
-                                    href="https://wa.me/393383061933?text=Ciao%20Antonello%2C%20sono%20un%20ospite%20del%20Tetto%20Fiorito."
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="contact-text-btn whatsapp-btn"
-                                    aria-label="Scrivi ad Antonello su WhatsApp"
-                                >
-                                    WhatsApp
-                                </a>
+        <p id="welcome-text" data-i18n="welcome_text">
+            Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi.
+            Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza.
+            Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale
+            per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli,
+            Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana.
+            Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno
+            il più piacevole possibile.
+        </p>
 
-                                <a
-                                    href="sms:+393383061933?body=Ciao%20Antonello%2C%20sono%20un%20ospite%20del%20Tetto%20Fiorito."
-                                    class="contact-text-btn sms-btn"
-                                    aria-label="Invia un SMS ad Antonello"
-                                >
-                                    SMS
-                                </a>
+    </div>
 
-                            </div>
-                        </div>
+
+    <div class="card contact-card">
+
+        <h3 data-i18n="contacts_title">
+            📞 Contatti Rapidi & Emergenze
+        </h3>
+
+        <div class="contact-row">
+
+            <div class="host-info">
+
+                <span class="host-label" data-i18n="host_label">
+                    Il vostro host
+                </span>
+
+                <div class="host-main-row">
+
+                    <strong>Antonello Assante</strong>
+
+                    <div class="contact-actions">
+
+                        <a href="tel:+393383061933"
+                           class="contact-text-btn call-btn"
+                           data-i18n="call">
+                            Chiama
+                        </a>
+
+                        <a href="https://wa.me/393383061933?text=Ciao%20Antonello%2C%20sono%20un%20ospite%20del%20Tetto%20Fiorito."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="contact-text-btn whatsapp-btn"
+                           data-i18n="whatsapp">
+                            WhatsApp
+                        </a>
+
+                        <a href="sms:+393383061933?body=Ciao%20Antonello%2C%20sono%20un%20ospite%20del%20Tetto%20Fiorito."
+                           class="contact-text-btn sms-btn"
+                           data-i18n="sms">
+                            SMS
+                        </a>
+
                     </div>
+
                 </div>
-                <div class="emergency-grid">
-                    <div><span>Emergenze:</span> <strong>112</strong></div>
-                    <div><span>Ambulanza:</span> <strong>118</strong></div>
-                    <div><span>Vigili del Fuoco:</span> <strong>115</strong></div>
-                </div>
+
             </div>
-        </section>
+
+        </div>
+
+
+        <div class="emergency-grid">
+
+            <div>
+                <span data-i18n="emergency">Emergenze:</span>
+                <strong>112</strong>
+            </div>
+
+            <div>
+                <span data-i18n="ambulance">Ambulanza:</span>
+                <strong>118</strong>
+            </div>
+
+            <div>
+                <span data-i18n="firefighters">Vigili del Fuoco:</span>
+                <strong>115</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
         <!-- SEZIONE 2: INFO APPARTAMENTO (Include i Rifiuti al suo interno) -->
         <section id="tab-apt" class="tab-content">
-            <div class="card">
-                <h2 id="title-apt">ℹ️ Informazioni Appartamento</h2>
-                
-                <div class="wifi-credentials">
-                    <div class="wifi-header">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0 M1.42 9a16 16 0 0 1 21.16 0 M8.53 16.11a6 6 0 0 1 6.94 0 M12 20h.01"/></svg>
-                        <strong>Connessione Wi-Fi</strong>
-                    </div>
-                    <div class="wifi-body">
-                        <p><strong>Rete 1:</strong> Tetto Fiorito</p>
-                        <p><strong>Rete 2:</strong> EXT – Tetto Fiorito</p>
-                        <p><strong>Password:</strong> <span class="highlight-text">tettofiorito</span></p>
-                    </div>
-                </div>
 
-                <div class="info-block">
-                    <h4 id="lbl-ac">❄️ Aria Condizionata</h4>
-                    <p id="txt-ac">Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando. Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.</p>
-                </div>
+    <div class="card">
 
-                <div class="info-block">
-                    <h4 id="lbl-rules">👥 Vicinato & Terrazza</h4>
-                    <p id="txt-rules">Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni (scale e terrazza) nelle ore serali e notturne, nel rispetto degli altri residenti. La terrazza è uno spazio condominiale condiviso. Siete i benvenuti a rilassarvi utilizzando l'altalena, il divanetto e le poltrone. Vi chiediamo invece di non utilizzare le sedie bianche in plastica e di non lasciare cibo, bevande o altri oggetti sulla terrazza al termine dell'utilizzo.</p>
-                </div>
+        <h2 data-i18n="apartment_title">
+            ℹ️ Informazioni Appartamento
+        </h2>
+
+
+        <div class="wifi-credentials">
+
+            <div class="wifi-header">
+
+                <svg class="icon"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <path d="M5 12.55a11 11 0 0 1 14.08 0 M1.42 9a16 16 0 0 1 21.16 0 M8.53 16.11a6 6 0 0 1 6.94 0 M12 20h.01"/>
+                </svg>
+
+                <strong data-i18n="wifi_title">
+                    Connessione Wi-Fi
+                </strong>
+
             </div>
 
-           <!-- PARCHEGGIO -->
-<div class="card parking-container">
 
-    <h2>🚗 Parcheggio</h2>
+            <div class="wifi-body">
 
-    <p class="parking-subtitle">
+                <p data-i18n="network_1">
+                    <strong>Rete 1:</strong> Tetto Fiorito
+                </p>
+
+                <p data-i18n="network_2">
+                    <strong>Rete 2:</strong> EXT – Tetto Fiorito
+                </p>
+
+                <p data-i18n="wifi_password">
+                    <strong>Password:</strong>
+                    <span class="highlight-text">tettofiorito</span>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-block">
+
+            <h4 data-i18n="ac_title">
+                ❄️ Aria Condizionata
+            </h4>
+
+            <p data-i18n="ac_text">
+                Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando.
+                Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.
+            </p>
+
+        </div>
+
+
+        <div class="info-block">
+
+            <h4 data-i18n="rules_title">
+                👥 Vicinato & Terrazza
+            </h4>
+
+            <p data-i18n="rules_text">
+                Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni
+                nelle ore serali e notturne.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card parking-container">
+
+    <h2 data-i18n="parking_title">
+        🚗 Parcheggio
+    </h2>
+
+    <p class="parking-subtitle" data-i18n="parking_intro">
         Il <strong>Tetto Fiorito non dispone di un parcheggio privato</strong>.
         Nelle vicinanze sono però disponibili alcuni parcheggi a pagamento,
         facilmente raggiungibili dalla struttura.
     </p>
 
 
-    <!-- PARCHEGGIO PORTO ANTICO STABIA -->
     <div class="parking-accordion">
 
         <details>
@@ -172,16 +275,22 @@
                     </span>
 
                     <div>
-                        <strong>Porto Antico Stabia</strong>
 
-                        <span class="parking-location">
+                        <strong data-i18n="porto_antico">
+                            Porto Antico Stabia
+                        </strong>
+
+                        <span class="parking-location"
+                              data-i18n="porto_location">
                             📍 Nei pressi del porto
                         </span>
+
                     </div>
 
                 </div>
 
-                <span class="parking-summary-action">
+                <span class="parking-summary-action"
+                      data-i18n="see_rates">
                     Vedi tariffe
                 </span>
 
@@ -191,17 +300,21 @@
             <div class="parking-details-content">
 
                 <div class="parking-rate-row">
-                    <span>Prima ora</span>
+                    <span data-i18n="first_hour">Prima ora</span>
                     <strong>€ 3,00</strong>
                 </div>
 
                 <div class="parking-rate-row">
-                    <span>Ore successive o frazione</span>
+                    <span data-i18n="next_hours">
+                        Ore successive o frazione
+                    </span>
                     <strong>€ 3,00</strong>
                 </div>
 
                 <div class="parking-rate-row parking-daily-rate">
-                    <span>Giornaliero H24</span>
+                    <span data-i18n="daily_24">
+                        Giornaliero H24
+                    </span>
                     <strong>€ 25,00</strong>
                 </div>
 
@@ -212,7 +325,6 @@
     </div>
 
 
-    <!-- PARCHEGGIO GIORDANO -->
     <div class="parking-accordion">
 
         <details>
@@ -226,16 +338,22 @@
                     </span>
 
                     <div>
-                        <strong>Parcheggio Giordano</strong>
 
-                        <span class="parking-location">
+                        <strong data-i18n="giordano">
+                            Parcheggio Giordano
+                        </strong>
+
+                        <span class="parking-location"
+                              data-i18n="giordano_location">
                             📍 Nei pressi della Circumvesuviana
                         </span>
+
                     </div>
 
                 </div>
 
-                <span class="parking-summary-action">
+                <span class="parking-summary-action"
+                      data-i18n="see_rates">
                     Vedi tariffe
                 </span>
 
@@ -244,91 +362,96 @@
 
             <div class="parking-details-content">
 
-                <!-- AUTO PICCOLA -->
+
                 <div class="parking-vehicle-section">
 
-                    <h4>🚗 Auto piccola</h4>
+                    <h4 data-i18n="small_car">
+                        🚗 Auto piccola
+                    </h4>
 
                     <div class="parking-rate-row">
-                        <span>Prima ora</span>
+                        <span data-i18n="first_hour">Prima ora</span>
                         <strong>€ 2,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>30 minuti</span>
+                        <span data-i18n="thirty_minutes">30 minuti</span>
                         <strong>€ 1,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>Ore successive</span>
+                        <span data-i18n="next_hours_simple">Ore successive</span>
                         <strong>€ 2,00</strong>
                     </div>
 
                     <div class="parking-rate-row parking-daily-rate">
-                        <span>Giornaliero</span>
+                        <span data-i18n="daily">Giornaliero</span>
                         <strong>€ 20,00</strong>
                     </div>
 
                 </div>
 
 
-                <!-- AUTO MEDIA -->
                 <div class="parking-vehicle-section">
 
-                    <h4>🚙 Auto media</h4>
+                    <h4 data-i18n="medium_car">
+                        🚙 Auto media
+                    </h4>
 
                     <div class="parking-rate-row">
-                        <span>Prima ora</span>
+                        <span data-i18n="first_hour">Prima ora</span>
                         <strong>€ 3,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>30 minuti</span>
+                        <span data-i18n="thirty_minutes">30 minuti</span>
                         <strong>€ 1,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>Ore successive</span>
+                        <span data-i18n="next_hours_simple">Ore successive</span>
                         <strong>€ 2,00</strong>
                     </div>
 
                     <div class="parking-rate-row parking-daily-rate">
-                        <span>Giornaliero</span>
+                        <span data-i18n="daily">Giornaliero</span>
                         <strong>€ 30,00</strong>
                     </div>
 
                 </div>
 
 
-                <!-- AUTO GRANDE -->
                 <div class="parking-vehicle-section">
 
-                    <h4>🚐 Auto grande</h4>
+                    <h4 data-i18n="large_car">
+                        🚐 Auto grande
+                    </h4>
 
                     <div class="parking-rate-row">
-                        <span>Prima ora</span>
+                        <span data-i18n="first_hour">Prima ora</span>
                         <strong>€ 4,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>30 minuti</span>
+                        <span data-i18n="thirty_minutes">30 minuti</span>
                         <strong>€ 3,00</strong>
                     </div>
 
                     <div class="parking-rate-row">
-                        <span>Ore successive</span>
+                        <span data-i18n="next_hours_simple">Ore successive</span>
                         <strong>€ 4,00</strong>
                     </div>
 
                     <div class="parking-rate-row parking-daily-rate">
-                        <span>Giornaliero</span>
+                        <span data-i18n="daily">Giornaliero</span>
                         <strong>€ 40,00</strong>
                     </div>
 
                 </div>
 
 
-                <p class="parking-disclaimer">
+                <p class="parking-disclaimer"
+                   data-i18n="parking_warning">
                     ℹ️ Le tariffe riportate possono subire variazioni.
                     Si consiglia di verificarle direttamente presso il parcheggio.
                 </p>
@@ -341,77 +464,159 @@
 
 </div>
 
-            <!-- COMPARTO RIFIUTI INTEGRATO DENTRO INFO APPARTAMENTO -->
-            <div class="card trash-container">
-                <h2>♻️ Raccolta Rifiuti </h2>
-                <p id="txt-trash-info" class="trash-subtitle">I rifiuti vanno posti fuori all’ingresso principale, in strada, sui 2 gradini di ingresso, dopo le ore 20:00 del giorno indicato.</p>
-                
-                <div class="table-responsive">
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th id="th-day">Giorno</th>
-                                <th id="th-type">Tipo Rifiuto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td id="d-lun" class="day-col">Lunedì sera</td>
-                                <td>
-                                    <span class="badge badge-undiff">Indifferenziata</span>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td id="d-mar" class="day-col">Martedì sera</td>
-                                <td>
-                                    <span class="badge badge-plastic">Plastica e Lattine</span>
-                                </td>
-                            </tr>
+<div class="card trash-container">
 
-                            <tr>
-                                <td id="d-mer" class="day-col">Mercoledì sera</td>
-                                <td>
-                                    <span class="badge badge-organic">Organico</span>
-                                    +
-                                    <span class="badge badge-glass">Vetro</span>
-                                </td>
-                            </tr>
+    <h2 data-i18n="trash_title">
+        ♻️ Raccolta Rifiuti
+    </h2>
 
-                            <tr>
-                                <td id="d-gio" class="day-col">Giovedì sera</td>
-                                <td>
-                                    <span class="badge badge-undiff">Indifferenziata</span>
-                                </td>
-                            </tr>
+    <p class="trash-subtitle"
+       data-i18n="trash_info">
+        I rifiuti vanno posti fuori all’ingresso principale,
+        in strada, sui 2 gradini di ingresso,
+        dopo le ore 20:00 del giorno indicato.
+    </p>
 
-                            <tr>
-                                <td id="d-ven" class="day-col">Venerdì sera</td>
-                                <td>
-                                    <span class="badge badge-organic">Organico</span>
-                                    +
-                                    <span class="badge badge-paper">Carta e Cartone</span>
-                                </td>
-                            </tr>
 
-                            <tr>
-                                <td id="d-sab" class="day-col">Sabato sera</td>
-                                <td>
-                                    <span class="badge badge-none">Nessun conferimento</span>
-                                </td>
-                            </tr>
+    <div class="table-responsive">
 
-                            <tr>
-                                <td id="d-dom" class="day-col">Domenica sera</td>
-                                <td>
-                                    <span class="badge badge-organic">Organico</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+        <table class="custom-table">
+
+            <thead>
+                <tr>
+                    <th data-i18n="day">Giorno</th>
+                    <th data-i18n="trash_type">Tipo Rifiuto</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td class="day-col" data-i18n="monday">
+                        Lunedì sera
+                    </td>
+
+                    <td>
+                        <span class="badge badge-undiff"
+                              data-i18n="undifferentiated">
+                            Indifferenziata
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="tuesday">
+                        Martedì sera
+                    </td>
+
+                    <td>
+                        <span class="badge badge-plastic"
+                              data-i18n="plastic_cans">
+                            Plastica e Lattine
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="wednesday">
+                        Mercoledì sera
+                    </td>
+
+                    <td>
+
+                        <span class="badge badge-organic"
+                              data-i18n="organic">
+                            Organico
+                        </span>
+
+                        +
+
+                        <span class="badge badge-glass"
+                              data-i18n="glass">
+                            Vetro
+                        </span>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="thursday">
+                        Giovedì sera
+                    </td>
+
+                    <td>
+                        <span class="badge badge-undiff"
+                              data-i18n="undifferentiated">
+                            Indifferenziata
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="friday">
+                        Venerdì sera
+                    </td>
+
+                    <td>
+
+                        <span class="badge badge-organic"
+                              data-i18n="organic">
+                            Organico
+                        </span>
+
+                        +
+
+                        <span class="badge badge-paper"
+                              data-i18n="paper">
+                            Carta e Cartone
+                        </span>
+
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="saturday">
+                        Sabato sera
+                    </td>
+
+                    <td>
+                        <span class="badge badge-none"
+                              data-i18n="no_collection">
+                            Nessun conferimento
+                        </span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td class="day-col" data-i18n="sunday">
+                        Domenica sera
+                    </td>
+
+                    <td>
+                        <span class="badge badge-organic"
+                              data-i18n="organic">
+                            Organico
+                        </span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+</section>
 
         <!-- SEZIONE 3: CONSIGLI (Supermercati e Gastronomia) -->
                            <!-- SEZIONE 3: CONSIGLI (Supermercati, Gastronomia, Spiagge ed Esperienze) -->
@@ -2486,180 +2691,2248 @@
     </footer>
 
     <!-- Script per navigazione e interattività Accordion -->
-    <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-            
-            document.getElementById(tabId).classList.add('active');
-            
-            const activeBtn = Array.from(document.querySelectorAll('.nav-link')).find(btn => btn.getAttribute('onclick').includes(tabId));
-            if(activeBtn) activeBtn.classList.add('active');
-            
-            window.scrollTo({top: 0, behavior: 'smooth'});
+                        <script>
+
+const translations = {
+
+    /* =========================================================
+       ITALIANO
+    ========================================================= */
+
+    it: {
+
+        /* NAVBAR */
+        nav_home: "Home",
+        nav_info: "Info",
+        nav_tips: "Consigli",
+        nav_transport: "Trasporti",
+        nav_itinerary: "Itinerari",
+
+        /* HOME */
+        guest_directory: "GUEST DIRECTORY",
+        welcome_title: "Benvenuti",
+
+        welcome_text: `
+            Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi.
+            Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza.
+            Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale
+            per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli,
+            Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana.
+            Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.
+        `,
+
+        contacts_title: "📞 Contatti Rapidi & Emergenze",
+        host_label: "Il vostro host",
+        call: "Chiama",
+        whatsapp: "WhatsApp",
+        sms: "SMS",
+        emergency: "Emergenze:",
+        ambulance: "Ambulanza:",
+        firefighters: "Vigili del Fuoco:",
+
+
+        /* INFO APPARTAMENTO */
+
+        apartment_title: "ℹ️ Informazioni Appartamento",
+
+        wifi_title: "Connessione Wi-Fi",
+        network_1: "<strong>Rete 1:</strong> Tetto Fiorito",
+        network_2: "<strong>Rete 2:</strong> EXT – Tetto Fiorito",
+        wifi_password: "<strong>Password:</strong> <span class='highlight-text'>tettofiorito</span>",
+
+        ac_title: "❄️ Aria Condizionata",
+        ac_text: `
+            Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando.
+            Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.
+        `,
+
+        rules_title: "👥 Vicinato & Terrazza",
+        rules_text: `
+            Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni
+            (scale e terrazza) nelle ore serali e notturne, nel rispetto degli altri residenti.
+            La terrazza è uno spazio condominiale condiviso.
+            Siete i benvenuti a rilassarvi utilizzando l'altalena, il divanetto e le poltrone.
+            Vi chiediamo invece di non utilizzare le sedie bianche in plastica e di non lasciare
+            cibo, bevande o altri oggetti sulla terrazza al termine dell'utilizzo.
+        `,
+
+
+        /* PARCHEGGIO */
+
+        parking_title: "🚗 Parcheggio",
+
+        parking_intro: `
+            Il <strong>Tetto Fiorito non dispone di un parcheggio privato</strong>.
+            Nelle vicinanze sono però disponibili alcuni parcheggi a pagamento,
+            facilmente raggiungibili dalla struttura.
+        `,
+
+        porto_antico: "Porto Antico Stabia",
+        porto_location: "📍 Nei pressi del porto",
+
+        giordano: "Parcheggio Giordano",
+        giordano_location: "📍 Nei pressi della Circumvesuviana",
+
+        see_rates: "Vedi tariffe",
+
+        first_hour: "Prima ora",
+        next_hours: "Ore successive o frazione",
+        next_hours_simple: "Ore successive",
+        thirty_minutes: "30 minuti",
+        daily_24: "Giornaliero H24",
+        daily: "Giornaliero",
+
+        small_car: "🚗 Auto piccola",
+        medium_car: "🚙 Auto media",
+        large_car: "🚐 Auto grande",
+
+        parking_warning: `
+            ℹ️ Le tariffe riportate possono subire variazioni.
+            Si consiglia di verificarle direttamente presso il parcheggio.
+        `,
+
+
+        /* RIFIUTI */
+
+        trash_title: "♻️ Raccolta Rifiuti",
+
+        trash_info: `
+            I rifiuti vanno posti fuori all’ingresso principale, in strada,
+            sui 2 gradini di ingresso, dopo le ore 20:00 del giorno indicato.
+        `,
+
+        day: "Giorno",
+        trash_type: "Tipo Rifiuto",
+
+        monday: "Lunedì sera",
+        tuesday: "Martedì sera",
+        wednesday: "Mercoledì sera",
+        thursday: "Giovedì sera",
+        friday: "Venerdì sera",
+        saturday: "Sabato sera",
+        sunday: "Domenica sera",
+
+        undifferentiated: "Indifferenziata",
+        plastic_cans: "Plastica e Lattine",
+        organic: "Organico",
+        glass: "Vetro",
+        paper: "Carta e Cartone",
+        no_collection: "Nessun conferimento",
+
+
+        /* CONSIGLI - SERVIZI */
+
+        shops_title: "🛒 Supermercati e Servizi Vicini",
+
+        shops_intro: `
+            Clicca sul nome del servizio per aprire direttamente la mappa e calcolare il percorso:
+        `,
+
+        service_store: "Servizio / Insegna",
+        type_location: "Tipologia e Posizione",
+
+        supermarket: "Supermercato alimentare",
+        supermarket_home: "Supermercato e prodotti per la casa",
+        food_typical: "Alimentari e prodotti tipici",
+        minimarket: "Minimarket, ortofrutta e salumeria",
+        personal_home: "Igiene personale, detersivi e prodotti per la casa",
+
+        walk_1: "🚶 Circa 1 minuto a piedi",
+        walk_3: "🚶 Circa 3 minuti a piedi",
+        walk_6: "🚶 Circa 6 minuti a piedi",
+        walk_7: "🚶 Circa 7 minuti a piedi",
+
+
+        /* GASTRONOMIA */
+
+        gastronomy_title: "🍝 Gastronomia Locale e Ristoranti",
+
+        gastronomy_intro: `
+            I nostri posti preferiti. Clicca sui locali evidenziati con 📍 per aprire la mappa:
+        `,
+
+        category: "Categoria",
+        place_notes: "Locale e Note del Tetto Fiorito",
+
+        breakfast: "☕ Bar / Colazione",
+        pizza_places: "🍕 Pizzerie",
+        takeaway: "🍗 Rosticceria",
+        restaurants: "🍽️ Ristoranti",
+        winebar: "🍷 Tipico / Wine Bar",
+        icecream: "🍨 Gelaterie",
+
+
+        /* SPIAGGE */
+
+        beaches_title: "🏖️ Spiagge e Stabilimenti Balneari",
+
+        beaches_intro: `
+            Lo specchio di mare di fronte al Tetto Fiorito è spiaggia libera balneabile.
+            Per lidi attrezzati privati:
+        `,
+
+        area: "Zona",
+        beach_notes: "Stabilimenti Consigliati & Note",
+
+        castellammare_beaches: `
+            <strong>Bagno Conte, Bagno Elena, Stone, Famous Beach</strong>.<br>
+            Lidi storici cittadini, molto comodi per una giornata di relax.
+        `,
+
+        vico_beaches: `
+            <strong>Il Bikini, Scrajo</strong>.<br>
+            Lo Scrajo è la spiaggia preferita del Tetto Fiorito,
+            celebre per la sua sorgente marina e l'acqua limpidissima.
+        `,
+
+
+        /* ESPERIENZE */
+
+        experiences_title: "🗺️ Esperienze e Cibi da non perdere",
+
+        experiences_intro: `
+            I piccoli segreti per vivere la cultura stabiese al 100% durante il soggiorno:
+        `,
+
+        promenade_title: "🌅 Passeggiata sul Lungomare",
+
+        promenade_text: `
+            La nostra Villa Comunale è uno dei lungomari più lunghi e belli d'Europa.
+            Godetevi una camminata serale prendendo un gelato o la tipica e rinfrescante
+            <strong>“Fruttata”</strong> nei caratteristici Chalet storici.
+        `,
+
+        biscuits_title: "📍 🍪 I Biscotti di Castellammare (Biscottificio Ricciardi)",
+
+        biscuits_text: `
+            Il dolce simbolo della città, i caratteristici biscotti a sigaro.
+            Vi consigliamo lo storico biscottificio <strong>Ricciardi</strong>,
+            eccezionale per i biscotti tradizionali da inzuppare,
+            i biscotti secchi e quelli in pasta di mandorla.
+        `,
+
+        water_title: "💧 L'Acqua della Madonna",
+
+        water_text: `
+            Castellammare è storicamente famosa per le sue acque.
+            Raggiungete l'<strong>Antica Fonte dell'Acqua della Madonna</strong>
+            vicino al porto per assaggiare l'acqua minerale o l'Acqua Acidula
+            direttamente dalle fonti pubbliche ancora accessibili.
+        `,
+
+
+        /* TRASPORTI */
+
+        transport_eyebrow: "COME MUOVERSI",
+        transport_title: "🚇 Trasporti e collegamenti",
+
+        transport_intro: `
+            Dal Tetto Fiorito potete raggiungere facilmente le principali
+            destinazioni della Campania in treno, via mare o con collegamenti
+            diretti per l’aeroporto.
+        `,
+
+        by_land: "Via terra",
+        station_title: "Stazione Circumvesuviana",
+
+        train_text: `
+            La stazione si trova a pochissimi metri dal portone del Tetto Fiorito.
+            Uscendo dalla struttura, basta svoltare a destra.
+        `,
+
+        few_steps: "A pochi passi da casa",
+
+        train_highlight: `
+            È il mezzo più semplice per raggiungere Napoli,
+            i siti archeologici e la Penisola Sorrentina.
+        `,
+
+        destinations_title: "Dove potete arrivare",
+
+        direction_naples: "Direzione Napoli",
+        direction_naples_text: "Per Pompei, Oplonti, Ercolano e Napoli.",
+
+        direction_sorrento: "Direzione Sorrento",
+        direction_sorrento_text: "Per Vico Equense, Meta e Sorrento.",
+
+        train_schedule: "📄 Consulta gli orari della Circumvesuviana",
+
+
+        /* ALISCAFO */
+
+        by_sea: "Via mare",
+        ferry_title: "Aliscafo per Capri",
+
+        ferry_text: `
+            Dal porto di Castellammare di Stabia è possibile raggiungere
+            Capri rapidamente e comodamente in aliscafo.
+        `,
+
+        port_title: "Porto di Castellammare",
+
+        port_text: `
+            Dal Tetto Fiorito il porto è raggiungibile in pochi minuti a piedi,
+            proseguendo verso sinistra lungo la costa.
+        `,
+
+        ferry_schedule_title: "🕒 Orari di andata e ritorno",
+        outward_route: "🚤 Castellammare → Capri",
+        return_route: "🌅 Capri → Castellammare",
+
+        monday_friday: "Lunedì–Venerdì",
+        saturday_simple: "Sabato",
+        sunday_holidays: "Domenica e festivi",
+        every_day: "Tutti i giorni",
+
+        fares: "💶 Tariffe",
+        fare_type: "Tipologia",
+        one_way: "Andata",
+        round_trip: "A/R",
+
+        adult: "Adulto",
+        children: "Bambini 2–12 anni",
+        groups: "Gruppi minimo 15 persone",
+        school_groups: "Gruppi scolastici",
+        luggage: "Bagaglio",
+        animal: "Animale",
+        bicycle: "Bicicletta",
+
+        transport_warning: `
+            Gli orari e le tariffe possono subire variazioni.
+            Verificate sempre eventuali aggiornamenti prima della partenza.
+        `,
+
+
+        /* BUS */
+
+        airport_connection: "Collegamento aeroporto",
+        bus_title: "Bus Curreri",
+
+        bus_text: `
+            Il servizio Curreri collega Castellammare di Stabia con
+            l’Aeroporto Internazionale di Napoli Capodichino.
+        `,
+
+        bus_stop_title: "Fermata consigliata: Villa Stabia",
+
+        bus_stop_text: `
+            Per raggiungere Napoli Capodichino vi consigliamo
+            di prendere il bus dalla fermata Villa Stabia.
+        `,
+
+        bus_schedule: "📄 Consulta gli orari dei bus",
+        book_ticket: "🎟️ Prenota il biglietto",
+
+
+        /* ITINERARI */
+
+        explore_campania: "ESPLORA LA CAMPANIA",
+        discover_title: "Località da scoprire",
+
+        discover_intro_1: `
+            Grazie alla sua posizione strategica,
+            <strong>Castellammare di Stabia</strong> è il punto di partenza ideale
+            per raggiungere alcuni dei luoghi più belli e affascinanti della Campania.
+            Potete organizzare le vostre giornate <strong>in completa autonomia</strong>,
+            utilizzando treni, autobus e collegamenti via mare, oppure scegliere
+            <strong>escursioni e tour organizzati</strong> per vivere l'esperienza
+            in modo ancora più comodo.
+        `,
+
+        discover_intro_2: `
+            Qui trovate alcune delle nostre destinazioni preferite,
+            insieme ai consigli del Tetto Fiorito su come raggiungerle,
+            cosa vedere e cosa assaggiare durante la visita.
+        `,
+
+        guide_button: "Guida & Consigli",
+        close_guide: "Chiudi Guida",
+
+
+        /* POMPEI */
+
+        pompeii_title: "🏛️ Pompei Scavi",
+
+        pompeii_desc: `
+            La leggendaria città romana rimasta cristallizzata
+            nel tempo dopo l'eruzione del Vesuvio del 79 d.C.
+        `,
+
+        train_naples_badge: "🚆 Circumvesuviana direzione Napoli",
+
+        how_to_get: "🚆 Come arrivarci",
+
+        pompeii_get: `
+            Raggiungete a piedi la stazione della
+            <strong>Circumvesuviana di Castellammare di Stabia</strong>
+            e prendete il treno in <strong>direzione Napoli</strong>.
+            Per raggiungere gli Scavi è importante verificare la corsa
+            e la fermata più adatta prima della partenza.
+        `,
+
+        organize_visit: "🎧 Come organizzare la visita",
+
+        tickets: `
+            <strong>Biglietti:</strong>
+            è possibile acquistare il biglietto in anticipo online
+            oppure direttamente presso la biglietteria degli scavi.
+        `,
+
+        tour_guide: `
+            <strong>Guida turistica:</strong>
+            per comprendere davvero la storia degli edifici,
+            delle domus e della vita quotidiana dell'antica Pompei,
+            consigliamo una visita con una guida turistica.
+        `,
+
+        audioguide: `
+            <strong>Audioguida:</strong>
+            in alternativa è possibile utilizzare i servizi
+            di audioguida e gli strumenti digitali messi a disposizione
+            per accompagnare la visita.
+        `,
+
+        tetto_tips: "💡 I consigli del Tetto Fiorito",
+
+
+        /* NAPOLI */
+
+        naples_title: "🎭 Napoli",
+
+        naples_desc: `
+            Un viaggio tra storia, arte, vicoli, tradizioni
+            e una delle culture gastronomiche più famose al mondo.
+        `,
+
+        naples_get: `
+            Prendete la Circumvesuviana da Castellammare
+            in <strong>direzione Napoli</strong> e proseguite fino
+            a <strong>Napoli Piazza Garibaldi</strong>.
+            Da qui potete continuare a piedi oppure utilizzare
+            la metropolitana per raggiungere le diverse zone della città.
+        `,
+
+        must_see: "🏛️ Cosa non perdere",
+        eat_naples: "🍕 Cosa mangiare a Napoli",
+
+
+        /* SORRENTO */
+
+        sorrento_title: "🍋 Sorrento",
+
+        sorrento_desc: `
+            Vicoli caratteristici, profumo di limoni,
+            viste sul Golfo e un'atmosfera romantica tutta da vivere.
+        `,
+
+        train_sorrento_badge: "🚆 Circumvesuviana direzione Sorrento",
+
+        sorrento_get: `
+            Prendete la Circumvesuviana da Castellammare
+            in <strong>direzione Sorrento</strong> e scendete al capolinea.
+            Una volta arrivati, il centro è facilmente visitabile a piedi.
+        `,
+
+        what_to_do: "🌅 Cosa fare",
+        taste: "🍋 Da assaggiare",
+
+
+        /* VICO */
+
+        vico_title: "🌿 Vico Equense",
+
+        vico_desc: `
+            Un piccolo borgo della Penisola Sorrentina
+            con splendidi panorami sul mare e un'atmosfera rilassata.
+        `,
+
+        why_visit: "🌊 Perché visitarla",
+
+
+        /* COSTIERA */
+
+        coast_title: "🌊 Positano & Amalfi",
+
+        coast_desc: `
+            Due delle perle più famose della Costiera Amalfitana,
+            tra borghi verticali, mare e panorami unici.
+        `,
+
+        coast_badge: "🚌 Bus - 🚢 Escursioni via mare",
+
+        sea_advice: "⚓️ Il nostro consiglio: vederle dal mare",
+        things_to_do: "✨ Cosa fare",
+        know_taste: "🍋 Da sapere e da assaggiare",
+
+
+        /* CAPRI */
+
+        capri_title: "🏝️ Capri",
+
+        capri_desc: `
+            La perla del Golfo, tra Faraglioni, grotte marine,
+            vicoli eleganti e panorami indimenticabili.
+        `,
+
+        capri_badge: "🚢 Aliscafo - ⛵️ Escursione privata",
+
+        unmissable_experience: "🌊 Un'esperienza da non perdere",
+        capri_taste: "🍋 Cosa assaggiare a Capri",
+
+        caprese: `
+            <strong>Caprese:</strong>
+            uno dei piatti più semplici e rappresentativi della cucina campana,
+            preparato con pomodoro, mozzarella fresca e basilico.
+        `,
+
+        caprese_cake: `
+            <strong>Torta Caprese:</strong>
+            il celebre dolce dell'isola preparato con cioccolato e mandorle.
+            Anche la sua versione al limone è da non perdere!
+        `,
+
+        buonocore: `
+            <strong>Gelato:</strong>
+            per una pausa golosa consigliamo <strong>Buonocore Gelateria</strong>,
+            famosa anche per il profumo delle sue cialde preparate al momento.
+        `,
+
+
+        /* STABIA */
+
+        stabia_title: "🏺 Scavi di Stabia",
+
+        stabia_desc: `
+            Antiche e magnifiche ville romane costruite
+            in posizione panoramica sul Golfo di Napoli.
+        `,
+
+        bus_taxi_badge: "🚌 Bus - 🚕 Taxi",
+
+
+        /* ERCOLANO */
+
+        herculaneum_title: "🌋 Ercolano Scavi",
+
+        herculaneum_desc: `
+            Una città romana straordinariamente conservata,
+            più raccolta di Pompei ma altrettanto affascinante.
+        `,
+
+
+        /* BOX FINALE */
+
+        organize_day: "ORGANIZZA LA TUA GIORNATA",
+
+        tours_title: "Tour, escursioni e noleggio scooter",
+
+        tours_intro: `
+            Preferite non organizzare tutto in autonomia?
+            A pochi passi dal Tetto Fiorito, nei pressi della stazione
+            della Circumvesuviana, potete rivolgervi a
+            <strong>Sesto Continente Tours</strong>
+            per informarvi e prenotare escursioni e tour organizzati
+            verso alcune delle principali destinazioni della zona.
+        `,
+
+        partner_discount: `
+            Comunicate di essere ospiti del <strong>Tetto Fiorito</strong>:
+            potrete verificare la disponibilità di una
+            <strong>tariffa o di uno sconto dedicato</strong>
+            sulle escursioni convenzionate.
+        `,
+
+        sea_tours: `
+            In particolare, consigliamo di informarvi sulle
+            <strong>escursioni via mare verso Positano e Amalfi</strong>
+            e sui <strong>tour in barca verso Capri</strong>,
+            ideali per ammirare la costa da una prospettiva unica.
+        `,
+
+        scooter_text: `
+            Per chi ha già esperienza nella guida di scooter,
+            il <strong>noleggio di un motorino</strong>
+            può essere un'altra soluzione pratica per esplorare
+            alcune località dei dintorni con maggiore libertà.
+            Informatevi sempre sulle condizioni di noleggio
+            e valutate con attenzione il traffico e la tipologia
+            delle strade prima di partire.
+        `,
+
+        discover_sesto: "Scopri Sesto Continente Tours",
+
+        footer: "© B&B Tetto Fiorito • Castellammare di Stabia"
+
+    },
+
+
+    /* =========================================================
+       ENGLISH
+    ========================================================= */
+
+    en: {
+
+        nav_home: "Home",
+        nav_info: "Info",
+        nav_tips: "Tips",
+        nav_transport: "Transport",
+        nav_itinerary: "Explore",
+
+        guest_directory: "GUEST DIRECTORY",
+        welcome_title: "Welcome",
+
+        welcome_text: `
+            Welcome to Tetto Fiorito and thank you for choosing to stay with us.
+            We are delighted that you have chosen Castellammare di Stabia as your base for your holiday.
+            Thanks to its strategic location, our city is the ideal starting point for visiting
+            some of Campania's most beautiful and famous destinations, including Naples,
+            Pompeii, Herculaneum, Sorrento, Capri and the Amalfi Coast.
+            Our wish is to make you feel at home and make your stay as pleasant as possible.
+        `,
+
+        contacts_title: "📞 Quick Contacts & Emergencies",
+        host_label: "Your host",
+        call: "Call",
+        whatsapp: "WhatsApp",
+        sms: "SMS",
+        emergency: "Emergency:",
+        ambulance: "Ambulance:",
+        firefighters: "Fire Brigade:",
+
+        apartment_title: "ℹ️ Apartment Information",
+        wifi_title: "Wi-Fi Connection",
+        network_1: "<strong>Network 1:</strong> Tetto Fiorito",
+        network_2: "<strong>Network 2:</strong> EXT – Tetto Fiorito",
+        wifi_password: "<strong>Password:</strong> <span class='highlight-text'>tettofiorito</span>",
+
+        ac_title: "❄️ Air Conditioning",
+        ac_text: `
+            You can control the air conditioning independently using the remote control.
+            We kindly ask you to turn it off when leaving the apartment.
+        `,
+
+        rules_title: "👥 Neighbours & Terrace",
+        rules_text: `
+            We kindly ask you to avoid excessive noise in the common areas
+            (stairs and terrace), especially during the evening and at night,
+            out of respect for the other residents.
+            The terrace is a shared condominium area.
+            You are welcome to relax using the swing, sofa and armchairs.
+            Please do not use the white plastic chairs and do not leave food,
+            drinks or personal belongings on the terrace after use.
+        `,
+
+        parking_title: "🚗 Parking",
+
+        parking_intro: `
+            <strong>Tetto Fiorito does not have private parking</strong>.
+            However, several paid parking facilities are available nearby
+            and can be easily reached from the property.
+        `,
+
+        porto_antico: "Porto Antico Stabia",
+        porto_location: "📍 Near the port",
+        giordano: "Giordano Car Park",
+        giordano_location: "📍 Near the Circumvesuviana station",
+        see_rates: "View rates",
+        first_hour: "First hour",
+        next_hours: "Each additional hour or part thereof",
+        next_hours_simple: "Additional hours",
+        thirty_minutes: "30 minutes",
+        daily_24: "24-hour daily rate",
+        daily: "Daily rate",
+        small_car: "🚗 Small car",
+        medium_car: "🚙 Medium car",
+        large_car: "🚐 Large car",
+
+        parking_warning: `
+            ℹ️ Rates may change.
+            We recommend checking the current prices directly with the car park.
+        `,
+
+        trash_title: "♻️ Waste Collection",
+
+        trash_info: `
+            Waste must be placed outside the main entrance, on the two entrance steps
+            facing the street, after 8:00 PM on the indicated day.
+        `,
+
+        day: "Day",
+        trash_type: "Waste Type",
+        monday: "Monday evening",
+        tuesday: "Tuesday evening",
+        wednesday: "Wednesday evening",
+        thursday: "Thursday evening",
+        friday: "Friday evening",
+        saturday: "Saturday evening",
+        sunday: "Sunday evening",
+        undifferentiated: "General waste",
+        plastic_cans: "Plastic & Cans",
+        organic: "Organic waste",
+        glass: "Glass",
+        paper: "Paper & Cardboard",
+        no_collection: "No collection",
+
+        shops_title: "🛒 Nearby Supermarkets & Services",
+
+        shops_intro: `
+            Click on a service name to open the map and calculate the route:
+        `,
+
+        service_store: "Service / Shop",
+        type_location: "Type & Location",
+        supermarket: "Grocery supermarket",
+        supermarket_home: "Supermarket and household products",
+        food_typical: "Groceries and local products",
+        minimarket: "Mini-market, fruit & vegetables and deli",
+        personal_home: "Personal care, detergents and household products",
+        walk_1: "🚶 About 1 minute on foot",
+        walk_3: "🚶 About 3 minutes on foot",
+        walk_6: "🚶 About 6 minutes on foot",
+        walk_7: "🚶 About 7 minutes on foot",
+
+        gastronomy_title: "🍝 Local Food & Restaurants",
+        gastronomy_intro: "Our favourite places. Click on the venues marked with 📍 to open the map:",
+        category: "Category",
+        place_notes: "Venue & Tetto Fiorito Notes",
+        breakfast: "☕ Café / Breakfast",
+        pizza_places: "🍕 Pizzerias",
+        takeaway: "🍗 Takeaway",
+        restaurants: "🍽️ Restaurants",
+        winebar: "🍷 Local Food / Wine Bar",
+        icecream: "🍨 Ice Cream",
+
+        beaches_title: "🏖️ Beaches & Beach Clubs",
+
+        beaches_intro: `
+            The stretch of sea in front of Tetto Fiorito has a free public beach suitable for swimming.
+            For private equipped beach clubs:
+        `,
+
+        area: "Area",
+        beach_notes: "Recommended Beach Clubs & Notes",
+
+        castellammare_beaches: `
+            <strong>Bagno Conte, Bagno Elena, Stone, Famous Beach</strong>.<br>
+            Historic local beach clubs, convenient for a relaxing day by the sea.
+        `,
+
+        vico_beaches: `
+            <strong>Il Bikini, Scrajo</strong>.<br>
+            Scrajo is Tetto Fiorito's favourite beach,
+            famous for its natural sea spring and crystal-clear water.
+        `,
+
+        experiences_title: "🗺️ Experiences & Local Foods Not to Miss",
+        experiences_intro: "A few local secrets to experience Stabia culture during your stay:",
+
+        promenade_title: "🌅 Walk Along the Seafront",
+
+        promenade_text: `
+            Our Villa Comunale is one of Europe's longest and most beautiful seafront promenades.
+            Enjoy an evening walk with an ice cream or try the typical refreshing
+            <strong>“Fruttata”</strong> at one of the traditional seafront chalets.
+        `,
+
+        biscuits_title: "📍 🍪 Castellammare Biscuits (Biscottificio Ricciardi)",
+
+        biscuits_text: `
+            One of the city's signature treats, traditionally shaped like cigars.
+            We recommend the historic <strong>Ricciardi</strong> bakery,
+            excellent for traditional dunking biscuits, dry biscuits and almond-paste sweets.
+        `,
+
+        water_title: "💧 Acqua della Madonna",
+
+        water_text: `
+            Castellammare has always been famous for its mineral waters.
+            Visit the <strong>Antica Fonte dell'Acqua della Madonna</strong>
+            near the port to taste mineral water or Acqua Acidula
+            directly from the public springs that are still accessible today.
+        `,
+
+        transport_eyebrow: "GETTING AROUND",
+        transport_title: "🚇 Transport & Connections",
+
+        transport_intro: `
+            From Tetto Fiorito you can easily reach Campania's main destinations
+            by train, by sea or via direct airport connections.
+        `,
+
+        by_land: "By land",
+        station_title: "Circumvesuviana Station",
+
+        train_text: `
+            The station is located just a few metres from the entrance of Tetto Fiorito.
+            When leaving the property, simply turn right.
+        `,
+
+        few_steps: "Just a few steps from home",
+
+        train_highlight: `
+            It is the easiest way to reach Naples,
+            the archaeological sites and the Sorrento Peninsula.
+        `,
+
+        destinations_title: "Where you can go",
+        direction_naples: "Towards Naples",
+        direction_naples_text: "For Pompeii, Oplontis, Herculaneum and Naples.",
+        direction_sorrento: "Towards Sorrento",
+        direction_sorrento_text: "For Vico Equense, Meta and Sorrento.",
+        train_schedule: "📄 View Circumvesuviana timetable",
+
+        by_sea: "By sea",
+        ferry_title: "Hydrofoil to Capri",
+
+        ferry_text: `
+            Capri can be reached quickly and conveniently by hydrofoil
+            from the port of Castellammare di Stabia.
+        `,
+
+        port_title: "Port of Castellammare",
+
+        port_text: `
+            The port can be reached from Tetto Fiorito in just a few minutes on foot,
+            heading left along the coast.
+        `,
+
+        ferry_schedule_title: "🕒 Outbound & Return Times",
+        outward_route: "🚤 Castellammare → Capri",
+        return_route: "🌅 Capri → Castellammare",
+        monday_friday: "Monday–Friday",
+        saturday_simple: "Saturday",
+        sunday_holidays: "Sundays & public holidays",
+        every_day: "Every day",
+
+        fares: "💶 Fares",
+        fare_type: "Type",
+        one_way: "One way",
+        round_trip: "Return",
+        adult: "Adult",
+        children: "Children aged 2–12",
+        groups: "Groups of at least 15 people",
+        school_groups: "School groups",
+        luggage: "Luggage",
+        animal: "Pet",
+        bicycle: "Bicycle",
+
+        transport_warning: `
+            Timetables and fares may change.
+            Always check for updates before departure.
+        `,
+
+        airport_connection: "Airport connection",
+        bus_title: "Curreri Bus",
+
+        bus_text: `
+            The Curreri service connects Castellammare di Stabia
+            with Naples International Airport – Capodichino.
+        `,
+
+        bus_stop_title: "Recommended stop: Villa Stabia",
+
+        bus_stop_text: `
+            To reach Naples Capodichino Airport,
+            we recommend taking the bus from the Villa Stabia stop.
+        `,
+
+        bus_schedule: "📄 View bus timetable",
+        book_ticket: "🎟️ Book your ticket",
+
+        explore_campania: "EXPLORE CAMPANIA",
+        discover_title: "Places to discover",
+
+        discover_intro_1: `
+            Thanks to its strategic location,
+            <strong>Castellammare di Stabia</strong> is the ideal starting point
+            for reaching some of Campania's most beautiful destinations.
+            You can plan your days <strong>independently</strong>,
+            using trains, buses and sea connections,
+            or choose <strong>organised excursions and tours</strong>
+            for an even more convenient experience.
+        `,
+
+        discover_intro_2: `
+            Here you will find some of our favourite destinations,
+            together with Tetto Fiorito's tips on how to get there,
+            what to see and what to taste.
+        `,
+
+        guide_button: "Guide & Tips",
+        close_guide: "Close Guide",
+
+        pompeii_title: "🏛️ Pompeii Archaeological Site",
+
+        pompeii_desc: `
+            The legendary Roman city frozen in time
+            after the eruption of Mount Vesuvius in AD 79.
+        `,
+
+        train_naples_badge: "🚆 Circumvesuviana towards Naples",
+        how_to_get: "🚆 How to get there",
+
+        pompeii_get: `
+            Walk to the <strong>Castellammare di Stabia Circumvesuviana station</strong>
+            and take a train <strong>towards Naples</strong>.
+            Check the service and the most convenient stop for the archaeological site before departure.
+        `,
+
+        organize_visit: "🎧 How to plan your visit",
+
+        tickets: `
+            <strong>Tickets:</strong>
+            tickets can be purchased online in advance
+            or directly at the archaeological site's ticket office.
+        `,
+
+        tour_guide: `
+            <strong>Tour guide:</strong>
+            to fully appreciate the history of the buildings,
+            villas and daily life in ancient Pompeii,
+            we recommend visiting with a professional guide.
+        `,
+
+        audioguide: `
+            <strong>Audio guide:</strong>
+            alternatively, audio-guide services and digital tools
+            are available to accompany your visit.
+        `,
+
+        tetto_tips: "💡 Tetto Fiorito's Tips",
+
+        naples_title: "🎭 Naples",
+
+        naples_desc: `
+            A journey through history, art, alleyways, traditions
+            and one of the world's most famous food cultures.
+        `,
+
+        naples_get: `
+            Take the Circumvesuviana from Castellammare
+            <strong>towards Naples</strong> and travel to
+            <strong>Napoli Piazza Garibaldi</strong>.
+            From there you can continue on foot or use the metro.
+        `,
+
+        must_see: "🏛️ What not to miss",
+        eat_naples: "🍕 What to eat in Naples",
+
+        sorrento_title: "🍋 Sorrento",
+
+        sorrento_desc: `
+            Charming streets, the scent of lemons,
+            views over the Gulf and a wonderfully romantic atmosphere.
+        `,
+
+        train_sorrento_badge: "🚆 Circumvesuviana towards Sorrento",
+
+        sorrento_get: `
+            Take the Circumvesuviana from Castellammare
+            <strong>towards Sorrento</strong> and get off at the final stop.
+            The town centre is easy to explore on foot.
+        `,
+
+        what_to_do: "🌅 What to do",
+        taste: "🍋 What to taste",
+
+        vico_title: "🌿 Vico Equense",
+
+        vico_desc: `
+            A charming town on the Sorrento Peninsula
+            with beautiful sea views and a relaxed atmosphere.
+        `,
+
+        why_visit: "🌊 Why visit",
+
+        coast_title: "🌊 Positano & Amalfi",
+
+        coast_desc: `
+            Two of the Amalfi Coast's most famous gems,
+            with hillside villages, sea views and unforgettable landscapes.
+        `,
+
+        coast_badge: "🚌 Bus - 🚢 Boat excursions",
+        sea_advice: "⚓️ Our tip: see them from the sea",
+        things_to_do: "✨ What to do",
+        know_taste: "🍋 Good to know & what to taste",
+
+        capri_title: "🏝️ Capri",
+
+        capri_desc: `
+            The pearl of the Gulf, with the Faraglioni,
+            sea caves, elegant streets and unforgettable views.
+        `,
+
+        capri_badge: "🚢 Hydrofoil - ⛵️ Private boat tour",
+        unmissable_experience: "🌊 An experience not to miss",
+        capri_taste: "🍋 What to taste in Capri",
+
+        caprese: `
+            <strong>Caprese salad:</strong>
+            one of Campania's simplest and most iconic dishes,
+            made with tomatoes, fresh mozzarella and basil.
+        `,
+
+        caprese_cake: `
+            <strong>Torta Caprese:</strong>
+            Capri's famous chocolate and almond cake.
+            Its lemon version is also well worth trying!
+        `,
+
+        buonocore: `
+            <strong>Ice cream:</strong>
+            for a sweet break we recommend <strong>Buonocore Gelateria</strong>,
+            also famous for the irresistible aroma of its freshly made waffle cones.
+        `,
+
+        stabia_title: "🏺 Stabiae Archaeological Sites",
+
+        stabia_desc: `
+            Magnificent ancient Roman villas
+            built in a panoramic position overlooking the Gulf of Naples.
+        `,
+
+        bus_taxi_badge: "🚌 Bus - 🚕 Taxi",
+
+        herculaneum_title: "🌋 Herculaneum Archaeological Site",
+
+        herculaneum_desc: `
+            An extraordinarily well-preserved Roman city,
+            smaller than Pompeii but equally fascinating.
+        `,
+
+        organize_day: "PLAN YOUR DAY",
+        tours_title: "Tours, excursions & scooter rental",
+
+        tours_intro: `
+            Prefer not to organise everything yourself?
+            Just a short walk from Tetto Fiorito, near the Circumvesuviana station,
+            you can contact <strong>Sesto Continente Tours</strong>
+            for information and bookings for organised excursions
+            to some of the area's main destinations.
+        `,
+
+        partner_discount: `
+            Let them know that you are staying at <strong>Tetto Fiorito</strong>:
+            you can ask about the availability of a
+            <strong>special rate or dedicated discount</strong>
+            on selected excursions.
+        `,
+
+        sea_tours: `
+            We particularly recommend asking about
+            <strong>boat excursions to Positano and Amalfi</strong>
+            and <strong>boat tours to Capri</strong>,
+            ideal for admiring the coastline from a unique perspective.
+        `,
+
+        scooter_text: `
+            For guests who already have experience riding scooters,
+            <strong>scooter rental</strong> can be a practical way
+            to explore nearby destinations more freely.
+            Always check the rental conditions and carefully consider
+            traffic and road conditions before setting off.
+        `,
+
+        discover_sesto: "Discover Sesto Continente Tours",
+        footer: "© B&B Tetto Fiorito • Castellammare di Stabia"
+    },
+
+
+    /* =========================================================
+       ESPAÑOL
+    ========================================================= */
+
+    es: {
+
+        nav_home: "Inicio",
+        nav_info: "Info",
+        nav_tips: "Consejos",
+        nav_transport: "Transportes",
+        nav_itinerary: "Itinerarios",
+
+        guest_directory: "GUÍA DEL HUÉSPED",
+        welcome_title: "Bienvenidos",
+
+        welcome_text: `
+            Bienvenidos a Tetto Fiorito y gracias por elegir alojarse con nosotros.
+            Nos alegra que hayan elegido Castellammare di Stabia como base para sus vacaciones.
+            Gracias a su ubicación estratégica, nuestra ciudad es el punto de partida ideal
+            para visitar algunos de los destinos más bonitos y conocidos de Campania,
+            como Nápoles, Pompeya, Herculano, Sorrento, Capri y la Costa Amalfitana.
+            Nuestro deseo es hacerles sentir como en casa y que su estancia sea lo más agradable posible.
+        `,
+
+        contacts_title: "📞 Contactos Rápidos y Emergencias",
+        host_label: "Su anfitrión",
+        call: "Llamar",
+        whatsapp: "WhatsApp",
+        sms: "SMS",
+        emergency: "Emergencias:",
+        ambulance: "Ambulancia:",
+        firefighters: "Bomberos:",
+
+        apartment_title: "ℹ️ Información del Apartamento",
+        wifi_title: "Conexión Wi-Fi",
+        network_1: "<strong>Red 1:</strong> Tetto Fiorito",
+        network_2: "<strong>Red 2:</strong> EXT – Tetto Fiorito",
+        wifi_password: "<strong>Contraseña:</strong> <span class='highlight-text'>tettofiorito</span>",
+
+        ac_title: "❄️ Aire Acondicionado",
+
+        ac_text: `
+            Pueden controlar el aire acondicionado de forma autónoma con el mando a distancia.
+            Les pedimos amablemente que lo apaguen cuando salgan del apartamento.
+        `,
+
+        rules_title: "👥 Vecindario y Terraza",
+
+        rules_text: `
+            Les pedimos que eviten ruidos excesivos en las zonas comunes,
+            especialmente por la tarde y durante la noche.
+            La terraza es un espacio comunitario compartido.
+            Pueden utilizar el columpio, el sofá y los sillones.
+            Les rogamos que no utilicen las sillas blancas de plástico
+            y que no dejen comida, bebidas u objetos en la terraza después de su uso.
+        `,
+
+        parking_title: "🚗 Aparcamiento",
+
+        parking_intro: `
+            <strong>Tetto Fiorito no dispone de aparcamiento privado</strong>.
+            Sin embargo, hay varios aparcamientos de pago cercanos
+            y fácilmente accesibles desde el alojamiento.
+        `,
+
+        porto_antico: "Porto Antico Stabia",
+        porto_location: "📍 Cerca del puerto",
+        giordano: "Aparcamiento Giordano",
+        giordano_location: "📍 Cerca de la estación Circumvesuviana",
+        see_rates: "Ver tarifas",
+        first_hour: "Primera hora",
+        next_hours: "Horas siguientes o fracción",
+        next_hours_simple: "Horas siguientes",
+        thirty_minutes: "30 minutos",
+        daily_24: "Tarifa diaria H24",
+        daily: "Tarifa diaria",
+        small_car: "🚗 Coche pequeño",
+        medium_car: "🚙 Coche mediano",
+        large_car: "🚐 Coche grande",
+
+        parking_warning: `
+            ℹ️ Las tarifas pueden sufrir modificaciones.
+            Se recomienda comprobarlas directamente en el aparcamiento.
+        `,
+
+        trash_title: "♻️ Recogida de Residuos",
+
+        trash_info: `
+            Los residuos deben dejarse fuera de la entrada principal,
+            sobre los dos escalones que dan a la calle,
+            después de las 20:00 del día indicado.
+        `,
+
+        day: "Día",
+        trash_type: "Tipo de residuo",
+        monday: "Lunes por la noche",
+        tuesday: "Martes por la noche",
+        wednesday: "Miércoles por la noche",
+        thursday: "Jueves por la noche",
+        friday: "Viernes por la noche",
+        saturday: "Sábado por la noche",
+        sunday: "Domingo por la noche",
+        undifferentiated: "Residuos no reciclables",
+        plastic_cans: "Plástico y latas",
+        organic: "Orgánico",
+        glass: "Vidrio",
+        paper: "Papel y cartón",
+        no_collection: "Sin recogida",
+
+        shops_title: "🛒 Supermercados y Servicios Cercanos",
+        shops_intro: "Haz clic en el nombre del servicio para abrir el mapa y calcular la ruta:",
+        service_store: "Servicio / Comercio",
+        type_location: "Tipo y ubicación",
+        supermarket: "Supermercado de alimentación",
+        supermarket_home: "Supermercado y productos para el hogar",
+        food_typical: "Alimentación y productos típicos",
+        minimarket: "Minimercado, frutería y charcutería",
+        personal_home: "Higiene personal, detergentes y productos para el hogar",
+        walk_1: "🚶 Aproximadamente 1 minuto a pie",
+        walk_3: "🚶 Aproximadamente 3 minutos a pie",
+        walk_6: "🚶 Aproximadamente 6 minutos a pie",
+        walk_7: "🚶 Aproximadamente 7 minutos a pie",
+
+        gastronomy_title: "🍝 Gastronomía Local y Restaurantes",
+        gastronomy_intro: "Nuestros lugares favoritos. Haz clic en los locales marcados con 📍 para abrir el mapa:",
+        category: "Categoría",
+        place_notes: "Local y consejos de Tetto Fiorito",
+        breakfast: "☕ Bar / Desayuno",
+        pizza_places: "🍕 Pizzerías",
+        takeaway: "🍗 Comida para llevar",
+        restaurants: "🍽️ Restaurantes",
+        winebar: "🍷 Cocina típica / Wine Bar",
+        icecream: "🍨 Heladerías",
+
+        beaches_title: "🏖️ Playas y Establecimientos Balnearios",
+
+        beaches_intro: `
+            Frente a Tetto Fiorito hay una playa pública apta para el baño.
+            Para establecimientos privados equipados:
+        `,
+
+        area: "Zona",
+        beach_notes: "Establecimientos recomendados y notas",
+
+        castellammare_beaches: `
+            <strong>Bagno Conte, Bagno Elena, Stone, Famous Beach</strong>.<br>
+            Históricos establecimientos locales, ideales para pasar un día de relax.
+        `,
+
+        vico_beaches: `
+            <strong>Il Bikini, Scrajo</strong>.<br>
+            Scrajo es la playa favorita de Tetto Fiorito,
+            famosa por su manantial marino y sus aguas cristalinas.
+        `,
+
+        experiences_title: "🗺️ Experiencias y Sabores que no hay que perderse",
+        experiences_intro: "Pequeños secretos para disfrutar al máximo de la cultura de Stabia durante su estancia:",
+
+        promenade_title: "🌅 Paseo por el Lungomare",
+
+        promenade_text: `
+            Nuestra Villa Comunale cuenta con uno de los paseos marítimos
+            más largos y bonitos de Europa.
+            Disfruten de un paseo al atardecer con un helado
+            o prueben la refrescante <strong>“Fruttata”</strong>
+            en uno de los tradicionales chalets del paseo marítimo.
+        `,
+
+        biscuits_title: "📍 🍪 Galletas de Castellammare (Biscottificio Ricciardi)",
+
+        biscuits_text: `
+            Uno de los dulces símbolo de la ciudad.
+            Recomendamos el histórico <strong>Ricciardi</strong>,
+            famoso por sus galletas tradicionales, galletas secas
+            y dulces de pasta de almendras.
+        `,
+
+        water_title: "💧 Acqua della Madonna",
+
+        water_text: `
+            Castellammare es históricamente famosa por sus aguas minerales.
+            Visiten la <strong>Antica Fonte dell'Acqua della Madonna</strong>,
+            cerca del puerto, para probar el agua mineral o el Acqua Acidula
+            directamente de las fuentes públicas.
+        `,
+
+        transport_eyebrow: "CÓMO MOVERSE",
+        transport_title: "🚇 Transportes y conexiones",
+
+        transport_intro: `
+            Desde Tetto Fiorito se puede llegar fácilmente
+            a los principales destinos de Campania en tren,
+            por mar o mediante conexiones directas con el aeropuerto.
+        `,
+
+        by_land: "Por tierra",
+        station_title: "Estación Circumvesuviana",
+
+        train_text: `
+            La estación se encuentra a pocos metros de la entrada de Tetto Fiorito.
+            Al salir, basta con girar a la derecha.
+        `,
+
+        few_steps: "A pocos pasos de casa",
+
+        train_highlight: `
+            Es la forma más sencilla de llegar a Nápoles,
+            a los yacimientos arqueológicos y a la Península Sorrentina.
+        `,
+
+        destinations_title: "Destinos",
+        direction_naples: "Dirección Nápoles",
+        direction_naples_text: "Para Pompeya, Oplontis, Herculano y Nápoles.",
+        direction_sorrento: "Dirección Sorrento",
+        direction_sorrento_text: "Para Vico Equense, Meta y Sorrento.",
+        train_schedule: "📄 Consultar horarios de la Circumvesuviana",
+
+        by_sea: "Por mar",
+        ferry_title: "Hidroala a Capri",
+
+        ferry_text: `
+            Desde el puerto de Castellammare di Stabia
+            se puede llegar rápida y cómodamente a Capri en hidroala.
+        `,
+
+        port_title: "Puerto de Castellammare",
+
+        port_text: `
+            Desde Tetto Fiorito se puede llegar al puerto
+            en pocos minutos a pie siguiendo la costa hacia la izquierda.
+        `,
+
+        ferry_schedule_title: "🕒 Horarios de ida y vuelta",
+        outward_route: "🚤 Castellammare → Capri",
+        return_route: "🌅 Capri → Castellammare",
+        monday_friday: "Lunes–Viernes",
+        saturday_simple: "Sábado",
+        sunday_holidays: "Domingos y festivos",
+        every_day: "Todos los días",
+
+        fares: "💶 Tarifas",
+        fare_type: "Tipo",
+        one_way: "Ida",
+        round_trip: "Ida/Vuelta",
+        adult: "Adulto",
+        children: "Niños de 2 a 12 años",
+        groups: "Grupos mínimo 15 personas",
+        school_groups: "Grupos escolares",
+        luggage: "Equipaje",
+        animal: "Mascota",
+        bicycle: "Bicicleta",
+
+        transport_warning: `
+            Los horarios y las tarifas pueden variar.
+            Comprueben siempre las actualizaciones antes de salir.
+        `,
+
+        airport_connection: "Conexión con el aeropuerto",
+        bus_title: "Bus Curreri",
+
+        bus_text: `
+            El servicio Curreri conecta Castellammare di Stabia
+            con el Aeropuerto Internacional de Nápoles Capodichino.
+        `,
+
+        bus_stop_title: "Parada recomendada: Villa Stabia",
+
+        bus_stop_text: `
+            Para llegar al aeropuerto de Nápoles Capodichino,
+            recomendamos tomar el autobús en la parada Villa Stabia.
+        `,
+
+        bus_schedule: "📄 Consultar horarios de autobuses",
+        book_ticket: "🎟️ Reservar billete",
+
+        explore_campania: "DESCUBRE CAMPANIA",
+        discover_title: "Lugares por descubrir",
+
+        discover_intro_1: `
+            Gracias a su ubicación estratégica,
+            <strong>Castellammare di Stabia</strong> es el punto de partida ideal
+            para descubrir algunos de los lugares más bonitos de Campania.
+            Pueden organizar sus días <strong>de forma independiente</strong>
+            utilizando trenes, autobuses y conexiones marítimas,
+            o elegir <strong>excursiones y tours organizados</strong>.
+        `,
+
+        discover_intro_2: `
+            Aquí encontrarán algunos de nuestros destinos favoritos,
+            junto con los consejos de Tetto Fiorito sobre cómo llegar,
+            qué ver y qué probar.
+        `,
+
+        guide_button: "Guía y Consejos",
+        close_guide: "Cerrar Guía",
+
+        pompeii_title: "🏛️ Ruinas de Pompeya",
+
+        pompeii_desc: `
+            La legendaria ciudad romana congelada en el tiempo
+            tras la erupción del Vesubio en el año 79 d.C.
+        `,
+
+        train_naples_badge: "🚆 Circumvesuviana dirección Nápoles",
+        how_to_get: "🚆 Cómo llegar",
+
+        organize_visit: "🎧 Cómo organizar la visita",
+        tetto_tips: "💡 Consejos de Tetto Fiorito",
+
+        naples_title: "🎭 Nápoles",
+
+        naples_desc: `
+            Un viaje entre historia, arte, callejuelas, tradiciones
+            y una de las culturas gastronómicas más famosas del mundo.
+        `,
+
+        must_see: "🏛️ Qué no perderse",
+        eat_naples: "🍕 Qué comer en Nápoles",
+
+        sorrento_title: "🍋 Sorrento",
+
+        sorrento_desc: `
+            Calles con encanto, aroma de limones,
+            vistas al Golfo y una atmósfera romántica.
+        `,
+
+        train_sorrento_badge: "🚆 Circumvesuviana dirección Sorrento",
+        what_to_do: "🌅 Qué hacer",
+        taste: "🍋 Qué probar",
+
+        vico_title: "🌿 Vico Equense",
+
+        vico_desc: `
+            Un pequeño pueblo de la Península Sorrentina
+            con magníficas vistas al mar y un ambiente tranquilo.
+        `,
+
+        why_visit: "🌊 Por qué visitarlo",
+
+        coast_title: "🌊 Positano y Amalfi",
+
+        coast_desc: `
+            Dos de las joyas más famosas de la Costa Amalfitana,
+            entre pueblos verticales, mar y paisajes únicos.
+        `,
+
+        coast_badge: "🚌 Bus - 🚢 Excursiones en barco",
+        sea_advice: "⚓️ Nuestro consejo: verlas desde el mar",
+        things_to_do: "✨ Qué hacer",
+        know_taste: "🍋 Qué saber y qué probar",
+
+        capri_title: "🏝️ Capri",
+
+        capri_desc: `
+            La perla del Golfo, entre los Faraglioni,
+            grutas marinas, elegantes callejuelas y vistas inolvidables.
+        `,
+
+        capri_badge: "🚢 Hidroala - ⛵️ Excursión privada",
+        unmissable_experience: "🌊 Una experiencia que no hay que perderse",
+        capri_taste: "🍋 Qué probar en Capri",
+
+        caprese: `
+            <strong>Ensalada Caprese:</strong>
+            uno de los platos más sencillos y representativos de Campania,
+            preparado con tomate, mozzarella fresca y albahaca.
+        `,
+
+        caprese_cake: `
+            <strong>Tarta Caprese:</strong>
+            el famoso dulce de la isla elaborado con chocolate y almendras.
+            ¡También merece la pena probar su versión de limón!
+        `,
+
+        buonocore: `
+            <strong>Helado:</strong>
+            recomendamos <strong>Buonocore Gelateria</strong>,
+            famosa también por el aroma de sus barquillos recién preparados.
+        `,
+
+        stabia_title: "🏺 Ruinas de Stabia",
+
+        stabia_desc: `
+            Magníficas villas romanas antiguas
+            construidas en una posición panorámica sobre el Golfo de Nápoles.
+        `,
+
+        bus_taxi_badge: "🚌 Bus - 🚕 Taxi",
+
+        herculaneum_title: "🌋 Ruinas de Herculano",
+
+        herculaneum_desc: `
+            Una ciudad romana extraordinariamente bien conservada,
+            más pequeña que Pompeya pero igualmente fascinante.
+        `,
+
+        organize_day: "ORGANIZA TU DÍA",
+        tours_title: "Tours, excursiones y alquiler de scooters",
+
+        discover_sesto: "Descubre Sesto Continente Tours",
+        footer: "© B&B Tetto Fiorito • Castellammare di Stabia"
+    },
+
+
+    /* =========================================================
+       FRANÇAIS
+    ========================================================= */
+
+    fr: {
+
+        nav_home: "Accueil",
+        nav_info: "Infos",
+        nav_tips: "Conseils",
+        nav_transport: "Transports",
+        nav_itinerary: "Itinéraires",
+
+        guest_directory: "GUIDE DES HÔTES",
+        welcome_title: "Bienvenue",
+
+        welcome_text: `
+            Bienvenue au Tetto Fiorito et merci d'avoir choisi de séjourner chez nous.
+            Nous sommes ravis que vous ayez choisi Castellammare di Stabia comme point de départ pour vos vacances.
+            Grâce à sa situation stratégique, notre ville est idéale pour découvrir
+            certaines des plus belles destinations de Campanie, notamment Naples,
+            Pompéi, Herculanum, Sorrente, Capri et la côte amalfitaine.
+            Nous souhaitons vous faire sentir comme chez vous et rendre votre séjour aussi agréable que possible.
+        `,
+
+        contacts_title: "📞 Contacts rapides & Urgences",
+        host_label: "Votre hôte",
+        call: "Appeler",
+        whatsapp: "WhatsApp",
+        sms: "SMS",
+        emergency: "Urgences :",
+        ambulance: "Ambulance :",
+        firefighters: "Pompiers :",
+
+        apartment_title: "ℹ️ Informations sur l'appartement",
+        wifi_title: "Connexion Wi-Fi",
+        network_1: "<strong>Réseau 1 :</strong> Tetto Fiorito",
+        network_2: "<strong>Réseau 2 :</strong> EXT – Tetto Fiorito",
+        wifi_password: "<strong>Mot de passe :</strong> <span class='highlight-text'>tettofiorito</span>",
+
+        ac_title: "❄️ Climatisation",
+
+        ac_text: `
+            Vous pouvez régler la climatisation de manière autonome à l'aide de la télécommande.
+            Merci de l'éteindre lorsque vous quittez l'appartement.
+        `,
+
+        rules_title: "👥 Voisinage & Terrasse",
+
+        rules_text: `
+            Nous vous demandons d'éviter les nuisances sonores dans les parties communes,
+            notamment le soir et la nuit, par respect pour les autres résidents.
+            La terrasse est un espace commun partagé.
+            Vous pouvez utiliser la balançoire, le canapé et les fauteuils.
+            Merci de ne pas utiliser les chaises blanches en plastique
+            et de ne laisser aucun objet, nourriture ou boisson sur la terrasse.
+        `,
+
+        parking_title: "🚗 Parking",
+
+        parking_intro: `
+            <strong>Le Tetto Fiorito ne dispose pas de parking privé</strong>.
+            Plusieurs parkings payants sont toutefois disponibles à proximité.
+        `,
+
+        porto_antico: "Porto Antico Stabia",
+        porto_location: "📍 Près du port",
+        giordano: "Parking Giordano",
+        giordano_location: "📍 Près de la gare Circumvesuviana",
+        see_rates: "Voir les tarifs",
+        first_hour: "Première heure",
+        next_hours: "Heures suivantes ou fraction",
+        next_hours_simple: "Heures suivantes",
+        thirty_minutes: "30 minutes",
+        daily_24: "Tarif journalier 24 h",
+        daily: "Tarif journalier",
+        small_car: "🚗 Petite voiture",
+        medium_car: "🚙 Voiture moyenne",
+        large_car: "🚐 Grande voiture",
+
+        parking_warning: `
+            ℹ️ Les tarifs peuvent être modifiés.
+            Nous vous conseillons de les vérifier directement auprès du parking.
+        `,
+
+        trash_title: "♻️ Collecte des déchets",
+
+        trash_info: `
+            Les déchets doivent être déposés à l'extérieur de l'entrée principale,
+            sur les deux marches donnant sur la rue,
+            après 20 h le jour indiqué.
+        `,
+
+        day: "Jour",
+        trash_type: "Type de déchet",
+        monday: "Lundi soir",
+        tuesday: "Mardi soir",
+        wednesday: "Mercredi soir",
+        thursday: "Jeudi soir",
+        friday: "Vendredi soir",
+        saturday: "Samedi soir",
+        sunday: "Dimanche soir",
+        undifferentiated: "Déchets non recyclables",
+        plastic_cans: "Plastique et canettes",
+        organic: "Déchets organiques",
+        glass: "Verre",
+        paper: "Papier et carton",
+        no_collection: "Pas de collecte",
+
+        shops_title: "🛒 Supermarchés & Services à proximité",
+        shops_intro: "Cliquez sur le nom du service pour ouvrir la carte et calculer l'itinéraire :",
+        service_store: "Service / Enseigne",
+        type_location: "Type et emplacement",
+        supermarket: "Supermarché alimentaire",
+        supermarket_home: "Supermarché et produits ménagers",
+        food_typical: "Alimentation et produits locaux",
+        minimarket: "Supérette, fruits et légumes et charcuterie",
+        personal_home: "Hygiène personnelle, détergents et produits ménagers",
+        walk_1: "🚶 Environ 1 minute à pied",
+        walk_3: "🚶 Environ 3 minutes à pied",
+        walk_6: "🚶 Environ 6 minutes à pied",
+        walk_7: "🚶 Environ 7 minutes à pied",
+
+        gastronomy_title: "🍝 Gastronomie locale & Restaurants",
+        gastronomy_intro: "Nos adresses préférées. Cliquez sur les lieux indiqués par 📍 pour ouvrir la carte :",
+        category: "Catégorie",
+        place_notes: "Lieu et conseils du Tetto Fiorito",
+        breakfast: "☕ Café / Petit-déjeuner",
+        pizza_places: "🍕 Pizzerias",
+        takeaway: "🍗 Rôtisserie / À emporter",
+        restaurants: "🍽️ Restaurants",
+        winebar: "🍷 Cuisine locale / Bar à vin",
+        icecream: "🍨 Glaciers",
+
+        beaches_title: "🏖️ Plages & Établissements balnéaires",
+
+        beaches_intro: `
+            La plage située devant le Tetto Fiorito est une plage publique où la baignade est autorisée.
+            Pour les établissements privés équipés :
+        `,
+
+        area: "Zone",
+        beach_notes: "Établissements recommandés & Conseils",
+
+        experiences_title: "🗺️ Expériences & Saveurs à ne pas manquer",
+        experiences_intro: "Quelques secrets pour découvrir pleinement la culture de Stabia pendant votre séjour :",
+
+        promenade_title: "🌅 Promenade en bord de mer",
+
+        promenade_text: `
+            Notre Villa Comunale possède l'une des promenades en bord de mer
+            les plus longues et les plus belles d'Europe.
+            Profitez d'une promenade en soirée avec une glace
+            ou goûtez la rafraîchissante <strong>« Fruttata »</strong>
+            dans l'un des chalets traditionnels.
+        `,
+
+        biscuits_title: "📍 🍪 Biscuits de Castellammare (Biscottificio Ricciardi)",
+
+        biscuits_text: `
+            L'une des spécialités emblématiques de la ville.
+            Nous recommandons la maison historique <strong>Ricciardi</strong>,
+            réputée pour ses biscuits traditionnels,
+            ses biscuits secs et ses douceurs à la pâte d'amande.
+        `,
+
+        water_title: "💧 L'Acqua della Madonna",
+
+        water_text: `
+            Castellammare est historiquement célèbre pour ses eaux minérales.
+            Rendez-vous à l'<strong>Antica Fonte dell'Acqua della Madonna</strong>,
+            près du port, pour goûter l'eau minérale ou l'Acqua Acidula
+            directement aux sources publiques.
+        `,
+
+        transport_eyebrow: "SE DÉPLACER",
+        transport_title: "🚇 Transports & Liaisons",
+
+        transport_intro: `
+            Depuis le Tetto Fiorito, vous pouvez facilement rejoindre
+            les principales destinations de Campanie en train,
+            par voie maritime ou grâce aux liaisons directes avec l'aéroport.
+        `,
+
+        by_land: "Par voie terrestre",
+        station_title: "Gare Circumvesuviana",
+
+        train_text: `
+            La gare se trouve à quelques mètres seulement de l'entrée du Tetto Fiorito.
+            En sortant, tournez simplement à droite.
+        `,
+
+        few_steps: "À quelques pas de la maison",
+
+        train_highlight: `
+            C'est le moyen le plus simple de rejoindre Naples,
+            les sites archéologiques et la péninsule de Sorrente.
+        `,
+
+        destinations_title: "Destinations",
+        direction_naples: "Direction Naples",
+        direction_naples_text: "Pour Pompéi, Oplontis, Herculanum et Naples.",
+        direction_sorrento: "Direction Sorrente",
+        direction_sorrento_text: "Pour Vico Equense, Meta et Sorrente.",
+        train_schedule: "📄 Consulter les horaires de la Circumvesuviana",
+
+        by_sea: "Par la mer",
+        ferry_title: "Hydroglisseur pour Capri",
+
+        ferry_text: `
+            Depuis le port de Castellammare di Stabia,
+            Capri est rapidement accessible en hydroglisseur.
+        `,
+
+        port_title: "Port de Castellammare",
+
+        port_text: `
+            Le port est accessible en quelques minutes à pied
+            depuis le Tetto Fiorito en longeant la côte vers la gauche.
+        `,
+
+        ferry_schedule_title: "🕒 Horaires aller-retour",
+        outward_route: "🚤 Castellammare → Capri",
+        return_route: "🌅 Capri → Castellammare",
+        monday_friday: "Lundi–Vendredi",
+        saturday_simple: "Samedi",
+        sunday_holidays: "Dimanches et jours fériés",
+        every_day: "Tous les jours",
+
+        fares: "💶 Tarifs",
+        fare_type: "Type",
+        one_way: "Aller",
+        round_trip: "A/R",
+        adult: "Adulte",
+        children: "Enfants de 2 à 12 ans",
+        groups: "Groupes de 15 personnes minimum",
+        school_groups: "Groupes scolaires",
+        luggage: "Bagage",
+        animal: "Animal",
+        bicycle: "Vélo",
+
+        transport_warning: `
+            Les horaires et les tarifs peuvent être modifiés.
+            Vérifiez toujours les informations avant votre départ.
+        `,
+
+        airport_connection: "Liaison aéroport",
+        bus_title: "Bus Curreri",
+
+        bus_text: `
+            Le service Curreri relie Castellammare di Stabia
+            à l'aéroport international de Naples-Capodichino.
+        `,
+
+        bus_stop_title: "Arrêt conseillé : Villa Stabia",
+
+        bus_stop_text: `
+            Pour rejoindre l'aéroport de Naples-Capodichino,
+            nous vous conseillons de prendre le bus à l'arrêt Villa Stabia.
+        `,
+
+        bus_schedule: "📄 Consulter les horaires des bus",
+        book_ticket: "🎟️ Réserver un billet",
+
+        explore_campania: "DÉCOUVREZ LA CAMPANIE",
+        discover_title: "Lieux à découvrir",
+
+        guide_button: "Guide & Conseils",
+        close_guide: "Fermer le guide",
+
+        pompeii_title: "🏛️ Site archéologique de Pompéi",
+        train_naples_badge: "🚆 Circumvesuviana direction Naples",
+        how_to_get: "🚆 Comment s'y rendre",
+        organize_visit: "🎧 Organiser la visite",
+        tetto_tips: "💡 Les conseils du Tetto Fiorito",
+
+        naples_title: "🎭 Naples",
+        must_see: "🏛️ À ne pas manquer",
+        eat_naples: "🍕 Que manger à Naples",
+
+        sorrento_title: "🍋 Sorrente",
+        train_sorrento_badge: "🚆 Circumvesuviana direction Sorrente",
+        what_to_do: "🌅 Que faire",
+        taste: "🍋 À goûter",
+
+        vico_title: "🌿 Vico Equense",
+        why_visit: "🌊 Pourquoi visiter",
+
+        coast_title: "🌊 Positano & Amalfi",
+        coast_badge: "🚌 Bus - 🚢 Excursions en bateau",
+        sea_advice: "⚓️ Notre conseil : les découvrir depuis la mer",
+        things_to_do: "✨ Que faire",
+        know_taste: "🍋 À savoir & À goûter",
+
+        capri_title: "🏝️ Capri",
+        capri_badge: "🚢 Hydroglisseur - ⛵️ Excursion privée",
+        unmissable_experience: "🌊 Une expérience à ne pas manquer",
+        capri_taste: "🍋 Que goûter à Capri",
+
+        caprese: `
+            <strong>Salade Caprese :</strong>
+            l'un des plats les plus simples et emblématiques de Campanie,
+            préparé avec des tomates, de la mozzarella fraîche et du basilic.
+        `,
+
+        caprese_cake: `
+            <strong>Torta Caprese :</strong>
+            le célèbre gâteau de l'île à base de chocolat et d'amandes.
+            Sa version au citron mérite également d'être goûtée !
+        `,
+
+        buonocore: `
+            <strong>Glace :</strong>
+            pour une pause gourmande, nous recommandons
+            <strong>Buonocore Gelateria</strong>,
+            célèbre également pour ses cornets préparés sur place.
+        `,
+
+        stabia_title: "🏺 Sites archéologiques de Stabia",
+        bus_taxi_badge: "🚌 Bus - 🚕 Taxi",
+
+        herculaneum_title: "🌋 Site archéologique d'Herculanum",
+
+        organize_day: "ORGANISEZ VOTRE JOURNÉE",
+        tours_title: "Tours, excursions & location de scooters",
+        discover_sesto: "Découvrir Sesto Continente Tours",
+
+        footer: "© B&B Tetto Fiorito • Castellammare di Stabia"
+    },
+
+
+    /* =========================================================
+       DEUTSCH
+    ========================================================= */
+
+    de: {
+
+        nav_home: "Start",
+        nav_info: "Infos",
+        nav_tips: "Tipps",
+        nav_transport: "Verkehr",
+        nav_itinerary: "Ausflüge",
+
+        guest_directory: "GÄSTEINFORMATIONEN",
+        welcome_title: "Willkommen",
+
+        welcome_text: `
+            Willkommen im Tetto Fiorito und vielen Dank, dass Sie sich für einen Aufenthalt bei uns entschieden haben.
+            Wir freuen uns, dass Sie Castellammare di Stabia als Ausgangspunkt für Ihren Urlaub gewählt haben.
+            Dank seiner strategischen Lage ist unsere Stadt der ideale Ausgangspunkt,
+            um einige der schönsten und bekanntesten Reiseziele Kampaniens zu besuchen,
+            darunter Neapel, Pompeji, Herculaneum, Sorrent, Capri und die Amalfiküste.
+            Wir möchten, dass Sie sich bei uns wie zu Hause fühlen und Ihren Aufenthalt genießen.
+        `,
+
+        contacts_title: "📞 Schnellkontakte & Notfälle",
+        host_label: "Ihr Gastgeber",
+        call: "Anrufen",
+        whatsapp: "WhatsApp",
+        sms: "SMS",
+        emergency: "Notruf:",
+        ambulance: "Rettungsdienst:",
+        firefighters: "Feuerwehr:",
+
+        apartment_title: "ℹ️ Informationen zur Unterkunft",
+        wifi_title: "WLAN-Verbindung",
+        network_1: "<strong>Netzwerk 1:</strong> Tetto Fiorito",
+        network_2: "<strong>Netzwerk 2:</strong> EXT – Tetto Fiorito",
+        wifi_password: "<strong>Passwort:</strong> <span class='highlight-text'>tettofiorito</span>",
+
+        ac_title: "❄️ Klimaanlage",
+
+        ac_text: `
+            Sie können die Klimaanlage mit der Fernbedienung selbstständig einstellen.
+            Bitte schalten Sie sie aus, wenn Sie die Unterkunft verlassen.
+        `,
+
+        rules_title: "👥 Nachbarschaft & Terrasse",
+
+        rules_text: `
+            Bitte vermeiden Sie übermäßigen Lärm in den Gemeinschaftsbereichen,
+            insbesondere am Abend und in der Nacht.
+            Die Terrasse ist ein gemeinschaftlich genutzter Bereich.
+            Sie können die Schaukel, das Sofa und die Sessel nutzen.
+            Bitte benutzen Sie nicht die weißen Plastikstühle
+            und lassen Sie keine Speisen, Getränke oder Gegenstände auf der Terrasse zurück.
+        `,
+
+        parking_title: "🚗 Parken",
+
+        parking_intro: `
+            <strong>Das Tetto Fiorito verfügt über keinen privaten Parkplatz</strong>.
+            In der Nähe stehen jedoch mehrere kostenpflichtige Parkmöglichkeiten zur Verfügung.
+        `,
+
+        porto_antico: "Porto Antico Stabia",
+        porto_location: "📍 In der Nähe des Hafens",
+        giordano: "Parkplatz Giordano",
+        giordano_location: "📍 In der Nähe des Circumvesuviana-Bahnhofs",
+        see_rates: "Tarife anzeigen",
+        first_hour: "Erste Stunde",
+        next_hours: "Jede weitere Stunde oder Teilstunde",
+        next_hours_simple: "Weitere Stunden",
+        thirty_minutes: "30 Minuten",
+        daily_24: "24-Stunden-Tagespreis",
+        daily: "Tagespreis",
+        small_car: "🚗 Kleinwagen",
+        medium_car: "🚙 Mittelgroßes Auto",
+        large_car: "🚐 Großes Auto",
+
+        parking_warning: `
+            ℹ️ Die Tarife können sich ändern.
+            Bitte prüfen Sie die aktuellen Preise direkt beim Parkplatz.
+        `,
+
+        trash_title: "♻️ Müllentsorgung",
+
+        trash_info: `
+            Der Müll muss am angegebenen Tag nach 20:00 Uhr
+            vor dem Haupteingang auf den beiden zur Straße führenden Stufen abgestellt werden.
+        `,
+
+        day: "Tag",
+        trash_type: "Abfallart",
+        monday: "Montagabend",
+        tuesday: "Dienstagabend",
+        wednesday: "Mittwochabend",
+        thursday: "Donnerstagabend",
+        friday: "Freitagabend",
+        saturday: "Samstagabend",
+        sunday: "Sonntagabend",
+        undifferentiated: "Restmüll",
+        plastic_cans: "Kunststoff und Dosen",
+        organic: "Biomüll",
+        glass: "Glas",
+        paper: "Papier und Karton",
+        no_collection: "Keine Abholung",
+
+        shops_title: "🛒 Supermärkte & Dienstleistungen in der Nähe",
+        shops_intro: "Klicken Sie auf den Namen, um die Karte zu öffnen und die Route zu berechnen:",
+        service_store: "Service / Geschäft",
+        type_location: "Art und Lage",
+        supermarket: "Lebensmittel-Supermarkt",
+        supermarket_home: "Supermarkt und Haushaltsprodukte",
+        food_typical: "Lebensmittel und regionale Produkte",
+        minimarket: "Minimarkt, Obst und Gemüse und Feinkost",
+        personal_home: "Körperpflege, Reinigungsmittel und Haushaltsprodukte",
+        walk_1: "🚶 Etwa 1 Minute zu Fuß",
+        walk_3: "🚶 Etwa 3 Minuten zu Fuß",
+        walk_6: "🚶 Etwa 6 Minuten zu Fuß",
+        walk_7: "🚶 Etwa 7 Minuten zu Fuß",
+
+        gastronomy_title: "🍝 Lokale Gastronomie & Restaurants",
+        gastronomy_intro: "Unsere Lieblingsorte. Klicken Sie auf die mit 📍 markierten Lokale, um die Karte zu öffnen:",
+        category: "Kategorie",
+        place_notes: "Lokal & Tipps des Tetto Fiorito",
+        breakfast: "☕ Café / Frühstück",
+        pizza_places: "🍕 Pizzerien",
+        takeaway: "🍗 Imbiss / Zum Mitnehmen",
+        restaurants: "🍽️ Restaurants",
+        winebar: "🍷 Regionale Küche / Weinbar",
+        icecream: "🍨 Eisdielen",
+
+        beaches_title: "🏖️ Strände & Strandbäder",
+
+        beaches_intro: `
+            Direkt vor dem Tetto Fiorito befindet sich ein öffentlicher Strand,
+            an dem das Baden erlaubt ist.
+            Für ausgestattete private Strandbäder:
+        `,
+
+        area: "Gebiet",
+        beach_notes: "Empfohlene Strandbäder & Hinweise",
+
+        experiences_title: "🗺️ Erlebnisse & Spezialitäten, die Sie nicht verpassen sollten",
+        experiences_intro: "Einige lokale Tipps, um die Kultur von Stabia während Ihres Aufenthalts zu entdecken:",
+
+        promenade_title: "🌅 Spaziergang an der Strandpromenade",
+
+        promenade_text: `
+            Unsere Villa Comunale besitzt eine der längsten und schönsten
+            Strandpromenaden Europas.
+            Genießen Sie einen Abendspaziergang mit einem Eis
+            oder probieren Sie die erfrischende <strong>„Fruttata“</strong>
+            in einem der traditionellen Strandchalets.
+        `,
+
+        biscuits_title: "📍 🍪 Biscotti di Castellammare (Biscottificio Ricciardi)",
+
+        biscuits_text: `
+            Eine der typischen Süßspeisen der Stadt.
+            Wir empfehlen die traditionsreiche Bäckerei <strong>Ricciardi</strong>,
+            bekannt für traditionelle Kekse, trockenes Gebäck und Mandelgebäck.
+        `,
+
+        water_title: "💧 Acqua della Madonna",
+
+        water_text: `
+            Castellammare ist seit jeher für seine Mineralquellen bekannt.
+            Besuchen Sie die <strong>Antica Fonte dell'Acqua della Madonna</strong>
+            in der Nähe des Hafens und probieren Sie Mineralwasser
+            oder Acqua Acidula direkt aus den öffentlichen Quellen.
+        `,
+
+        transport_eyebrow: "UNTERWEGS",
+        transport_title: "🚇 Verkehr & Verbindungen",
+
+        transport_intro: `
+            Vom Tetto Fiorito aus erreichen Sie die wichtigsten Reiseziele Kampaniens
+            bequem mit dem Zug, über den Seeweg oder über direkte Flughafenverbindungen.
+        `,
+
+        by_land: "Auf dem Landweg",
+        station_title: "Circumvesuviana-Bahnhof",
+
+        train_text: `
+            Der Bahnhof befindet sich nur wenige Meter vom Eingang des Tetto Fiorito entfernt.
+            Beim Verlassen der Unterkunft gehen Sie einfach nach rechts.
+        `,
+
+        few_steps: "Nur wenige Schritte entfernt",
+
+        train_highlight: `
+            Dies ist die einfachste Möglichkeit,
+            Neapel, die archäologischen Stätten und die Halbinsel von Sorrent zu erreichen.
+        `,
+
+        destinations_title: "Reiseziele",
+        direction_naples: "Richtung Neapel",
+        direction_naples_text: "Nach Pompeji, Oplontis, Herculaneum und Neapel.",
+        direction_sorrento: "Richtung Sorrent",
+        direction_sorrento_text: "Nach Vico Equense, Meta und Sorrent.",
+        train_schedule: "📄 Fahrplan der Circumvesuviana ansehen",
+
+        by_sea: "Auf dem Seeweg",
+        ferry_title: "Tragflügelboot nach Capri",
+
+        ferry_text: `
+            Vom Hafen von Castellammare di Stabia
+            erreichen Sie Capri schnell und bequem mit dem Tragflügelboot.
+        `,
+
+        port_title: "Hafen von Castellammare",
+
+        port_text: `
+            Vom Tetto Fiorito erreichen Sie den Hafen
+            in wenigen Minuten zu Fuß entlang der Küste nach links.
+        `,
+
+        ferry_schedule_title: "🕒 Hin- und Rückfahrzeiten",
+        outward_route: "🚤 Castellammare → Capri",
+        return_route: "🌅 Capri → Castellammare",
+        monday_friday: "Montag–Freitag",
+        saturday_simple: "Samstag",
+        sunday_holidays: "Sonntage und Feiertage",
+        every_day: "Täglich",
+
+        fares: "💶 Preise",
+        fare_type: "Kategorie",
+        one_way: "Einfache Fahrt",
+        round_trip: "Hin & Zurück",
+        adult: "Erwachsene",
+        children: "Kinder von 2 bis 12 Jahren",
+        groups: "Gruppen ab 15 Personen",
+        school_groups: "Schulgruppen",
+        luggage: "Gepäck",
+        animal: "Haustier",
+        bicycle: "Fahrrad",
+
+        transport_warning: `
+            Fahrpläne und Preise können sich ändern.
+            Bitte prüfen Sie vor der Abfahrt die aktuellen Informationen.
+        `,
+
+        airport_connection: "Flughafenverbindung",
+        bus_title: "Curreri Bus",
+
+        bus_text: `
+            Der Curreri-Service verbindet Castellammare di Stabia
+            mit dem internationalen Flughafen Neapel-Capodichino.
+        `,
+
+        bus_stop_title: "Empfohlene Haltestelle: Villa Stabia",
+
+        bus_stop_text: `
+            Für die Fahrt zum Flughafen Neapel-Capodichino
+            empfehlen wir die Haltestelle Villa Stabia.
+        `,
+
+        bus_schedule: "📄 Busfahrplan ansehen",
+        book_ticket: "🎟️ Ticket buchen",
+
+        explore_campania: "KAMPANIEN ENTDECKEN",
+        discover_title: "Ausflugsziele",
+
+        guide_button: "Reiseführer & Tipps",
+        close_guide: "Reiseführer schließen",
+
+        pompeii_title: "🏛️ Archäologische Stätte Pompeji",
+        train_naples_badge: "🚆 Circumvesuviana Richtung Neapel",
+        how_to_get: "🚆 Anreise",
+        organize_visit: "🎧 Besuch planen",
+        tetto_tips: "💡 Tipps des Tetto Fiorito",
+
+        naples_title: "🎭 Neapel",
+        must_see: "🏛️ Das sollten Sie nicht verpassen",
+        eat_naples: "🍕 Essen in Neapel",
+
+        sorrento_title: "🍋 Sorrent",
+        train_sorrento_badge: "🚆 Circumvesuviana Richtung Sorrent",
+        what_to_do: "🌅 Aktivitäten",
+        taste: "🍋 Spezialitäten",
+
+        vico_title: "🌿 Vico Equense",
+        why_visit: "🌊 Warum besuchen",
+
+        coast_title: "🌊 Positano & Amalfi",
+        coast_badge: "🚌 Bus - 🚢 Bootsausflüge",
+        sea_advice: "⚓️ Unser Tipp: vom Meer aus entdecken",
+        things_to_do: "✨ Aktivitäten",
+        know_taste: "🍋 Wissenswertes & Spezialitäten",
+
+        capri_title: "🏝️ Capri",
+        capri_badge: "🚢 Tragflügelboot - ⛵️ Privater Bootsausflug",
+        unmissable_experience: "🌊 Ein unvergessliches Erlebnis",
+        capri_taste: "🍋 Spezialitäten auf Capri",
+
+        caprese: `
+            <strong>Caprese-Salat:</strong>
+            eines der einfachsten und typischsten Gerichte Kampaniens,
+            zubereitet mit Tomaten, frischer Mozzarella und Basilikum.
+        `,
+
+        caprese_cake: `
+            <strong>Torta Caprese:</strong>
+            der berühmte Kuchen der Insel aus Schokolade und Mandeln.
+            Auch die Zitronenvariante ist einen Versuch wert!
+        `,
+
+        buonocore: `
+            <strong>Eis:</strong>
+            für eine süße Pause empfehlen wir die <strong>Buonocore Gelateria</strong>,
+            die auch für ihre frisch zubereiteten Waffeln bekannt ist.
+        `,
+
+        stabia_title: "🏺 Archäologische Stätten von Stabia",
+        bus_taxi_badge: "🚌 Bus - 🚕 Taxi",
+
+        herculaneum_title: "🌋 Archäologische Stätte Herculaneum",
+
+        organize_day: "PLANEN SIE IHREN TAG",
+        tours_title: "Touren, Ausflüge & Motorrollerverleih",
+
+        discover_sesto: "Sesto Continente Tours entdecken",
+
+        footer: "© B&B Tetto Fiorito • Castellammare di Stabia"
+    }
+
+};
+
+
+/* =========================================================
+   FUNZIONE CAMBIO LINGUA
+========================================================= */
+
+function setLanguage(lang) {
+
+    if (!translations[lang]) {
+        lang = "it";
+    }
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+
+        const key = element.getAttribute("data-i18n");
+
+        if (translations[lang][key] !== undefined) {
+            element.innerHTML = translations[lang][key];
         }
 
-        // Gestione apertura/chiusura card Itinerari
-        function toggleAccordion(element) {
-            const item = element.parentElement;
-            const content = item.querySelector('.accordion-content');
-            const arrow = element.querySelector('.arrow');
-            
-            if (item.classList.contains('open')) {
-                item.classList.remove('open');
-                arrow.style.transform = "rotate(0deg)";
-            } else {
-                // Chiude gli altri eventualmente aperti per ordine visivo
-                document.querySelectorAll('.accordion-item').forEach(el => {
-                    el.classList.remove('open');
-                    const a = el.querySelector('.arrow');
-                    if(a) a.style.transform = "rotate(0deg)";
-                });
-                item.classList.add('open');
-                arrow.style.transform = "rotate(180deg)";
-            }
+    });
+
+    const languageSelect = document.getElementById("language-select");
+
+    if (languageSelect) {
+        languageSelect.value = lang;
+    }
+
+    localStorage.setItem("tettoFioritoLanguage", lang);
+
+}
+
+
+/* =========================================================
+   RIPRISTINO LINGUA SELEZIONATA
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const savedLanguage =
+        localStorage.getItem("tettoFioritoLanguage") || "it";
+
+    setLanguage(savedLanguage);
+
+});
+
+
+/* =========================================================
+   NAVIGAZIONE TAB
+========================================================= */
+
+function switchTab(tabId) {
+
+    document.querySelectorAll(".tab-content").forEach(tab => {
+        tab.classList.remove("active");
+    });
+
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.classList.remove("active");
+    });
+
+    const selectedTab = document.getElementById(tabId);
+
+    if (selectedTab) {
+        selectedTab.classList.add("active");
+    }
+
+    const activeBtn = Array
+        .from(document.querySelectorAll(".nav-link"))
+        .find(btn =>
+            btn.getAttribute("onclick") &&
+            btn.getAttribute("onclick").includes(tabId)
+        );
+
+    if (activeBtn) {
+        activeBtn.classList.add("active");
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* =========================================================
+   APERTURA GUIDE ITINERARI
+========================================================= */
+
+function toggleLocalitaGuide(cardId) {
+
+    const card = document.getElementById(cardId);
+
+    if (!card) return;
+
+    const button = card.querySelector(".btn-toggle-guide");
+
+    const currentLanguage =
+        localStorage.getItem("tettoFioritoLanguage") || "it";
+
+    const t =
+        translations[currentLanguage] || translations.it;
+
+    const isOpen = card.classList.contains("open");
+
+    if (isOpen) {
+
+        card.classList.remove("open");
+
+        if (button) {
+            button.innerHTML =
+                '<i class="fas fa-book-open"></i> ' +
+                t.guide_button;
         }
 
-        const translations = {
-            it: {
-                welcome: "Benvenuti al Tetto Fiorito e grazie per aver scelto di soggiornare da noi. Siamo felici che abbiate scelto Castellammare di Stabia come base per la vostra vacanza. Grazie alla sua posizione strategica, la nostra città rappresenta il punto di partenza ideale per visitare alcune delle destinazioni più belle e conosciute della Campania, tra cui Napoli, Pompei, Ercolano, Sorrento, Capri e la Costiera Amalfitana. Il nostro desiderio è farvi sentire come a casa e rendere il vostro soggiorno il più piacevole possibile.",
-                apt: "ℹ️ Informazioni Appartamento",
-                ac_lbl: "❄️ Aria Condizionata",
-                ac_txt: "Potete gestire l’aria condizionata in modo autonomo usando l’apposito telecomando. Vi chiediamo gentilmente di spegnere l'aria condizionata quando lasciate l'appartamento.",
-                rules_lbl: "👥 Vicinato & Terrazza",
-                rules_txt: "Vi chiediamo gentilmente di evitare rumori eccessivi nelle aree comuni (scale e terrazza) nelle ore serali e notturne, nel rispetto degli altri residenti. La terrazza è uno spazio condominiale condiviso. Siete i benvenuti a rilassarvi utilizzando l'altalena, il divanetto e le poltrone. Vi chiediamo invece di non utilizzare le sedie bianche in plastica e di non lasciare cibo, bevande o altri oggetti sulla terrazza al termine dell'utilizzo.",
-                trash_info: "I rifiuti vanno posti fuori all’ingresso principale, in strada, sui 2 gradini di ingresso, dopo le ore 20:00 del giorno indicato.",
-                th_day: "Giorno", th_type: "Tipo Rifiuto",
-                lun: "Lunedì sera", mar: "Martedì sera", mer: "Mercoledì sera", gio: "Giovedì sera", ven: "Venerdì sera", dom: "Domenica sera",
-                transport: "🚇 Come Muoversi e Trasporti",
-                train: "Situata a pochissimi metri dal portone d'ingresso, svoltando a destra. Rappresenta il mezzo più comodo e rapido per raggiungere comodamente Napoli, Pompei, Ercolano e Sorrento.",
-                ferry: "Situato a pochi minuti di cammino a piedi, svoltando a sinistra del portone. Da qui partono regolarmente aliscafi e traghetti diretti verso l'isola di Capri e la costiera di Sorrento.",
-                shops: "🛒 Supermercati e Servizi Vicini",
-                shops_txt: "A pochi minuti a piedi dalla struttura troverete tutti i principali servizi necessari della zona:",
-                beaches: "🏖️ Spiagge Consigliate",
-                beaches_txt: "Lo specchio di mare di fronte al Tetto Fiorito è balneabile (spiaggia libera). Se cercate stabilimenti attrezzati:",
-                itinerary: "🗺️ Punti di Interesse e Itinerari",
-                itinerary_txt: "Grazie alla posizione incredibilmente strategica di Castellammare di Stabia, alloggiare al Tetto Fiorito vi permette di raggiungere in pochissimo tempo le perle più iconiche della Campania. Esplorate le mete vicine in autonomia o con i nostri tour partner selezionati.",
-                disc_tag: "Codice Sconto Partner Esclusivo Sesto Continente Tours:",
-                numbers: "📞 Contatti Rapidi & Emergenze"
-            },
-            en: {
-                welcome: "Welcome to Tetto Fiorito and thank you for choosing to stay with us. We are happy that you chose Castellammare di Stabia as the base for your holiday. Thanks to its strategic location, our city represents the ideal starting point for visiting some of the most beautiful and well-known destinations in Campania, including Naples, Pompeii, Herculaneum, Sorrento, Capri, and the Amalfi Coast. Our wish is to make you feel at home and make your stay as pleasant as possible.",
-                apt: "ℹ️ Apartment Information",
-                ac_lbl: "❄️ Air Conditioning",
-                ac_txt: "You can manage the air conditioning autonomously using the remote control. We kindly ask you to turn it off when you leave the apartment.",
-                rules_lbl: "👥 Neighbors & Terrace",
-                rules_txt: "We kindly ask you to avoid excessive noise in common areas (stairs and terrace) during evening and night hours, out of respect for other residents. The terrace is a shared space: you are welcome to relax using the swing, sofa, and armchairs. We ask you instead not to use the white plastic chairs and not to leave food, drinks, or other objects on the terrace after use.",
-                trash_info: "Waste must be placed outside the main entrance, on the street entrance steps, after 8:00 PM on the designated day.",
-                th_day: "Day", th_type: "Trash Type",
-                lun: "Monday night", mar: "Tuesday night", mer: "Wednesday night", gio: "Thursday night", ven: "Friday night", dom: "Sunday night",
-                transport: "🚇 Getting Around & Transport",
-                train: "Located just a few meters from the entrance door, turning right. It is the most convenient and fastest way to easily reach Naples, Pompeii, Herculaneum, and Sorrento.",
-                ferry: "Located a few minutes' walk away, turning left from the door. Hydrofoils and ferries leave regularly from here towards Capri and Sorrento.",
-                shops: "🛒 Supermarkets & Services",
-                shops_txt: "A few minutes' walk from the property you will find all main services of the area:",
-                beaches: "🏖️ Recommended Beaches",
-                beaches_txt: "The stretch of sea in front of Tetto Fiorito is declared swimmable (free beach). If you look for equipped beach clubs:",
-                itinerary: "🗺️ Points of Interest & Itineraries",
-                itinerary_txt: "Thanks to the strategic position of Castellammare di Stabia, staying at Tetto Fiorito allows you to quickly reach the most iconic spots in Campania. Explore nearby spots on your own or with our selected tour partners.",
-                disc_tag: "Exclusive Partner Discount Code Sesto Continente Tours:",
-                numbers: "📞 Quick Contacts & Emergencies"
-            },
-            fr: {
-                welcome: "Bienvenue au Tetto Fiorito ! Nous siamo ravis que vous ayez choisi Castellammare di Stabia comme base pour vos vacances. Grâce à sa position stratégique, notre ville représente le point de départ idéal pour visiter Naples, Pompéi, Herculanum, Sorrente, Capri et la côte amalfitaine. Notre souhait est que vous vous sentiez comme chez vous.",
-                apt: "ℹ️ Informations sur l'Appartement",
-                ac_lbl: "❄️ Climatisation",
-                ac_txt: "Vous pouvez gérer la climatisation de manière autonome à l'aide de la télécommande. Merci de bien vouloir l'éteindre lorsque vous quittez l'appartement.",
-                rules_lbl: "👥 Voisinage & Terrasse",
-                rules_txt: "Nous vous demandons d'éviter les bruits excessifs dans les parties communes le soir. La terrasse est partagée : vous pouvez utiliser la balancelle, le canapé et les fauteuils, mais pas les chaises en plastique blanc.",
-                trash_info: "Les déchets doivent être déposés devant l'entrée principale, dans la rue, après 20h00 le jour indiqué.",
-                th_day: "Jour", th_type: "Type de Déchet",
-                lun: "Lundi soir", mar: "Mardi soir", mer: "Mercredi soir", gio: "Jeudi soir", ven: "Vendredi soir", dom: "Dimanche soir",
-                transport: "🚇 Transports",
-                train: "Situé à quelques mètres de la porte d'entrée, en tournant à droite. C'est le moyen le plus rapide pour rejoindre Naples, Pompéi, Herculanum et Sorrente.",
-                ferry: "Situé à quelques minutes à pied, en tournant à gauche. Des ferries partent régulièrement d'ici vers Capri et Sorrente.",
-                shops: "🛒 Supermarchés et Services",
-                shops_txt: "À quelques minutes à pied, vous trouverez tous les services nécessaires de la zone :",
-                beaches: "🏖️ Plages Recommandées",
-                beaches_txt: "La mer en face est baignable (plage publique). Si vous recherchez des plages privées équipées :",
-                itinerary: "🗺️ Points d'Intérêt & Itinéraires",
-                itinerary_txt: "Grâce à la position stratégique de Castellammare, séjourner au Tetto Fiorito vous permet de rejoindre rapidement les perles de la Campanie. Visitez par vous-même ou via nos excursions partenaires.",
-                disc_tag: "Code de Réduction Sesto Continente Tours:",
-                numbers: "📞 Contacts & Urgences"
-            },
-            de: {
-                welcome: "Willkommen im Tetto Fiorito! Wir freuen uns, dass Sie Castellammare di Stabia gewählt haben. Dank seiner strategischen Lage ist unsere Stadt der ideale Ausgangspunkt, um Neapel, Pompeji, Herculaneum, Sorrent, Capri und die Amalfiküste zu besuchen. Wir möchten, dass Sie sich wie zu Hause fühlen.",
-                apt: "ℹ️ Informationen zur Wohnung",
-                ac_lbl: "❄️ Klimaanlage",
-                ac_txt: "Sie können die Klimaanlage mithilfe der Fernbedienung selbstständig regulieren. Bitte beim Verlassen della Wohnung ausschalten.",
-                rules_lbl: "👥 Nachbarschaft & Terrasse",
-                rules_txt: "Bitte vermeiden Sie abends/nachts übermäßigen Lärm in den Gemeinschaftsbereichen. Die Terrasse wird geteilt: Schaukel, Sofa und Sessel dürfen genutzt werden.",
-                trash_info: "Der Abfall muss am angegebenen Tag nach 20:00 Uhr vor dem Haupteingang auf den Stufen abgestellt werden.",
-                th_day: "Tag", th_type: "Müllart",
-                lun: "Montagabend", mar: "Dienstagabend", mer: "Mittwochabend", gio: "Donnerstagabend", ven: "Freitagabend", dom: "Sonntagabend",
-                transport: "🚇 Mobilität",
-                train: "Nur wenige Meter vom Eingang entfernt, nach rechts abbiegen. Der schnellste Weg nach Neapel, Pompeji, Herculaneum und Sorrent.",
-                ferry: "Nur wenige Gehminuten entfernt, nach links abbiegen. Fähren fahren regelmäßig nach Capri und Sorrent.",
-                shops: "🛒 Supermärkte & Dienstleistungen",
-                shops_txt: "Nur wenige Gehminuten entfernt finden Sie alle wichtigen Dienstleistungen der Region:",
-                beaches: "🏖️ Empfohlene Strände",
-                beaches_txt: "Das Meer gegenüber ist zum Baden freigegeben (freier Strand). Wenn Sie ausgestattete Strandbäder suchen:",
-                itinerary: "🗺️ Sehenswürdigkeiten & Routen",
-                itinerary_txt: "Dank der strategischen Lage von Castellammare di Stabia erreichen Sie die Highlights Kampaniens im Handumdrehen. Entdecken Sie die Ziele auf eigene Faust o mit Partner-Touren.",
-                disc_tag: "Exklusiver Rabattcode Sesto Continente Tours:",
-                numbers: "📞 Notfallnummern & Kontakte"
-            }
-        };
+    } else {
 
-        function setLanguage(lang) {
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+        card.classList.add("open");
 
-            const t = translations[lang];
-            document.getElementById('welcome-text').innerText = t.welcome;
-            document.getElementById('title-apt').innerText = t.apt;
-            document.getElementById('lbl-ac').innerText = t.ac_lbl;
-            document.getElementById('txt-ac').innerText = t.ac_txt;
-            document.getElementById('lbl-rules').innerText = t.rules_lbl;
-            document.getElementById('txt-rules').innerText = t.rules_txt;
-            document.getElementById('txt-trash-info').innerText = t.trash_info;
-            document.getElementById('th-day').innerText = t.th_day;
-            document.getElementById('th-type').innerText = t.th_type;
-            document.getElementById('title-transport').innerText = t.transport;
-            document.getElementById('txt-train').innerText = t.train;
-            document.getElementById('txt-ferry').innerText = t.ferry;
-            document.getElementById('title-shops').innerText = t.shops;
-            document.getElementById('txt-shops-info').innerText = t.shops_txt;
-            document.getElementById('title-beaches').innerText = t.beaches;
-            document.getElementById('txt-beaches').innerText = t.beaches_txt;
-            document.getElementById('title-itinerary').innerText = t.itinerary;
-            document.getElementById('txt-itinerary-intro').innerText = t.itinerary_txt;
-            document.getElementById('txt-discount-tag').innerText = t.disc_tag;
-            document.getElementById('title-numbers').innerText = t.numbers;
-
-            document.getElementById('d-lun').innerText = t.lun;
-            document.getElementById('d-mar').innerText = t.mar;
-            document.getElementById('d-mer').innerText = t.mer;
-            document.getElementById('d-gio').innerText = t.gio;
-            document.getElementById('d-ven').innerText = t.ven;
-            document.getElementById('d-dom').innerText = t.dom;
+        if (button) {
+            button.innerHTML =
+                '<i class="fas fa-book"></i> ' +
+                t.close_guide;
         }
 
-        function toggleLocalitaGuide(cardId) {
-            const card = document.getElementById(cardId);
-            const button = card.querySelector('.btn-toggle-guide');
-            
-            // Controlla se è già aperta
-            const isOpen = card.classList.contains('open');
-            
-            if (isOpen) {
-                card.classList.remove('open');
-                button.innerHTML = '<i class="fas fa-book-open"></i> Mostra Guida & Consigli';
-            } else {
-                card.classList.add('open');
-                button.innerHTML = '<i class="fas fa-book"></i> Chiudi Guida';
-            }
-        }
-    </script>
+    }
+
+}
+
+</script>
 </body>
 </html>
