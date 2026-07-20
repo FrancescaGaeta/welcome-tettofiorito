@@ -146,39 +146,49 @@
                 </div>
             </div>
 
-            <!-- PARCHEGGIO -->
-<div class="info-block parking-info-block">
+           <!-- PARCHEGGIO -->
+<div class="card parking-container">
 
-    <h4>🚗 Parcheggio</h4>
+    <h2>🚗 Parcheggio</h2>
 
-    <p>
+    <p class="parking-subtitle">
         Il <strong>Tetto Fiorito non dispone di un parcheggio privato</strong>.
-        Nelle vicinanze sono però disponibili alcuni parcheggi a pagamento
+        Nelle vicinanze sono però disponibili alcuni parcheggi a pagamento,
         facilmente raggiungibili dalla struttura.
     </p>
 
-    <div class="parking-grid">
 
-        <!-- PARCHEGGIO PORTO ANTICO STABIA -->
-        <div class="parking-option">
+    <!-- PARCHEGGIO PORTO ANTICO STABIA -->
+    <div class="parking-accordion">
 
-            <div class="parking-option-header">
-                <span class="parking-icon">🅿️</span>
+        <details>
 
-                <div>
-                    <h5>Porto Antico Stabia</h5>
-                    <span class="parking-location">
-                        Società Cooperativa
+            <summary>
+
+                <div class="parking-summary-main">
+
+                    <span class="parking-summary-icon">
+                        🅿️
                     </span>
+
+                    <div>
+                        <strong>Porto Antico Stabia</strong>
+
+                        <span class="parking-location">
+                            📍 Nei pressi del porto
+                        </span>
+                    </div>
+
                 </div>
-            </div>
 
-            <p class="parking-description">
-                Parcheggio situato nei pressi della zona portuale,
-                comodo per raggiungere il Tetto Fiorito.
-            </p>
+                <span class="parking-summary-action">
+                    Vedi tariffe
+                </span>
 
-            <div class="parking-rates">
+            </summary>
+
+
+            <div class="parking-details-content">
 
                 <div class="parking-rate-row">
                     <span>Prima ora</span>
@@ -197,35 +207,47 @@
 
             </div>
 
-        </div>
+        </details>
+
+    </div>
 
 
-        <!-- PARCHEGGIO GIORDANO -->
-        <div class="parking-option">
+    <!-- PARCHEGGIO GIORDANO -->
+    <div class="parking-accordion">
 
-            <div class="parking-option-header">
-                <span class="parking-icon">🅿️</span>
+        <details>
 
-                <div>
-                    <h5>Parcheggio Giordano</h5>
-                    <span class="parking-location">
-                        Nei pressi della Circumvesuviana
+            <summary>
+
+                <div class="parking-summary-main">
+
+                    <span class="parking-summary-icon">
+                        🅿️
                     </span>
+
+                    <div>
+                        <strong>Parcheggio Giordano</strong>
+
+                        <span class="parking-location">
+                            📍 Nei pressi della Circumvesuviana
+                        </span>
+                    </div>
+
                 </div>
-            </div>
 
-            <p class="parking-description">
-                Un'altra soluzione comoda, situata nei pressi della stazione
-                della Circumvesuviana. Le tariffe variano in base alla
-                dimensione del veicolo.
-            </p>
+                <span class="parking-summary-action">
+                    Vedi tariffe
+                </span>
 
-            <div class="parking-car-rates">
+            </summary>
+
+
+            <div class="parking-details-content">
 
                 <!-- AUTO PICCOLA -->
-                <div class="parking-vehicle-rate">
+                <div class="parking-vehicle-section">
 
-                    <strong>🚗 Auto piccola</strong>
+                    <h4>🚗 Auto piccola</h4>
 
                     <div class="parking-rate-row">
                         <span>Prima ora</span>
@@ -251,9 +273,9 @@
 
 
                 <!-- AUTO MEDIA -->
-                <div class="parking-vehicle-rate">
+                <div class="parking-vehicle-section">
 
-                    <strong>🚙 Auto media</strong>
+                    <h4>🚙 Auto media</h4>
 
                     <div class="parking-rate-row">
                         <span>Prima ora</span>
@@ -279,9 +301,9 @@
 
 
                 <!-- AUTO GRANDE -->
-                <div class="parking-vehicle-rate">
+                <div class="parking-vehicle-section">
 
-                    <strong>🚐 Auto grande</strong>
+                    <h4>🚐 Auto grande</h4>
 
                     <div class="parking-rate-row">
                         <span>Prima ora</span>
@@ -305,14 +327,15 @@
 
                 </div>
 
+
+                <p class="parking-disclaimer">
+                    ℹ️ Le tariffe riportate possono subire variazioni.
+                    Si consiglia di verificarle direttamente presso il parcheggio.
+                </p>
+
             </div>
 
-            <p class="parking-disclaimer">
-                ℹ️ Le tariffe riportate sono indicative e potrebbero subire variazioni.
-                Si consiglia di verificarle direttamente presso il parcheggio.
-            </p>
-
-        </div>
+        </details>
 
     </div>
 
@@ -939,139 +962,142 @@
 
             </div>
 
+                            <!-- ORARI ANDATA E RITORNO -->
 
-            <!-- ORARI DI ANDATA -->
+<details class="transport-accordion ferry-schedule-accordion">
 
-            <details class="transport-accordion">
+    <summary>
+        <span>🕒 Orari di andata e ritorno</span>
+    </summary>
 
-                <summary>
-                    <span>🕒 Orari di andata</span>
-                </summary>
+    <div class="transport-accordion-content">
 
-                <div class="transport-accordion-content">
+        <!-- ANDATA -->
 
-                    <div class="transport-info-list">
+        <div class="ferry-schedule-section">
 
-                        <div class="transport-info-row">
+            <h4 class="ferry-schedule-title">
+                🚤 Castellammare → Capri
+            </h4>
 
-                            <div class="schedule-heading">
+            <div class="transport-info-list">
 
-                                <strong>
-                                    Lunedì–Venerdì
-                                </strong>
+                <div class="transport-info-row">
 
-                                <small>
-                                    Monday–Friday
-                                </small>
+                    <div class="schedule-heading">
 
-                            </div>
+                        <strong>
+                            Lunedì–Venerdì
+                        </strong>
 
-                            <div class="schedule-times">
-                                <span>06:30</span>
-                                <span>06:40</span>
-                                <span>07:50</span>
-                                <span>07:55</span>
-                                <span>08:25</span>
-                                <span>09:10</span>
-                            </div>
+                        <small>
+                            Monday–Friday
+                        </small>
 
-                        </div>
+                    </div>
 
-
-                        <div class="transport-info-row">
-
-                            <div class="schedule-heading">
-
-                                <strong>
-                                    Sabato
-                                </strong>
-
-                                <small>
-                                    Saturday
-                                </small>
-
-                            </div>
-
-                            <div class="schedule-times">
-                                <span>06:30</span>
-                                <span>06:40</span>
-                                <span>07:50</span>
-                                <span>07:55</span>
-                                <span>08:25</span>
-                                <span>09:10</span>
-                            </div>
-
-                        </div>
-
-
-                        <div class="transport-info-row">
-
-                            <div class="schedule-heading">
-
-                                <strong>
-                                    Domenica e festivi
-                                </strong>
-
-                                <small>
-                                    Sunday and holidays
-                                </small>
-
-                            </div>
-
-                            <div class="schedule-times">
-                                <span>07:20</span>
-                                <span>07:50</span>
-                                <span>07:55</span>
-                                <span>08:25</span>
-                                <span>09:10</span>
-                            </div>
-
-                        </div>
-
+                    <div class="schedule-times">
+                        <span>06:30</span>
+                        <span>06:40</span>
+                        <span>07:50</span>
+                        <span>07:55</span>
+                        <span>08:25</span>
+                        <span>09:10</span>
                     </div>
 
                 </div>
 
-            </details>
 
+                <div class="transport-info-row">
 
-            <!-- ORARI DI RITORNO -->
+                    <div class="schedule-heading">
 
-            <details class="transport-accordion">
+                        <strong>
+                            Sabato
+                        </strong>
 
-                <summary>
-                    <span>🌅 Orari di ritorno</span>
-                </summary>
+                        <small>
+                            Saturday
+                        </small>
 
-                <div class="transport-accordion-content">
+                    </div>
 
-                    <div class="transport-info-row">
-
-                        <div class="schedule-heading">
-
-                            <strong>
-                                Tutti i giorni
-                            </strong>
-
-                            <small>
-                                Every day
-                            </small>
-
-                        </div>
-
-                        <div class="schedule-times">
-                            <span>17:25</span>
-                            <span>17:40</span>
-                            <span>17:45</span>
-                        </div>
-
+                    <div class="schedule-times">
+                        <span>06:30</span>
+                        <span>06:40</span>
+                        <span>07:50</span>
+                        <span>07:55</span>
+                        <span>08:25</span>
+                        <span>09:10</span>
                     </div>
 
                 </div>
 
-            </details>
+
+                <div class="transport-info-row">
+
+                    <div class="schedule-heading">
+
+                        <strong>
+                            Domenica e festivi
+                        </strong>
+
+                        <small>
+                            Sunday and holidays
+                        </small>
+
+                    </div>
+
+                    <div class="schedule-times">
+                        <span>07:20</span>
+                        <span>07:50</span>
+                        <span>07:55</span>
+                        <span>08:25</span>
+                        <span>09:10</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
 
 
+        <!-- RITORNO -->
+
+        <div class="ferry-schedule-section ferry-return-section">
+
+            <h4 class="ferry-schedule-title">
+                🌅 Capri → Castellammare
+            </h4>
+
+            <div class="transport-info-row">
+
+                <div class="schedule-heading">
+
+                    <strong>
+                        Tutti i giorni
+                    </strong>
+
+                    <small>
+                        Every day
+                    </small>
+
+                </div>
+
+                <div class="schedule-times">
+                    <span>17:25</span>
+                    <span>17:40</span>
+                    <span>17:45</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</details>
             <!-- TARIFFE -->
 
             <details class="transport-accordion">
